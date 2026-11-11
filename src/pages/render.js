@@ -6,6 +6,7 @@ import {
 import {
   PLANS, ROOM_PAGES, AREA_RANGES, planTitle, planShort, fmtArea, ROOM_WORD,
 } from '../data/plans.js';
+import { loaderMarkup } from './loader.js';
 
 export const esc = (s) => String(s)
   .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -110,7 +111,7 @@ function head(page, opts) {
   return `<head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<script>document.documentElement.classList.add('js')</script>
+<script>document.documentElement.classList.add('js','pl-on');setTimeout(function(){document.documentElement.classList.add('pl-timeout')},20000)</script>
 <title>${esc(page.title)}</title>
 <meta name="description" content="${esc(page.description)}">
 ${robots}${page.noindex ? '' : `<link rel="canonical" href="${url}">`}
@@ -166,15 +167,6 @@ function stage(page) {
   return `<div class="stage" id="stage" data-stage>
   <div class="stage-frame">
     <img class="stage-poster${poster.contain ? ' contain' : ''}" src="${poster.src}" alt="${esc(poster.alt)}" width="${poster.w}" height="${poster.h}" ${page.preload === poster.src ? 'fetchpriority="high"' : 'loading="eager"'} decoding="async">
-    <div class="s-pre" data-pre role="status" aria-live="polite">
-      <div class="s-pre-in">
-        <p class="s-pre-k">3D-модель комплекса</p>
-        <b data-pre-pct>0%</b>
-        <span class="s-pre-bar"><i data-pre-bar></i></span>
-        <p class="s-pre-t" data-pre-text>Загружаем 3D-движок…</p>
-        <p class="s-pre-n">Страницу можно читать, пока модель готовится</p>
-      </div>
-    </div>
   </div>
   <div class="stage-ui" data-stage-ui></div>
 </div>`;
@@ -214,6 +206,7 @@ export function renderPage(page, opts) {
 <html lang="ru" dir="ltr">
 ${head(page, opts)}
 <body data-route="${page.route}" data-layout="${page.layout}">
+${loaderMarkup()}
 <a class="skip" href="#main">Перейти к содержанию</a>
 ${header(page)}
 ${stage(page)}

@@ -7,11 +7,27 @@ import { createRouter } from './router.js';
 import { createPage } from './page.js';
 
 const stage = document.querySelector('[data-stage]');
+const pl = document.querySelector('[data-pl]'); // полноэкранный предзагрузчик
 const pre = {
-  pct: stage?.querySelector('[data-pre-pct]'),
-  bar: stage?.querySelector('[data-pre-bar]'),
-  text: stage?.querySelector('[data-pre-text]'),
+  pct: pl?.querySelector('[data-pre-pct]'),
+  bar: pl?.querySelector('[data-pre-bar]'),
+  text: pl?.querySelector('[data-pre-text]'),
 };
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// Убираем предзагрузчик не раньше, чем доиграет анимация логотипа (~2,9 с от начала
+// загрузки страницы). Промис — момент, когда экран начинает гаснуть.
+function hideLoader(minMs = reduced ? 0 : 2900) {
+  if (!pl || pl.classList.contains('done')) return Promise.resolve();
+  if (import.meta.env.DEV && location.search.includes('pl-debug')) return new Promise(() => {}); // заставка остаётся — для отладки анимации
+  const wait = Math.max(0, minMs - performance.now());
+  return new Promise((resolve) => setTimeout(() => {
+    pl.classList.add('done');
+    document.documentElement.classList.remove('pl-on');
+    setTimeout(() => pl.remove(), 900);
+    resolve();
+  }, wait));
+}
 let shown = 0;
 function progress(p, text) {
   shown = Math.max(shown, p); // проценты только растут
@@ -67,11 +83,11 @@ async function download(meta) {
 }
 
 async function boot3D() {
-  if (!stage) return;
-  if (!webgl()) { stage.classList.add('no3d'); return; }
+  if (!stage) { hideLoader(0); return; }
+  if (!webgl()) { stage.classList.add('no3d'); hideLoader(0); return; }
   window.__3d = true;
   document.querySelectorAll('[data-3d-only]').forEach((el) => { el.hidden = false; });
-  progress(0.02, 'Загружаем 3D-движок…');
+  progress(0.02, 'Загружаем 3D-модель комплекса…');
   try {
     await download(document.querySelector('meta[name="x-3d"]'));
     progress(0.34, 'Запускаем 3D-движок…');
@@ -83,21 +99,25 @@ async function boot3D() {
       navigate: (u) => router.go(u),
       lead: (ctx) => openLead(ctx),
     });
-    app = a;
-    if (import.meta.env.DEV) window.__app = app;
+    if (import.meta.env.DEV) window.__app = a;
+    a.setRects(page.rects(), 0);
+    a.setFilter(last.filter);
+    a.setPaused(last.paused);
+    await hideLoader();
+    app = a; // с этого момента страница управляет сценой напрямую
     app.setRects(page.rects(), 0);
     app.setFilter(last.filter);
-    if (last.view) app.setView(...last.view);
-    app.setPaused(last.paused);
+    if (last.view) app.setView(...last.view); // облёт камеры — одновременно с исчезновением заставки
   } catch (e) {
     console.error('3D недоступно:', e);
     stage.classList.add('no3d');
+    hideLoader(0);
   }
 }
 
 // экономия трафика: 3D только по запросу
 if (navigator.connection?.saveData) {
-  if (pre.text) pre.text.textContent = 'Включена экономия трафика';
+  hideLoader(0);
   const b = document.createElement('button');
   b.className = 's-btn';
   b.style.cssText = 'position:absolute;left:50%;top:60%;transform:translate(-50%,-50%);z-index:3;pointer-events:auto';
