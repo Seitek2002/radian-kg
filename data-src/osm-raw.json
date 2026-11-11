@@ -1,0 +1,6548 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-11-11T13:32:39Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "way",
+  "id": 25504592,
+  "bounds": {
+    "minlat": 42.8332313,
+    "minlon": 74.5643000,
+    "maxlat": 42.8353581,
+    "maxlon": 74.5646987
+  },
+  "geometry": [
+    { "lat": 42.8353581, "lon": 74.5643000 },
+    { "lat": 42.8346424, "lon": 74.5644200 },
+    { "lat": 42.8345122, "lon": 74.5644443 },
+    { "lat": 42.8343081, "lon": 74.5644780 },
+    { "lat": 42.8340574, "lon": 74.5645194 },
+    { "lat": 42.8338424, "lon": 74.5645462 },
+    { "lat": 42.8333972, "lon": 74.5646258 },
+    { "lat": 42.8332313, "lon": 74.5646987 }
+  ],
+  "tags": {
+    "addr:country": "KG",
+    "highway": "residential",
+    "maxspeed:practical": "8"
+  }
+},
+{
+  "type": "way",
+  "id": 44729322,
+  "bounds": {
+    "minlat": 42.8224003,
+    "minlon": 74.5631408,
+    "maxlat": 42.8266707,
+    "maxlon": 74.5667096
+  },
+  "geometry": [
+    { "lat": 42.8224828, "lon": 74.5633638 },
+    { "lat": 42.8224811, "lon": 74.5634858 },
+    { "lat": 42.8224003, "lon": 74.5667096 },
+    { "lat": 42.8229247, "lon": 74.5666512 },
+    { "lat": 42.8233667, "lon": 74.5665146 },
+    { "lat": 42.8238241, "lon": 74.5661122 },
+    { "lat": 42.8247811, "lon": 74.5651941 },
+    { "lat": 42.8249739, "lon": 74.5650171 },
+    { "lat": 42.8265492, "lon": 74.5633507 },
+    { "lat": 42.8266629, "lon": 74.5632779 },
+    { "lat": 42.8266707, "lon": 74.5631408 }
+  ],
+  "tags": {
+    "addr:country": "KG",
+    "highway": "residential",
+    "maxspeed:practical": "15"
+  }
+},
+{
+  "type": "way",
+  "id": 51091842,
+  "bounds": {
+    "minlat": 42.8258928,
+    "minlon": 74.5446451,
+    "maxlat": 42.8297409,
+    "maxlon": 74.5631090
+  },
+  "geometry": [
+    { "lat": 42.8296532, "lon": 74.5631090 },
+    { "lat": 42.8296546, "lon": 74.5629364 },
+    { "lat": 42.8296548, "lon": 74.5629072 },
+    { "lat": 42.8296694, "lon": 74.5621181 },
+    { "lat": 42.8296868, "lon": 74.5611748 },
+    { "lat": 42.8296989, "lon": 74.5604690 },
+    { "lat": 42.8297027, "lon": 74.5602951 },
+    { "lat": 42.8297121, "lon": 74.5598613 },
+    { "lat": 42.8297236, "lon": 74.5592897 },
+    { "lat": 42.8297409, "lon": 74.5579029 },
+    { "lat": 42.8297266, "lon": 74.5573928 },
+    { "lat": 42.8297042, "lon": 74.5570141 },
+    { "lat": 42.8296826, "lon": 74.5567138 },
+    { "lat": 42.8296107, "lon": 74.5560430 },
+    { "lat": 42.8295178, "lon": 74.5554904 },
+    { "lat": 42.8294863, "lon": 74.5553075 },
+    { "lat": 42.8294838, "lon": 74.5552927 },
+    { "lat": 42.8293563, "lon": 74.5547259 },
+    { "lat": 42.8292436, "lon": 74.5542908 },
+    { "lat": 42.8289668, "lon": 74.5534496 },
+    { "lat": 42.8288724, "lon": 74.5531627 },
+    { "lat": 42.8287617, "lon": 74.5528429 },
+    { "lat": 42.8285939, "lon": 74.5523583 },
+    { "lat": 42.8280502, "lon": 74.5508016 },
+    { "lat": 42.8279860, "lon": 74.5506179 },
+    { "lat": 42.8278982, "lon": 74.5503652 },
+    { "lat": 42.8270388, "lon": 74.5478916 },
+    { "lat": 42.8269997, "lon": 74.5477810 },
+    { "lat": 42.8259791, "lon": 74.5448964 },
+    { "lat": 42.8259329, "lon": 74.5447633 },
+    { "lat": 42.8258928, "lon": 74.5446451 }
+  ],
+  "tags": {
+    "highway": "primary",
+    "lanes": "2",
+    "maxspeed": "60",
+    "name": "Аалы Токомбаев проспекти",
+    "name:ky": "Аалы Токомбаев проспекти",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 52595801,
+  "bounds": {
+    "minlat": 42.8266216,
+    "minlon": 74.5674929,
+    "maxlat": 42.8291784,
+    "maxlon": 74.5676182
+  },
+  "geometry": [
+    { "lat": 42.8266216, "lon": 74.5674929 },
+    { "lat": 42.8282253, "lon": 74.5675664 },
+    { "lat": 42.8290196, "lon": 74.5675867 },
+    { "lat": 42.8291784, "lon": 74.5676182 }
+  ],
+  "tags": {
+    "addr:country": "KG",
+    "highway": "residential",
+    "maxspeed:practical": "10",
+    "name": "Жеңишгүл көчөсү",
+    "name:en": "Zhenish Gul street",
+    "name:ru": "улица Жениш Гул"
+  }
+},
+{
+  "type": "way",
+  "id": 52595804,
+  "bounds": {
+    "minlat": 42.8292391,
+    "minlon": 74.5640770,
+    "maxlat": 42.8295290,
+    "maxlon": 74.5652778
+  },
+  "geometry": [
+    { "lat": 42.8295290, "lon": 74.5640770 },
+    { "lat": 42.8293440, "lon": 74.5640798 },
+    { "lat": 42.8292951, "lon": 74.5641323 },
+    { "lat": 42.8292593, "lon": 74.5641973 },
+    { "lat": 42.8292391, "lon": 74.5643860 },
+    { "lat": 42.8292391, "lon": 74.5649331 },
+    { "lat": 42.8292789, "lon": 74.5650548 },
+    { "lat": 42.8293581, "lon": 74.5652778 },
+    { "lat": 42.8295141, "lon": 74.5652728 }
+  ],
+  "tags": {
+    "highway": "service",
+    "maxspeed:practical": "10",
+    "oneway": "yes",
+    "service": "driveway",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 52595805,
+  "bounds": {
+    "minlat": 42.8265757,
+    "minlon": 74.5721811,
+    "maxlat": 42.8281669,
+    "maxlon": 74.5742657
+  },
+  "geometry": [
+    { "lat": 42.8265757, "lon": 74.5721811 },
+    { "lat": 42.8267105, "lon": 74.5722354 },
+    { "lat": 42.8270191, "lon": 74.5722939 },
+    { "lat": 42.8271209, "lon": 74.5723550 },
+    { "lat": 42.8272124, "lon": 74.5724324 },
+    { "lat": 42.8272686, "lon": 74.5725282 },
+    { "lat": 42.8277918, "lon": 74.5739811 },
+    { "lat": 42.8279082, "lon": 74.5742017 },
+    { "lat": 42.8279572, "lon": 74.5742468 },
+    { "lat": 42.8281669, "lon": 74.5742657 }
+  ],
+  "tags": {
+    "addr:country": "KG",
+    "highway": "residential",
+    "maxspeed:practical": "10"
+  }
+},
+{
+  "type": "way",
+  "id": 52595807,
+  "bounds": {
+    "minlat": 42.8233108,
+    "minlon": 74.5721220,
+    "maxlat": 42.8249398,
+    "maxlon": 74.5721616
+  },
+  "geometry": [
+    { "lat": 42.8233108, "lon": 74.5721220 },
+    { "lat": 42.8244477, "lon": 74.5721616 },
+    { "lat": 42.8249398, "lon": 74.5721388 }
+  ],
+  "tags": {
+    "addr:country": "KG",
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 52595808,
+  "bounds": {
+    "minlat": 42.8249398,
+    "minlon": 74.5721388,
+    "maxlat": 42.8265757,
+    "maxlon": 74.5721811
+  },
+  "geometry": [
+    { "lat": 42.8265757, "lon": 74.5721811 },
+    { "lat": 42.8264965, "lon": 74.5721588 },
+    { "lat": 42.8253940, "lon": 74.5721555 },
+    { "lat": 42.8249398, "lon": 74.5721388 }
+  ],
+  "tags": {
+    "addr:country": "KG",
+    "bicycle": "yes",
+    "foot": "yes",
+    "highway": "residential",
+    "horse": "no",
+    "maxspeed": "20",
+    "maxspeed:practical": "10",
+    "surface": "gravel"
+  }
+},
+{
+  "type": "way",
+  "id": 52595810,
+  "bounds": {
+    "minlat": 42.8233516,
+    "minlon": 74.5650171,
+    "maxlat": 42.8249739,
+    "maxlon": 74.5651555
+  },
+  "geometry": [
+    { "lat": 42.8233516, "lon": 74.5651555 },
+    { "lat": 42.8249739, "lon": 74.5650171 }
+  ],
+  "tags": {
+    "addr:country": "KG",
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 52595812,
+  "bounds": {
+    "minlat": 42.8281297,
+    "minlon": 74.5694486,
+    "maxlat": 42.8282248,
+    "maxlon": 74.5765568
+  },
+  "geometry": [
+    { "lat": 42.8281297, "lon": 74.5765568 },
+    { "lat": 42.8281423, "lon": 74.5756010 },
+    { "lat": 42.8281669, "lon": 74.5742657 },
+    { "lat": 42.8281722, "lon": 74.5740432 },
+    { "lat": 42.8281887, "lon": 74.5729224 },
+    { "lat": 42.8281925, "lon": 74.5717931 },
+    { "lat": 42.8281882, "lon": 74.5706986 },
+    { "lat": 42.8282248, "lon": 74.5695634 },
+    { "lat": 42.8282230, "lon": 74.5694486 }
+  ],
+  "tags": {
+    "addr:country": "KG",
+    "highway": "residential",
+    "maxspeed:practical": "10",
+    "name": "Узун-Булак көчөсү",
+    "name:en": "Uzun-Bulak street",
+    "name:ru": "улица Узун-Булак"
+  }
+},
+{
+  "type": "way",
+  "id": 52595813,
+  "bounds": {
+    "minlat": 42.8264844,
+    "minlon": 74.5632779,
+    "maxlat": 42.8266629,
+    "maxlon": 74.5765439
+  },
+  "geometry": [
+    { "lat": 42.8266629, "lon": 74.5632779 },
+    { "lat": 42.8266619, "lon": 74.5634093 },
+    { "lat": 42.8266530, "lon": 74.5645158 },
+    { "lat": 42.8266352, "lon": 74.5658452 },
+    { "lat": 42.8266350, "lon": 74.5662820 },
+    { "lat": 42.8266231, "lon": 74.5672153 },
+    { "lat": 42.8266216, "lon": 74.5674929 },
+    { "lat": 42.8266120, "lon": 74.5683111 },
+    { "lat": 42.8266068, "lon": 74.5685528 },
+    { "lat": 42.8265970, "lon": 74.5695493 },
+    { "lat": 42.8265963, "lon": 74.5696698 },
+    { "lat": 42.8265845, "lon": 74.5708033 },
+    { "lat": 42.8265838, "lon": 74.5710867 },
+    { "lat": 42.8265757, "lon": 74.5721811 },
+    { "lat": 42.8265615, "lon": 74.5734058 },
+    { "lat": 42.8265429, "lon": 74.5744927 },
+    { "lat": 42.8265410, "lon": 74.5745758 },
+    { "lat": 42.8265188, "lon": 74.5755535 },
+    { "lat": 42.8265020, "lon": 74.5764374 },
+    { "lat": 42.8265018, "lon": 74.5764473 },
+    { "lat": 42.8264844, "lon": 74.5765439 }
+  ],
+  "tags": {
+    "addr:country": "KG",
+    "highway": "residential",
+    "maxspeed:practical": "10",
+    "name": "Баба-Ата көчөсү",
+    "name:en": "Baba-Ata street",
+    "name:ru": "улица Баба-Ата"
+  }
+},
+{
+  "type": "way",
+  "id": 52595814,
+  "bounds": {
+    "minlat": 42.8249019,
+    "minlon": 74.5696728,
+    "maxlat": 42.8249646,
+    "maxlon": 74.5765468
+  },
+  "geometry": [
+    { "lat": 42.8249646, "lon": 74.5696728 },
+    { "lat": 42.8249535, "lon": 74.5697966 },
+    { "lat": 42.8249358, "lon": 74.5710556 },
+    { "lat": 42.8249398, "lon": 74.5721388 },
+    { "lat": 42.8249297, "lon": 74.5733209 },
+    { "lat": 42.8249258, "lon": 74.5744286 },
+    { "lat": 42.8249191, "lon": 74.5755400 },
+    { "lat": 42.8249019, "lon": 74.5765468 }
+  ],
+  "tags": {
+    "addr:country": "KG",
+    "highway": "residential",
+    "name": "Кара-Коо көчөсү",
+    "name:en": "Kara-Koo street",
+    "name:ru": "улица Кара-Коо"
+  }
+},
+{
+  "type": "way",
+  "id": 52595816,
+  "bounds": {
+    "minlat": 42.8282230,
+    "minlon": 74.5675664,
+    "maxlat": 42.8282253,
+    "maxlon": 74.5694486
+  },
+  "geometry": [
+    { "lat": 42.8282253, "lon": 74.5675664 },
+    { "lat": 42.8282238, "lon": 74.5683545 },
+    { "lat": 42.8282230, "lon": 74.5694486 }
+  ],
+  "tags": {
+    "addr:country": "KG",
+    "highway": "residential",
+    "name": "Узун-Булак көчөсү",
+    "name:en": "Uzun-Bulak street",
+    "name:ru": "улица Узун-Булак"
+  }
+},
+{
+  "type": "way",
+  "id": 52595818,
+  "bounds": {
+    "minlat": 42.8232335,
+    "minlon": 74.5412991,
+    "maxlat": 42.8286568,
+    "maxlon": 74.5630709
+  },
+  "geometry": [
+    { "lat": 42.8285116, "lon": 74.5630709 },
+    { "lat": 42.8285380, "lon": 74.5623935 },
+    { "lat": 42.8285625, "lon": 74.5607931 },
+    { "lat": 42.8286165, "lon": 74.5605495 },
+    { "lat": 42.8286227, "lon": 74.5599160 },
+    { "lat": 42.8286290, "lon": 74.5592709 },
+    { "lat": 42.8286350, "lon": 74.5585563 },
+    { "lat": 42.8286485, "lon": 74.5575566 },
+    { "lat": 42.8286568, "lon": 74.5570512 },
+    { "lat": 42.8286149, "lon": 74.5567607 },
+    { "lat": 42.8286033, "lon": 74.5566802 },
+    { "lat": 42.8284712, "lon": 74.5562655 },
+    { "lat": 42.8284305, "lon": 74.5561974 },
+    { "lat": 42.8283750, "lon": 74.5561044 },
+    { "lat": 42.8280330, "lon": 74.5550347 },
+    { "lat": 42.8275585, "lon": 74.5536237 },
+    { "lat": 42.8271820, "lon": 74.5523465 },
+    { "lat": 42.8268061, "lon": 74.5513499 },
+    { "lat": 42.8267810, "lon": 74.5512835 },
+    { "lat": 42.8267502, "lon": 74.5511821 },
+    { "lat": 42.8263102, "lon": 74.5498197 },
+    { "lat": 42.8257196, "lon": 74.5481120 },
+    { "lat": 42.8246679, "lon": 74.5452814 },
+    { "lat": 42.8232335, "lon": 74.5412991 }
+  ],
+  "tags": {
+    "addr:country": "KG",
+    "highway": "residential",
+    "maxspeed:practical": "15",
+    "name": "Шербет көчөсү",
+    "name:en": "Sherbet street",
+    "name:ru": "улица Шербет"
+  }
+},
+{
+  "type": "way",
+  "id": 53574910,
+  "bounds": {
+    "minlat": 42.8249646,
+    "minlon": 74.5650171,
+    "maxlat": 42.8250176,
+    "maxlon": 74.5696728
+  },
+  "geometry": [
+    { "lat": 42.8249739, "lon": 74.5650171 },
+    { "lat": 42.8250176, "lon": 74.5651686 },
+    { "lat": 42.8250160, "lon": 74.5659112 },
+    { "lat": 42.8250160, "lon": 74.5659850 },
+    { "lat": 42.8250054, "lon": 74.5672937 },
+    { "lat": 42.8250044, "lon": 74.5673480 },
+    { "lat": 42.8249905, "lon": 74.5686253 },
+    { "lat": 42.8249884, "lon": 74.5687083 },
+    { "lat": 42.8249790, "lon": 74.5695480 },
+    { "lat": 42.8249646, "lon": 74.5696728 }
+  ],
+  "tags": {
+    "addr:country": "KG",
+    "highway": "residential",
+    "name": "Кара-Коо көчөсү"
+  }
+},
+{
+  "type": "way",
+  "id": 53574940,
+  "bounds": {
+    "minlat": 42.8266350,
+    "minlon": 74.5652778,
+    "maxlat": 42.8293581,
+    "maxlon": 74.5663492
+  },
+  "geometry": [
+    { "lat": 42.8266350, "lon": 74.5662820 },
+    { "lat": 42.8287309, "lon": 74.5663492 },
+    { "lat": 42.8291667, "lon": 74.5663371 },
+    { "lat": 42.8292081, "lon": 74.5663378 },
+    { "lat": 42.8292348, "lon": 74.5663270 },
+    { "lat": 42.8292537, "lon": 74.5662970 },
+    { "lat": 42.8292581, "lon": 74.5662522 },
+    { "lat": 42.8292624, "lon": 74.5655082 },
+    { "lat": 42.8292623, "lon": 74.5654733 },
+    { "lat": 42.8293581, "lon": 74.5652778 }
+  ],
+  "tags": {
+    "addr:country": "KG",
+    "highway": "residential",
+    "maxspeed:practical": "10"
+  }
+},
+{
+  "type": "way",
+  "id": 85534676,
+  "bounds": {
+    "minlat": 42.8194400,
+    "minlon": 74.5614826,
+    "maxlat": 42.8280220,
+    "maxlon": 74.5630875
+  },
+  "geometry": [
+    { "lat": 42.8194400, "lon": 74.5619631 },
+    { "lat": 42.8196599, "lon": 74.5618790 },
+    { "lat": 42.8201887, "lon": 74.5618644 },
+    { "lat": 42.8213607, "lon": 74.5617680 },
+    { "lat": 42.8218649, "lon": 74.5617781 },
+    { "lat": 42.8236303, "lon": 74.5616454 },
+    { "lat": 42.8252756, "lon": 74.5615653 },
+    { "lat": 42.8269343, "lon": 74.5614826 },
+    { "lat": 42.8278850, "lon": 74.5614932 },
+    { "lat": 42.8279266, "lon": 74.5615059 },
+    { "lat": 42.8279560, "lon": 74.5615374 },
+    { "lat": 42.8279686, "lon": 74.5615789 },
+    { "lat": 42.8280220, "lon": 74.5630875 }
+  ],
+  "tags": {
+    "access": "yes",
+    "addr:country": "KG",
+    "highway": "residential",
+    "maxspeed:practical": "10",
+    "name": "Миң-Куш көчөсү",
+    "name:en": "Min-Kush street",
+    "name:ru": "улица Мин-Куш"
+  }
+},
+{
+  "type": "way",
+  "id": 85534679,
+  "bounds": {
+    "minlat": 42.8218796,
+    "minlon": 74.5693158,
+    "maxlat": 42.8294657,
+    "maxlon": 74.5698304
+  },
+  "geometry": [
+    { "lat": 42.8218796, "lon": 74.5698304 },
+    { "lat": 42.8219606, "lon": 74.5698298 },
+    { "lat": 42.8224371, "lon": 74.5698261 },
+    { "lat": 42.8233438, "lon": 74.5697728 },
+    { "lat": 42.8249646, "lon": 74.5696728 },
+    { "lat": 42.8265970, "lon": 74.5695493 },
+    { "lat": 42.8272512, "lon": 74.5695088 },
+    { "lat": 42.8282230, "lon": 74.5694486 },
+    { "lat": 42.8287379, "lon": 74.5694053 },
+    { "lat": 42.8291592, "lon": 74.5693525 },
+    { "lat": 42.8292822, "lon": 74.5693371 },
+    { "lat": 42.8294657, "lon": 74.5693158 }
+  ],
+  "tags": {
+    "highway": "tertiary",
+    "maxspeed:practical": "15",
+    "name": "Карыбек Тыналиев көчөсү"
+  }
+},
+{
+  "type": "way",
+  "id": 97848246,
+  "bounds": {
+    "minlat": 42.8275064,
+    "minlon": 74.5631076,
+    "maxlat": 42.8292789,
+    "maxlon": 74.5651220
+  },
+  "geometry": [
+    { "lat": 42.8292789, "lon": 74.5650548 },
+    { "lat": 42.8291722, "lon": 74.5650987 },
+    { "lat": 42.8291154, "lon": 74.5651220 },
+    { "lat": 42.8275064, "lon": 74.5651142 },
+    { "lat": 42.8275122, "lon": 74.5636537 },
+    { "lat": 42.8275255, "lon": 74.5632588 },
+    { "lat": 42.8275267, "lon": 74.5632435 },
+    { "lat": 42.8275333, "lon": 74.5631076 }
+  ],
+  "tags": {
+    "addr:country": "KG",
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 129246043,
+  "bounds": {
+    "minlat": 42.8300270,
+    "minlon": 74.5678312,
+    "maxlat": 42.8301358,
+    "maxlon": 74.5681673
+  },
+  "geometry": [
+    { "lat": 42.8301236, "lon": 74.5678312 },
+    { "lat": 42.8301358, "lon": 74.5681607 },
+    { "lat": 42.8300392, "lon": 74.5681673 },
+    { "lat": 42.8300270, "lon": 74.5678378 },
+    { "lat": 42.8301236, "lon": 74.5678312 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "addr:housenumber": "10",
+    "addr:place": "Джал микрорайон",
+    "addr:street": "верхний джал микрорайон",
+    "addr:suburb": "Джал микрорайон",
+    "building": "yes",
+    "building:levels": "5"
+  }
+},
+{
+  "type": "way",
+  "id": 129246049,
+  "bounds": {
+    "minlat": 42.8299727,
+    "minlon": 74.5658058,
+    "maxlat": 42.8300837,
+    "maxlon": 74.5666242
+  },
+  "geometry": [
+    { "lat": 42.8300837, "lon": 74.5658075 },
+    { "lat": 42.8300764, "lon": 74.5666242 },
+    { "lat": 42.8299727, "lon": 74.5666225 },
+    { "lat": 42.8299799, "lon": 74.5658058 },
+    { "lat": 42.8300837, "lon": 74.5658075 }
+  ],
+  "tags": {
+    "addr:housenumber": "77",
+    "addr:place": "Джал микрорайон",
+    "addr:street": "микрорайон Верхний Джал",
+    "addr:suburb": "Джал микрорайон",
+    "building": "apartments",
+    "building:levels": "9"
+  }
+},
+{
+  "type": "way",
+  "id": 129246113,
+  "bounds": {
+    "minlat": 42.8314226,
+    "minlon": 74.5685180,
+    "maxlat": 42.8317349,
+    "maxlon": 74.5688244
+  },
+  "geometry": [
+    { "lat": 42.8317287, "lon": 74.5685180 },
+    { "lat": 42.8317349, "lon": 74.5688125 },
+    { "lat": 42.8314288, "lon": 74.5688244 },
+    { "lat": 42.8314226, "lon": 74.5685300 },
+    { "lat": 42.8317287, "lon": 74.5685180 }
+  ],
+  "tags": {
+    "addr:housenumber": "9",
+    "addr:place": "Джал микрорайон",
+    "addr:street": "ДЖал-29 Тыналиева",
+    "addr:suburb": "Джал микрорайон",
+    "building": "apartments",
+    "building:levels": "12",
+    "height": "10"
+  }
+},
+{
+  "type": "way",
+  "id": 129246143,
+  "bounds": {
+    "minlat": 42.8300392,
+    "minlon": 74.5681607,
+    "maxlat": 42.8301546,
+    "maxlon": 74.5686766
+  },
+  "geometry": [
+    { "lat": 42.8301358, "lon": 74.5681607 },
+    { "lat": 42.8301546, "lon": 74.5686699 },
+    { "lat": 42.8300581, "lon": 74.5686766 },
+    { "lat": 42.8300392, "lon": 74.5681673 },
+    { "lat": 42.8301358, "lon": 74.5681607 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "addr:housenumber": "12",
+    "addr:place": "Джал микрорайон",
+    "addr:street": "улица Тыналиева",
+    "addr:suburb": "Джал микрорайон",
+    "building": "yes",
+    "building:levels": "9"
+  }
+},
+{
+  "type": "way",
+  "id": 129246151,
+  "bounds": {
+    "minlat": 42.8309924,
+    "minlon": 74.5685593,
+    "maxlat": 42.8313047,
+    "maxlon": 74.5688657
+  },
+  "geometry": [
+    { "lat": 42.8312985, "lon": 74.5685593 },
+    { "lat": 42.8313047, "lon": 74.5688537 },
+    { "lat": 42.8309986, "lon": 74.5688657 },
+    { "lat": 42.8309924, "lon": 74.5685713 },
+    { "lat": 42.8312985, "lon": 74.5685593 }
+  ],
+  "tags": {
+    "addr:housenumber": "9/1",
+    "addr:place": "Джал микрорайон",
+    "addr:street": "микрорайон Джал-29 Тыналиева",
+    "addr:suburb": "Джал микрорайон",
+    "building": "apartments",
+    "building:levels": "10"
+  }
+},
+{
+  "type": "way",
+  "id": 155014656,
+  "bounds": {
+    "minlat": 42.8300316,
+    "minlon": 74.5674574,
+    "maxlat": 42.8304235,
+    "maxlon": 74.5676114
+  },
+  "geometry": [
+    { "lat": 42.8304235, "lon": 74.5674717 },
+    { "lat": 42.8304208, "lon": 74.5676114 },
+    { "lat": 42.8300316, "lon": 74.5675971 },
+    { "lat": 42.8300344, "lon": 74.5674574 },
+    { "lat": 42.8304235, "lon": 74.5674717 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "addr:housenumber": "11",
+    "addr:place": "Джал микрорайон",
+    "addr:street": "Джал-29 микрорайон",
+    "building": "yes",
+    "building:levels": "9"
+  }
+},
+{
+  "type": "way",
+  "id": 155014659,
+  "bounds": {
+    "minlat": 42.8312133,
+    "minlon": 74.5658190,
+    "maxlat": 42.8316213,
+    "maxlon": 74.5659883
+  },
+  "geometry": [
+    { "lat": 42.8316213, "lon": 74.5658280 },
+    { "lat": 42.8312152, "lon": 74.5658190 },
+    { "lat": 42.8312133, "lon": 74.5659793 },
+    { "lat": 42.8316194, "lon": 74.5659883 },
+    { "lat": 42.8316213, "lon": 74.5658280 }
+  ],
+  "tags": {
+    "addr:housenumber": "20",
+    "addr:place": "Джал микрорайон",
+    "addr:street": "микрорайон Джал-29",
+    "addr:suburb": "Джал микрорайон",
+    "building": "apartments",
+    "building:levels": "9"
+  }
+},
+{
+  "type": "way",
+  "id": 155023808,
+  "bounds": {
+    "minlat": 42.8303377,
+    "minlon": 74.5721614,
+    "maxlat": 42.8304479,
+    "maxlon": 74.5727837
+  },
+  "geometry": [
+    { "lat": 42.8304479, "lon": 74.5721695 },
+    { "lat": 42.8303488, "lon": 74.5721614 },
+    { "lat": 42.8303377, "lon": 74.5727703 },
+    { "lat": 42.8304432, "lon": 74.5727837 },
+    { "lat": 42.8304479, "lon": 74.5721695 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155384069,
+  "bounds": {
+    "minlat": 42.8306090,
+    "minlon": 74.5701204,
+    "maxlat": 42.8308135,
+    "maxlon": 74.5705550
+  },
+  "geometry": [
+    { "lat": 42.8306758, "lon": 74.5704101 },
+    { "lat": 42.8306877, "lon": 74.5705496 },
+    { "lat": 42.8306129, "lon": 74.5705550 },
+    { "lat": 42.8306090, "lon": 74.5703779 },
+    { "lat": 42.8306450, "lon": 74.5703672 },
+    { "lat": 42.8306404, "lon": 74.5702921 },
+    { "lat": 42.8306522, "lon": 74.5702385 },
+    { "lat": 42.8306247, "lon": 74.5702063 },
+    { "lat": 42.8306410, "lon": 74.5701365 },
+    { "lat": 42.8306804, "lon": 74.5701204 },
+    { "lat": 42.8307158, "lon": 74.5701365 },
+    { "lat": 42.8307663, "lon": 74.5701526 },
+    { "lat": 42.8308096, "lon": 74.5701580 },
+    { "lat": 42.8308135, "lon": 74.5702009 },
+    { "lat": 42.8308023, "lon": 74.5702546 },
+    { "lat": 42.8307709, "lon": 74.5702814 },
+    { "lat": 42.8307270, "lon": 74.5702867 },
+    { "lat": 42.8307118, "lon": 74.5703028 },
+    { "lat": 42.8307191, "lon": 74.5703565 },
+    { "lat": 42.8306758, "lon": 74.5704101 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155392076,
+  "bounds": {
+    "minlat": 42.8299520,
+    "minlon": 74.5713812,
+    "maxlat": 42.8301001,
+    "maxlon": 74.5716494
+  },
+  "geometry": [
+    { "lat": 42.8300976, "lon": 74.5713865 },
+    { "lat": 42.8300110, "lon": 74.5713812 },
+    { "lat": 42.8299756, "lon": 74.5714134 },
+    { "lat": 42.8299520, "lon": 74.5714670 },
+    { "lat": 42.8299599, "lon": 74.5715260 },
+    { "lat": 42.8299835, "lon": 74.5715797 },
+    { "lat": 42.8299835, "lon": 74.5716494 },
+    { "lat": 42.8300451, "lon": 74.5716081 },
+    { "lat": 42.8301001, "lon": 74.5715545 },
+    { "lat": 42.8300976, "lon": 74.5713865 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155392079,
+  "bounds": {
+    "minlat": 42.8299733,
+    "minlon": 74.5718074,
+    "maxlat": 42.8301336,
+    "maxlon": 74.5720240
+  },
+  "geometry": [
+    { "lat": 42.8301266, "lon": 74.5718707 },
+    { "lat": 42.8301110, "lon": 74.5718392 },
+    { "lat": 42.8300884, "lon": 74.5718169 },
+    { "lat": 42.8300679, "lon": 74.5718077 },
+    { "lat": 42.8300400, "lon": 74.5718074 },
+    { "lat": 42.8300176, "lon": 74.5718173 },
+    { "lat": 42.8299951, "lon": 74.5718399 },
+    { "lat": 42.8299805, "lon": 74.5718692 },
+    { "lat": 42.8299733, "lon": 74.5719059 },
+    { "lat": 42.8299757, "lon": 74.5719438 },
+    { "lat": 42.8299844, "lon": 74.5719717 },
+    { "lat": 42.8300026, "lon": 74.5720004 },
+    { "lat": 42.8300270, "lon": 74.5720189 },
+    { "lat": 42.8300429, "lon": 74.5720240 },
+    { "lat": 42.8300708, "lon": 74.5720223 },
+    { "lat": 42.8300978, "lon": 74.5720066 },
+    { "lat": 42.8301180, "lon": 74.5719803 },
+    { "lat": 42.8301304, "lon": 74.5719462 },
+    { "lat": 42.8301336, "lon": 74.5719178 },
+    { "lat": 42.8301266, "lon": 74.5718707 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155392257,
+  "bounds": {
+    "minlat": 42.8302903,
+    "minlon": 74.5719195,
+    "maxlat": 42.8304405,
+    "maxlon": 74.5721025
+  },
+  "geometry": [
+    { "lat": 42.8304405, "lon": 74.5719219 },
+    { "lat": 42.8302918, "lon": 74.5719195 },
+    { "lat": 42.8302903, "lon": 74.5721002 },
+    { "lat": 42.8304390, "lon": 74.5721025 },
+    { "lat": 42.8304405, "lon": 74.5719219 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155392259,
+  "bounds": {
+    "minlat": 42.8300996,
+    "minlon": 74.5725452,
+    "maxlat": 42.8302568,
+    "maxlon": 74.5727384
+  },
+  "geometry": [
+    { "lat": 42.8302568, "lon": 74.5725480 },
+    { "lat": 42.8301015, "lon": 74.5725452 },
+    { "lat": 42.8300996, "lon": 74.5727356 },
+    { "lat": 42.8302550, "lon": 74.5727384 },
+    { "lat": 42.8302568, "lon": 74.5725480 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155393831,
+  "bounds": {
+    "minlat": 42.8299266,
+    "minlon": 74.5725159,
+    "maxlat": 42.8300561,
+    "maxlon": 74.5726769
+  },
+  "geometry": [
+    { "lat": 42.8300561, "lon": 74.5725216 },
+    { "lat": 42.8299304, "lon": 74.5725159 },
+    { "lat": 42.8299266, "lon": 74.5726713 },
+    { "lat": 42.8300524, "lon": 74.5726769 },
+    { "lat": 42.8300561, "lon": 74.5725216 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155393833,
+  "bounds": {
+    "minlat": 42.8302644,
+    "minlon": 74.5713683,
+    "maxlat": 42.8303611,
+    "maxlon": 74.5714342
+  },
+  "geometry": [
+    { "lat": 42.8303611, "lon": 74.5713701 },
+    { "lat": 42.8302651, "lon": 74.5713683 },
+    { "lat": 42.8302644, "lon": 74.5714324 },
+    { "lat": 42.8303605, "lon": 74.5714342 },
+    { "lat": 42.8303611, "lon": 74.5713701 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155394783,
+  "bounds": {
+    "minlat": 42.8288644,
+    "minlon": 74.5727810,
+    "maxlat": 42.8290018,
+    "maxlon": 74.5729102
+  },
+  "geometry": [
+    { "lat": 42.8290018, "lon": 74.5727842 },
+    { "lat": 42.8288660, "lon": 74.5727810 },
+    { "lat": 42.8288644, "lon": 74.5729070 },
+    { "lat": 42.8290002, "lon": 74.5729102 },
+    { "lat": 42.8290018, "lon": 74.5727842 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155394791,
+  "bounds": {
+    "minlat": 42.8288110,
+    "minlon": 74.5725749,
+    "maxlat": 42.8288861,
+    "maxlon": 74.5727139
+  },
+  "geometry": [
+    { "lat": 42.8288861, "lon": 74.5725772 },
+    { "lat": 42.8288133, "lon": 74.5725749 },
+    { "lat": 42.8288110, "lon": 74.5727117 },
+    { "lat": 42.8288838, "lon": 74.5727139 },
+    { "lat": 42.8288861, "lon": 74.5725772 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155394980,
+  "bounds": {
+    "minlat": 42.8288170,
+    "minlon": 74.5701073,
+    "maxlat": 42.8288876,
+    "maxlon": 74.5701930
+  },
+  "geometry": [
+    { "lat": 42.8288876, "lon": 74.5701073 },
+    { "lat": 42.8288170, "lon": 74.5701073 },
+    { "lat": 42.8288170, "lon": 74.5701930 },
+    { "lat": 42.8288876, "lon": 74.5701930 },
+    { "lat": 42.8288876, "lon": 74.5701073 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155394983,
+  "bounds": {
+    "minlat": 42.8282832,
+    "minlon": 74.5702188,
+    "maxlat": 42.8285153,
+    "maxlon": 74.5706518
+  },
+  "geometry": [
+    { "lat": 42.8285153, "lon": 74.5702301 },
+    { "lat": 42.8283230, "lon": 74.5702188 },
+    { "lat": 42.8283205, "lon": 74.5702987 },
+    { "lat": 42.8283949, "lon": 74.5703031 },
+    { "lat": 42.8283890, "lon": 74.5704874 },
+    { "lat": 42.8284881, "lon": 74.5704933 },
+    { "lat": 42.8284845, "lon": 74.5706049 },
+    { "lat": 42.8282847, "lon": 74.5705931 },
+    { "lat": 42.8282832, "lon": 74.5706389 },
+    { "lat": 42.8285019, "lon": 74.5706518 },
+    { "lat": 42.8285153, "lon": 74.5702301 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155395204,
+  "bounds": {
+    "minlat": 42.8283621,
+    "minlon": 74.5708038,
+    "maxlat": 42.8284892,
+    "maxlon": 74.5710682
+  },
+  "geometry": [
+    { "lat": 42.8284892, "lon": 74.5708084 },
+    { "lat": 42.8283658, "lon": 74.5708038 },
+    { "lat": 42.8283621, "lon": 74.5709915 },
+    { "lat": 42.8283915, "lon": 74.5709926 },
+    { "lat": 42.8283901, "lon": 74.5710660 },
+    { "lat": 42.8284492, "lon": 74.5710682 },
+    { "lat": 42.8284504, "lon": 74.5710099 },
+    { "lat": 42.8284851, "lon": 74.5710112 },
+    { "lat": 42.8284892, "lon": 74.5708084 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155395206,
+  "bounds": {
+    "minlat": 42.8287712,
+    "minlon": 74.5705959,
+    "maxlat": 42.8288805,
+    "maxlon": 74.5707650
+  },
+  "geometry": [
+    { "lat": 42.8288793, "lon": 74.5705959 },
+    { "lat": 42.8287712, "lon": 74.5705974 },
+    { "lat": 42.8287726, "lon": 74.5707650 },
+    { "lat": 42.8288805, "lon": 74.5707634 },
+    { "lat": 42.8288793, "lon": 74.5705959 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155395207,
+  "bounds": {
+    "minlat": 42.8284956,
+    "minlon": 74.5714011,
+    "maxlat": 42.8286647,
+    "maxlon": 74.5715694
+  },
+  "geometry": [
+    { "lat": 42.8286143, "lon": 74.5714011 },
+    { "lat": 42.8284956, "lon": 74.5714039 },
+    { "lat": 42.8284977, "lon": 74.5715694 },
+    { "lat": 42.8286089, "lon": 74.5715668 },
+    { "lat": 42.8286082, "lon": 74.5715106 },
+    { "lat": 42.8286647, "lon": 74.5715093 },
+    { "lat": 42.8286639, "lon": 74.5714426 },
+    { "lat": 42.8286149, "lon": 74.5714437 },
+    { "lat": 42.8286143, "lon": 74.5714011 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155395208,
+  "bounds": {
+    "minlat": 42.8287804,
+    "minlon": 74.5708573,
+    "maxlat": 42.8288961,
+    "maxlon": 74.5709503
+  },
+  "geometry": [
+    { "lat": 42.8288943, "lon": 74.5708573 },
+    { "lat": 42.8287804, "lon": 74.5708616 },
+    { "lat": 42.8287822, "lon": 74.5709503 },
+    { "lat": 42.8288961, "lon": 74.5709460 },
+    { "lat": 42.8288943, "lon": 74.5708573 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155395338,
+  "bounds": {
+    "minlat": 42.8280630,
+    "minlon": 74.5707574,
+    "maxlat": 42.8281412,
+    "maxlon": 74.5709188
+  },
+  "geometry": [
+    { "lat": 42.8281412, "lon": 74.5707606 },
+    { "lat": 42.8280666, "lon": 74.5707574 },
+    { "lat": 42.8280630, "lon": 74.5709157 },
+    { "lat": 42.8281376, "lon": 74.5709188 },
+    { "lat": 42.8281412, "lon": 74.5707606 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155395340,
+  "bounds": {
+    "minlat": 42.8280271,
+    "minlon": 74.5704727,
+    "maxlat": 42.8281283,
+    "maxlon": 74.5705991
+  },
+  "geometry": [
+    { "lat": 42.8281283, "lon": 74.5704778 },
+    { "lat": 42.8280305, "lon": 74.5704727 },
+    { "lat": 42.8280271, "lon": 74.5705940 },
+    { "lat": 42.8281249, "lon": 74.5705991 },
+    { "lat": 42.8281283, "lon": 74.5704778 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155395793,
+  "bounds": {
+    "minlat": 42.8280526,
+    "minlon": 74.5712214,
+    "maxlat": 42.8281528,
+    "maxlon": 74.5717303
+  },
+  "geometry": [
+    { "lat": 42.8281528, "lon": 74.5712220 },
+    { "lat": 42.8280528, "lon": 74.5712214 },
+    { "lat": 42.8280526, "lon": 74.5712944 },
+    { "lat": 42.8281113, "lon": 74.5712947 },
+    { "lat": 42.8281100, "lon": 74.5717300 },
+    { "lat": 42.8281513, "lon": 74.5717303 },
+    { "lat": 42.8281528, "lon": 74.5712220 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155396006,
+  "bounds": {
+    "minlat": 42.8277974,
+    "minlon": 74.5703211,
+    "maxlat": 42.8279142,
+    "maxlon": 74.5704565
+  },
+  "geometry": [
+    { "lat": 42.8279142, "lon": 74.5703545 },
+    { "lat": 42.8278161, "lon": 74.5703211 },
+    { "lat": 42.8277974, "lon": 74.5704231 },
+    { "lat": 42.8278955, "lon": 74.5704565 },
+    { "lat": 42.8279142, "lon": 74.5703545 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155396007,
+  "bounds": {
+    "minlat": 42.8279515,
+    "minlon": 74.5715154,
+    "maxlat": 42.8280617,
+    "maxlon": 74.5716869
+  },
+  "geometry": [
+    { "lat": 42.8280617, "lon": 74.5715179 },
+    { "lat": 42.8279536, "lon": 74.5715154 },
+    { "lat": 42.8279515, "lon": 74.5716844 },
+    { "lat": 42.8280596, "lon": 74.5716869 },
+    { "lat": 42.8280617, "lon": 74.5715179 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "addr:housenumber": "44",
+    "addr:street": "улица Узун-Булак",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155396041,
+  "bounds": {
+    "minlat": 42.8280118,
+    "minlon": 74.5718906,
+    "maxlat": 42.8281117,
+    "maxlon": 74.5720265
+  },
+  "geometry": [
+    { "lat": 42.8281117, "lon": 74.5718939 },
+    { "lat": 42.8280142, "lon": 74.5718906 },
+    { "lat": 42.8280118, "lon": 74.5720232 },
+    { "lat": 42.8281094, "lon": 74.5720265 },
+    { "lat": 42.8281117, "lon": 74.5718939 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155396171,
+  "bounds": {
+    "minlat": 42.8280085,
+    "minlon": 74.5723988,
+    "maxlat": 42.8280821,
+    "maxlon": 74.5725816
+  },
+  "geometry": [
+    { "lat": 42.8280821, "lon": 74.5723988 },
+    { "lat": 42.8280085, "lon": 74.5723988 },
+    { "lat": 42.8280086, "lon": 74.5725816 },
+    { "lat": 42.8280821, "lon": 74.5725815 },
+    { "lat": 42.8280821, "lon": 74.5723988 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155396923,
+  "bounds": {
+    "minlat": 42.8272282,
+    "minlon": 74.5718872,
+    "maxlat": 42.8273315,
+    "maxlon": 74.5720948
+  },
+  "geometry": [
+    { "lat": 42.8273315, "lon": 74.5718965 },
+    { "lat": 42.8272390, "lon": 74.5718872 },
+    { "lat": 42.8272282, "lon": 74.5720854 },
+    { "lat": 42.8273207, "lon": 74.5720948 },
+    { "lat": 42.8273315, "lon": 74.5718965 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155396924,
+  "bounds": {
+    "minlat": 42.8268893,
+    "minlon": 74.5719576,
+    "maxlat": 42.8270190,
+    "maxlon": 74.5721187
+  },
+  "geometry": [
+    { "lat": 42.8270190, "lon": 74.5719632 },
+    { "lat": 42.8268931, "lon": 74.5719576 },
+    { "lat": 42.8268893, "lon": 74.5721131 },
+    { "lat": 42.8270152, "lon": 74.5721187 },
+    { "lat": 42.8270190, "lon": 74.5719632 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155396930,
+  "bounds": {
+    "minlat": 42.8269143,
+    "minlon": 74.5716253,
+    "maxlat": 42.8270202,
+    "maxlon": 74.5717859
+  },
+  "geometry": [
+    { "lat": 42.8270202, "lon": 74.5716328 },
+    { "lat": 42.8269206, "lon": 74.5716253 },
+    { "lat": 42.8269143, "lon": 74.5717783 },
+    { "lat": 42.8270140, "lon": 74.5717859 },
+    { "lat": 42.8270202, "lon": 74.5716328 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155397338,
+  "bounds": {
+    "minlat": 42.8280839,
+    "minlon": 74.5710020,
+    "maxlat": 42.8281512,
+    "maxlon": 74.5711677
+  },
+  "geometry": [
+    { "lat": 42.8281447, "lon": 74.5710020 },
+    { "lat": 42.8280839, "lon": 74.5710065 },
+    { "lat": 42.8280904, "lon": 74.5711677 },
+    { "lat": 42.8281512, "lon": 74.5711631 },
+    { "lat": 42.8281447, "lon": 74.5710020 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155397339,
+  "bounds": {
+    "minlat": 42.8274187,
+    "minlon": 74.5716573,
+    "maxlat": 42.8275302,
+    "maxlon": 74.5718484
+  },
+  "geometry": [
+    { "lat": 42.8275269, "lon": 74.5716573 },
+    { "lat": 42.8274187, "lon": 74.5716608 },
+    { "lat": 42.8274220, "lon": 74.5718484 },
+    { "lat": 42.8275302, "lon": 74.5718449 },
+    { "lat": 42.8275269, "lon": 74.5716573 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155397459,
+  "bounds": {
+    "minlat": 42.8280148,
+    "minlon": 74.5687443,
+    "maxlat": 42.8281339,
+    "maxlon": 74.5689514
+  },
+  "geometry": [
+    { "lat": 42.8281328, "lon": 74.5687443 },
+    { "lat": 42.8280148, "lon": 74.5687454 },
+    { "lat": 42.8280160, "lon": 74.5689514 },
+    { "lat": 42.8281339, "lon": 74.5689502 },
+    { "lat": 42.8281328, "lon": 74.5687443 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155397461,
+  "bounds": {
+    "minlat": 42.8280490,
+    "minlon": 74.5680888,
+    "maxlat": 42.8281506,
+    "maxlon": 74.5682878
+  },
+  "geometry": [
+    { "lat": 42.8281506, "lon": 74.5680921 },
+    { "lat": 42.8280525, "lon": 74.5680888 },
+    { "lat": 42.8280490, "lon": 74.5682846 },
+    { "lat": 42.8281471, "lon": 74.5682878 },
+    { "lat": 42.8281506, "lon": 74.5680921 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155397616,
+  "bounds": {
+    "minlat": 42.8289089,
+    "minlon": 74.5685448,
+    "maxlat": 42.8290961,
+    "maxlon": 74.5687091
+  },
+  "geometry": [
+    { "lat": 42.8290961, "lon": 74.5686103 },
+    { "lat": 42.8289422, "lon": 74.5685448 },
+    { "lat": 42.8289089, "lon": 74.5686902 },
+    { "lat": 42.8289532, "lon": 74.5687091 },
+    { "lat": 42.8289675, "lon": 74.5686465 },
+    { "lat": 42.8290771, "lon": 74.5686931 },
+    { "lat": 42.8290961, "lon": 74.5686103 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155397619,
+  "bounds": {
+    "minlat": 42.8289365,
+    "minlon": 74.5682769,
+    "maxlat": 42.8290528,
+    "maxlon": 74.5685286
+  },
+  "geometry": [
+    { "lat": 42.8290528, "lon": 74.5682847 },
+    { "lat": 42.8289440, "lon": 74.5682769 },
+    { "lat": 42.8289365, "lon": 74.5684700 },
+    { "lat": 42.8289923, "lon": 74.5684740 },
+    { "lat": 42.8289903, "lon": 74.5685248 },
+    { "lat": 42.8290434, "lon": 74.5685286 },
+    { "lat": 42.8290528, "lon": 74.5682847 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155397850,
+  "bounds": {
+    "minlat": 42.8284440,
+    "minlon": 74.5690601,
+    "maxlat": 42.8286019,
+    "maxlon": 74.5692255
+  },
+  "geometry": [
+    { "lat": 42.8286019, "lon": 74.5690646 },
+    { "lat": 42.8284466, "lon": 74.5690601 },
+    { "lat": 42.8284440, "lon": 74.5692209 },
+    { "lat": 42.8285994, "lon": 74.5692255 },
+    { "lat": 42.8286019, "lon": 74.5690646 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155397854,
+  "bounds": {
+    "minlat": 42.8284657,
+    "minlon": 74.5685971,
+    "maxlat": 42.8286338,
+    "maxlon": 74.5687746
+  },
+  "geometry": [
+    { "lat": 42.8286338, "lon": 74.5686671 },
+    { "lat": 42.8284948, "lon": 74.5685971 },
+    { "lat": 42.8284657, "lon": 74.5687046 },
+    { "lat": 42.8286047, "lon": 74.5687746 },
+    { "lat": 42.8286338, "lon": 74.5686671 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155397855,
+  "bounds": {
+    "minlat": 42.8282721,
+    "minlon": 74.5689940,
+    "maxlat": 42.8284138,
+    "maxlon": 74.5692837
+  },
+  "geometry": [
+    { "lat": 42.8284138, "lon": 74.5690584 },
+    { "lat": 42.8283429, "lon": 74.5690530 },
+    { "lat": 42.8283376, "lon": 74.5690064 },
+    { "lat": 42.8282839, "lon": 74.5689940 },
+    { "lat": 42.8282721, "lon": 74.5691389 },
+    { "lat": 42.8283154, "lon": 74.5691442 },
+    { "lat": 42.8283154, "lon": 74.5692676 },
+    { "lat": 42.8284098, "lon": 74.5692837 },
+    { "lat": 42.8284098, "lon": 74.5691603 },
+    { "lat": 42.8284138, "lon": 74.5690584 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155397856,
+  "bounds": {
+    "minlat": 42.8290502,
+    "minlon": 74.5689983,
+    "maxlat": 42.8290913,
+    "maxlon": 74.5691403
+  },
+  "geometry": [
+    { "lat": 42.8290913, "lon": 74.5689983 },
+    { "lat": 42.8290502, "lon": 74.5689983 },
+    { "lat": 42.8290502, "lon": 74.5691403 },
+    { "lat": 42.8290913, "lon": 74.5691403 },
+    { "lat": 42.8290913, "lon": 74.5689983 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 155397960,
+  "bounds": {
+    "minlat": 42.8287926,
+    "minlon": 74.5685101,
+    "maxlat": 42.8289225,
+    "maxlon": 74.5686657
+  },
+  "geometry": [
+    { "lat": 42.8289225, "lon": 74.5685570 },
+    { "lat": 42.8288959, "lon": 74.5686657 },
+    { "lat": 42.8287926, "lon": 74.5686187 },
+    { "lat": 42.8288192, "lon": 74.5685101 },
+    { "lat": 42.8289225, "lon": 74.5685570 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155398015,
+  "bounds": {
+    "minlat": 42.8283742,
+    "minlon": 74.5681221,
+    "maxlat": 42.8284462,
+    "maxlon": 74.5682560
+  },
+  "geometry": [
+    { "lat": 42.8284462, "lon": 74.5681239 },
+    { "lat": 42.8283761, "lon": 74.5681221 },
+    { "lat": 42.8283742, "lon": 74.5682542 },
+    { "lat": 42.8284443, "lon": 74.5682560 },
+    { "lat": 42.8284462, "lon": 74.5681239 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155398119,
+  "bounds": {
+    "minlat": 42.8283003,
+    "minlon": 74.5684051,
+    "maxlat": 42.8284665,
+    "maxlon": 74.5686250
+  },
+  "geometry": [
+    { "lat": 42.8283951, "lon": 74.5685228 },
+    { "lat": 42.8283865, "lon": 74.5686142 },
+    { "lat": 42.8284484, "lon": 74.5686250 },
+    { "lat": 42.8284665, "lon": 74.5684325 },
+    { "lat": 42.8283098, "lon": 74.5684051 },
+    { "lat": 42.8283003, "lon": 74.5685062 },
+    { "lat": 42.8283951, "lon": 74.5685228 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155398121,
+  "bounds": {
+    "minlat": 42.8286677,
+    "minlon": 74.5679796,
+    "maxlat": 42.8287521,
+    "maxlon": 74.5681428
+  },
+  "geometry": [
+    { "lat": 42.8287521, "lon": 74.5679939 },
+    { "lat": 42.8286847, "lon": 74.5679796 },
+    { "lat": 42.8286677, "lon": 74.5681285 },
+    { "lat": 42.8287351, "lon": 74.5681428 },
+    { "lat": 42.8287521, "lon": 74.5679939 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155398162,
+  "bounds": {
+    "minlat": 42.8285526,
+    "minlon": 74.5679448,
+    "maxlat": 42.8286331,
+    "maxlon": 74.5680722
+  },
+  "geometry": [
+    { "lat": 42.8286331, "lon": 74.5679587 },
+    { "lat": 42.8285652, "lon": 74.5679448 },
+    { "lat": 42.8285526, "lon": 74.5680582 },
+    { "lat": 42.8286205, "lon": 74.5680722 },
+    { "lat": 42.8286331, "lon": 74.5679587 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155400427,
+  "bounds": {
+    "minlat": 42.8312708,
+    "minlon": 74.5612425,
+    "maxlat": 42.8321619,
+    "maxlon": 74.5632846
+  },
+  "geometry": [
+    { "lat": 42.8313181, "lon": 74.5632846 },
+    { "lat": 42.8312935, "lon": 74.5626171 },
+    { "lat": 42.8312708, "lon": 74.5621584 },
+    { "lat": 42.8312708, "lon": 74.5620109 },
+    { "lat": 42.8313181, "lon": 74.5616381 },
+    { "lat": 42.8313450, "lon": 74.5615295 },
+    { "lat": 42.8313840, "lon": 74.5614490 },
+    { "lat": 42.8314768, "lon": 74.5613874 },
+    { "lat": 42.8321279, "lon": 74.5612506 },
+    { "lat": 42.8321619, "lon": 74.5612425 }
+  ],
+  "tags": {
+    "addr:country": "KG",
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 155400588,
+  "bounds": {
+    "minlat": 42.8287431,
+    "minlon": 74.5644496,
+    "maxlat": 42.8291536,
+    "maxlon": 74.5647015
+  },
+  "geometry": [
+    { "lat": 42.8291536, "lon": 74.5644725 },
+    { "lat": 42.8287504, "lon": 74.5644496 },
+    { "lat": 42.8287431, "lon": 74.5646876 },
+    { "lat": 42.8289870, "lon": 74.5647015 },
+    { "lat": 42.8289894, "lon": 74.5646200 },
+    { "lat": 42.8291487, "lon": 74.5646291 },
+    { "lat": 42.8291536, "lon": 74.5644725 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155430711,
+  "bounds": {
+    "minlat": 42.8317085,
+    "minlon": 74.5705313,
+    "maxlat": 42.8319621,
+    "maxlon": 74.5708754
+  },
+  "geometry": [
+    { "lat": 42.8319601, "lon": 74.5707420 },
+    { "lat": 42.8319431, "lon": 74.5707980 },
+    { "lat": 42.8319019, "lon": 74.5708532 },
+    { "lat": 42.8318605, "lon": 74.5708753 },
+    { "lat": 42.8318101, "lon": 74.5708754 },
+    { "lat": 42.8317533, "lon": 74.5708384 },
+    { "lat": 42.8317245, "lon": 74.5707921 },
+    { "lat": 42.8317085, "lon": 74.5707301 },
+    { "lat": 42.8317097, "lon": 74.5706695 },
+    { "lat": 42.8317357, "lon": 74.5705943 },
+    { "lat": 42.8317693, "lon": 74.5705546 },
+    { "lat": 42.8318080, "lon": 74.5705336 },
+    { "lat": 42.8318525, "lon": 74.5705313 },
+    { "lat": 42.8318954, "lon": 74.5705502 },
+    { "lat": 42.8319304, "lon": 74.5705876 },
+    { "lat": 42.8319487, "lon": 74.5706238 },
+    { "lat": 42.8319621, "lon": 74.5706816 },
+    { "lat": 42.8319601, "lon": 74.5707420 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155430739,
+  "bounds": {
+    "minlat": 42.8312429,
+    "minlon": 74.5703136,
+    "maxlat": 42.8314002,
+    "maxlon": 74.5705021
+  },
+  "geometry": [
+    { "lat": 42.8314000, "lon": 74.5703136 },
+    { "lat": 42.8312429, "lon": 74.5703138 },
+    { "lat": 42.8312431, "lon": 74.5705021 },
+    { "lat": 42.8314002, "lon": 74.5705018 },
+    { "lat": 42.8314000, "lon": 74.5703136 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155430745,
+  "bounds": {
+    "minlat": 42.8308320,
+    "minlon": 74.5705580,
+    "maxlat": 42.8310051,
+    "maxlon": 74.5707365
+  },
+  "geometry": [
+    { "lat": 42.8309990, "lon": 74.5705580 },
+    { "lat": 42.8308320, "lon": 74.5705694 },
+    { "lat": 42.8308382, "lon": 74.5707365 },
+    { "lat": 42.8310051, "lon": 74.5707251 },
+    { "lat": 42.8309990, "lon": 74.5705580 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155430799,
+  "bounds": {
+    "minlat": 42.8311976,
+    "minlon": 74.5697982,
+    "maxlat": 42.8314380,
+    "maxlon": 74.5701089
+  },
+  "geometry": [
+    { "lat": 42.8314269, "lon": 74.5697982 },
+    { "lat": 42.8311976, "lon": 74.5698243 },
+    { "lat": 42.8312081, "lon": 74.5699956 },
+    { "lat": 42.8312816, "lon": 74.5699872 },
+    { "lat": 42.8312891, "lon": 74.5701089 },
+    { "lat": 42.8313671, "lon": 74.5701001 },
+    { "lat": 42.8313603, "lon": 74.5699890 },
+    { "lat": 42.8314380, "lon": 74.5699801 },
+    { "lat": 42.8314269, "lon": 74.5697982 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155430800,
+  "bounds": {
+    "minlat": 42.8317385,
+    "minlon": 74.5700638,
+    "maxlat": 42.8319007,
+    "maxlon": 74.5703087
+  },
+  "geometry": [
+    { "lat": 42.8318976, "lon": 74.5700638 },
+    { "lat": 42.8317385, "lon": 74.5700676 },
+    { "lat": 42.8317416, "lon": 74.5703087 },
+    { "lat": 42.8319007, "lon": 74.5703049 },
+    { "lat": 42.8318976, "lon": 74.5700638 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155431013,
+  "bounds": {
+    "minlat": 42.8313000,
+    "minlon": 74.5712328,
+    "maxlat": 42.8313932,
+    "maxlon": 74.5714248
+  },
+  "geometry": [
+    { "lat": 42.8313848, "lon": 74.5712328 },
+    { "lat": 42.8313000, "lon": 74.5712399 },
+    { "lat": 42.8313083, "lon": 74.5714248 },
+    { "lat": 42.8313932, "lon": 74.5714176 },
+    { "lat": 42.8313848, "lon": 74.5712328 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155431014,
+  "bounds": {
+    "minlat": 42.8311287,
+    "minlon": 74.5707647,
+    "maxlat": 42.8312347,
+    "maxlon": 74.5709308
+  },
+  "geometry": [
+    { "lat": 42.8312303, "lon": 74.5707647 },
+    { "lat": 42.8311287, "lon": 74.5707699 },
+    { "lat": 42.8311332, "lon": 74.5709308 },
+    { "lat": 42.8312347, "lon": 74.5709256 },
+    { "lat": 42.8312303, "lon": 74.5707647 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155431015,
+  "bounds": {
+    "minlat": 42.8310985,
+    "minlon": 74.5703576,
+    "maxlat": 42.8312096,
+    "maxlon": 74.5705108
+  },
+  "geometry": [
+    { "lat": 42.8311623, "lon": 74.5703576 },
+    { "lat": 42.8311658, "lon": 74.5704227 },
+    { "lat": 42.8312052, "lon": 74.5704188 },
+    { "lat": 42.8312096, "lon": 74.5705005 },
+    { "lat": 42.8311064, "lon": 74.5705108 },
+    { "lat": 42.8310985, "lon": 74.5703640 },
+    { "lat": 42.8311623, "lon": 74.5703576 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155431016,
+  "bounds": {
+    "minlat": 42.8313002,
+    "minlon": 74.5709240,
+    "maxlat": 42.8314579,
+    "maxlon": 74.5709987
+  },
+  "geometry": [
+    { "lat": 42.8314556, "lon": 74.5709240 },
+    { "lat": 42.8313002, "lon": 74.5709343 },
+    { "lat": 42.8313025, "lon": 74.5709987 },
+    { "lat": 42.8314579, "lon": 74.5709884 },
+    { "lat": 42.8314556, "lon": 74.5709240 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155431017,
+  "bounds": {
+    "minlat": 42.8311900,
+    "minlon": 74.5712325,
+    "maxlat": 42.8312394,
+    "maxlon": 74.5713366
+  },
+  "geometry": [
+    { "lat": 42.8312370, "lon": 74.5712325 },
+    { "lat": 42.8311900, "lon": 74.5712346 },
+    { "lat": 42.8311924, "lon": 74.5713366 },
+    { "lat": 42.8312394, "lon": 74.5713345 },
+    { "lat": 42.8312370, "lon": 74.5712325 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 155431028,
+  "bounds": {
+    "minlat": 42.8315356,
+    "minlon": 74.5699924,
+    "maxlat": 42.8317029,
+    "maxlon": 74.5703356
+  },
+  "geometry": [
+    { "lat": 42.8316931, "lon": 74.5700801 },
+    { "lat": 42.8316316, "lon": 74.5700847 },
+    { "lat": 42.8316279, "lon": 74.5699924 },
+    { "lat": 42.8315703, "lon": 74.5699967 },
+    { "lat": 42.8315735, "lon": 74.5700773 },
+    { "lat": 42.8315356, "lon": 74.5700801 },
+    { "lat": 42.8315459, "lon": 74.5703356 },
+    { "lat": 42.8317029, "lon": 74.5703238 },
+    { "lat": 42.8316931, "lon": 74.5700801 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "addr:housenumber": "26",
+    "addr:street": "улица Тыналиева",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155552023,
+  "bounds": {
+    "minlat": 42.8285689,
+    "minlon": 74.5667028,
+    "maxlat": 42.8287099,
+    "maxlon": 74.5669662
+  },
+  "geometry": [
+    { "lat": 42.8287099, "lon": 74.5668198 },
+    { "lat": 42.8286552, "lon": 74.5668166 },
+    { "lat": 42.8286587, "lon": 74.5667047 },
+    { "lat": 42.8286262, "lon": 74.5667028 },
+    { "lat": 42.8286227, "lon": 74.5668114 },
+    { "lat": 42.8285736, "lon": 74.5668085 },
+    { "lat": 42.8285689, "lon": 74.5669581 },
+    { "lat": 42.8287052, "lon": 74.5669662 },
+    { "lat": 42.8287099, "lon": 74.5668198 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155552024,
+  "bounds": {
+    "minlat": 42.8289123,
+    "minlon": 74.5667544,
+    "maxlat": 42.8290258,
+    "maxlon": 74.5669117
+  },
+  "geometry": [
+    { "lat": 42.8290253, "lon": 74.5667544 },
+    { "lat": 42.8289123, "lon": 74.5667550 },
+    { "lat": 42.8289127, "lon": 74.5669117 },
+    { "lat": 42.8290258, "lon": 74.5669111 },
+    { "lat": 42.8290253, "lon": 74.5667544 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155552025,
+  "bounds": {
+    "minlat": 42.8285694,
+    "minlon": 74.5671050,
+    "maxlat": 42.8286969,
+    "maxlon": 74.5672691
+  },
+  "geometry": [
+    { "lat": 42.8286969, "lon": 74.5671161 },
+    { "lat": 42.8285770, "lon": 74.5671050 },
+    { "lat": 42.8285694, "lon": 74.5672580 },
+    { "lat": 42.8286893, "lon": 74.5672691 },
+    { "lat": 42.8286969, "lon": 74.5671161 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155552026,
+  "bounds": {
+    "minlat": 42.8283458,
+    "minlon": 74.5670919,
+    "maxlat": 42.8284785,
+    "maxlon": 74.5673248
+  },
+  "geometry": [
+    { "lat": 42.8284785, "lon": 74.5670991 },
+    { "lat": 42.8283507, "lon": 74.5670919 },
+    { "lat": 42.8283458, "lon": 74.5672531 },
+    { "lat": 42.8283950, "lon": 74.5672559 },
+    { "lat": 42.8283930, "lon": 74.5673226 },
+    { "lat": 42.8284333, "lon": 74.5673248 },
+    { "lat": 42.8284361, "lon": 74.5672312 },
+    { "lat": 42.8284744, "lon": 74.5672334 },
+    { "lat": 42.8284785, "lon": 74.5670991 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155552033,
+  "bounds": {
+    "minlat": 42.8286420,
+    "minlon": 74.5672972,
+    "maxlat": 42.8286976,
+    "maxlon": 74.5674840
+  },
+  "geometry": [
+    { "lat": 42.8286976, "lon": 74.5673020 },
+    { "lat": 42.8286523, "lon": 74.5672972 },
+    { "lat": 42.8286420, "lon": 74.5674793 },
+    { "lat": 42.8286874, "lon": 74.5674840 },
+    { "lat": 42.8286976, "lon": 74.5673020 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155552069,
+  "bounds": {
+    "minlat": 42.8277592,
+    "minlon": 74.5670815,
+    "maxlat": 42.8279012,
+    "maxlon": 74.5673158
+  },
+  "geometry": [
+    { "lat": 42.8279012, "lon": 74.5670880 },
+    { "lat": 42.8277632, "lon": 74.5670815 },
+    { "lat": 42.8277592, "lon": 74.5672385 },
+    { "lat": 42.8278045, "lon": 74.5672407 },
+    { "lat": 42.8278026, "lon": 74.5673139 },
+    { "lat": 42.8278432, "lon": 74.5673158 },
+    { "lat": 42.8278457, "lon": 74.5672205 },
+    { "lat": 42.8278977, "lon": 74.5672230 },
+    { "lat": 42.8279012, "lon": 74.5670880 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155552130,
+  "bounds": {
+    "minlat": 42.8280242,
+    "minlon": 74.5671706,
+    "maxlat": 42.8281124,
+    "maxlon": 74.5673337
+  },
+  "geometry": [
+    { "lat": 42.8281124, "lon": 74.5671766 },
+    { "lat": 42.8280303, "lon": 74.5671706 },
+    { "lat": 42.8280242, "lon": 74.5673278 },
+    { "lat": 42.8281062, "lon": 74.5673337 },
+    { "lat": 42.8281124, "lon": 74.5671766 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155552131,
+  "bounds": {
+    "minlat": 42.8280280,
+    "minlon": 74.5667344,
+    "maxlat": 42.8281617,
+    "maxlon": 74.5669544
+  },
+  "geometry": [
+    { "lat": 42.8281617, "lon": 74.5667428 },
+    { "lat": 42.8280356, "lon": 74.5667344 },
+    { "lat": 42.8280280, "lon": 74.5669460 },
+    { "lat": 42.8281541, "lon": 74.5669544 },
+    { "lat": 42.8281617, "lon": 74.5667428 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155552239,
+  "bounds": {
+    "minlat": 42.8276978,
+    "minlon": 74.5666502,
+    "maxlat": 42.8278159,
+    "maxlon": 74.5669647
+  },
+  "geometry": [
+    { "lat": 42.8278159, "lon": 74.5666514 },
+    { "lat": 42.8276988, "lon": 74.5666502 },
+    { "lat": 42.8276978, "lon": 74.5668342 },
+    { "lat": 42.8277725, "lon": 74.5668350 },
+    { "lat": 42.8277718, "lon": 74.5669642 },
+    { "lat": 42.8278141, "lon": 74.5669647 },
+    { "lat": 42.8278159, "lon": 74.5666514 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155552280,
+  "bounds": {
+    "minlat": 42.8274980,
+    "minlon": 74.5671597,
+    "maxlat": 42.8276173,
+    "maxlon": 74.5673662
+  },
+  "geometry": [
+    { "lat": 42.8276173, "lon": 74.5671680 },
+    { "lat": 42.8275060, "lon": 74.5671597 },
+    { "lat": 42.8274980, "lon": 74.5673578 },
+    { "lat": 42.8276093, "lon": 74.5673662 },
+    { "lat": 42.8276173, "lon": 74.5671680 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155552445,
+  "bounds": {
+    "minlat": 42.8275087,
+    "minlon": 74.5665882,
+    "maxlat": 42.8276271,
+    "maxlon": 74.5667637
+  },
+  "geometry": [
+    { "lat": 42.8276271, "lon": 74.5665923 },
+    { "lat": 42.8275120, "lon": 74.5665882 },
+    { "lat": 42.8275087, "lon": 74.5667596 },
+    { "lat": 42.8276238, "lon": 74.5667637 },
+    { "lat": 42.8276271, "lon": 74.5665923 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155552446,
+  "bounds": {
+    "minlat": 42.8269878,
+    "minlon": 74.5670308,
+    "maxlat": 42.8270919,
+    "maxlon": 74.5672321
+  },
+  "geometry": [
+    { "lat": 42.8270919, "lon": 74.5670362 },
+    { "lat": 42.8269937, "lon": 74.5670308 },
+    { "lat": 42.8269878, "lon": 74.5672266 },
+    { "lat": 42.8270860, "lon": 74.5672321 },
+    { "lat": 42.8270919, "lon": 74.5670362 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155552447,
+  "bounds": {
+    "minlat": 42.8273174,
+    "minlon": 74.5665443,
+    "maxlat": 42.8274267,
+    "maxlon": 74.5667746
+  },
+  "geometry": [
+    { "lat": 42.8274267, "lon": 74.5665476 },
+    { "lat": 42.8273212, "lon": 74.5665443 },
+    { "lat": 42.8273174, "lon": 74.5667713 },
+    { "lat": 42.8274228, "lon": 74.5667746 },
+    { "lat": 42.8274267, "lon": 74.5665476 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155552873,
+  "bounds": {
+    "minlat": 42.8278591,
+    "minlon": 74.5679294,
+    "maxlat": 42.8279905,
+    "maxlon": 74.5682469
+  },
+  "geometry": [
+    { "lat": 42.8279869, "lon": 74.5679294 },
+    { "lat": 42.8278591, "lon": 74.5679321 },
+    { "lat": 42.8278607, "lon": 74.5680690 },
+    { "lat": 42.8279252, "lon": 74.5680677 },
+    { "lat": 42.8279272, "lon": 74.5682469 },
+    { "lat": 42.8279905, "lon": 74.5682455 },
+    { "lat": 42.8279869, "lon": 74.5679294 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155552874,
+  "bounds": {
+    "minlat": 42.8271127,
+    "minlon": 74.5665314,
+    "maxlat": 42.8272201,
+    "maxlon": 74.5667187
+  },
+  "geometry": [
+    { "lat": 42.8272201, "lon": 74.5665327 },
+    { "lat": 42.8271141, "lon": 74.5665314 },
+    { "lat": 42.8271127, "lon": 74.5667180 },
+    { "lat": 42.8271632, "lon": 74.5667187 },
+    { "lat": 42.8271636, "lon": 74.5666663 },
+    { "lat": 42.8272191, "lon": 74.5666670 },
+    { "lat": 42.8272201, "lon": 74.5665327 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155552875,
+  "bounds": {
+    "minlat": 42.8274438,
+    "minlon": 74.5679214,
+    "maxlat": 42.8276209,
+    "maxlon": 74.5681733
+  },
+  "geometry": [
+    { "lat": 42.8276209, "lon": 74.5679293 },
+    { "lat": 42.8274498, "lon": 74.5679214 },
+    { "lat": 42.8274438, "lon": 74.5681655 },
+    { "lat": 42.8276149, "lon": 74.5681733 },
+    { "lat": 42.8276209, "lon": 74.5679293 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155552876,
+  "bounds": {
+    "minlat": 42.8274992,
+    "minlon": 74.5659992,
+    "maxlat": 42.8276090,
+    "maxlon": 74.5661497
+  },
+  "geometry": [
+    { "lat": 42.8276090, "lon": 74.5660045 },
+    { "lat": 42.8275031, "lon": 74.5659992 },
+    { "lat": 42.8274992, "lon": 74.5661444 },
+    { "lat": 42.8276050, "lon": 74.5661497 },
+    { "lat": 42.8276090, "lon": 74.5660045 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155552877,
+  "bounds": {
+    "minlat": 42.8271594,
+    "minlon": 74.5679046,
+    "maxlat": 42.8272610,
+    "maxlon": 74.5680822
+  },
+  "geometry": [
+    { "lat": 42.8272610, "lon": 74.5679160 },
+    { "lat": 42.8271707, "lon": 74.5679046 },
+    { "lat": 42.8271594, "lon": 74.5680708 },
+    { "lat": 42.8272497, "lon": 74.5680822 },
+    { "lat": 42.8272610, "lon": 74.5679160 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155552878,
+  "bounds": {
+    "minlat": 42.8273016,
+    "minlon": 74.5660212,
+    "maxlat": 42.8274182,
+    "maxlon": 74.5662061
+  },
+  "geometry": [
+    { "lat": 42.8274182, "lon": 74.5660259 },
+    { "lat": 42.8273056, "lon": 74.5660212 },
+    { "lat": 42.8273016, "lon": 74.5662014 },
+    { "lat": 42.8274142, "lon": 74.5662061 },
+    { "lat": 42.8274182, "lon": 74.5660259 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155553068,
+  "bounds": {
+    "minlat": 42.8278246,
+    "minlon": 74.5658389,
+    "maxlat": 42.8279580,
+    "maxlon": 74.5660055
+  },
+  "geometry": [
+    { "lat": 42.8279580, "lon": 74.5658473 },
+    { "lat": 42.8278302, "lon": 74.5658389 },
+    { "lat": 42.8278246, "lon": 74.5659971 },
+    { "lat": 42.8279524, "lon": 74.5660055 },
+    { "lat": 42.8279580, "lon": 74.5658473 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155553069,
+  "bounds": {
+    "minlat": 42.8280820,
+    "minlon": 74.5657255,
+    "maxlat": 42.8282249,
+    "maxlon": 74.5660897
+  },
+  "geometry": [
+    { "lat": 42.8281804, "lon": 74.5657255 },
+    { "lat": 42.8281708, "lon": 74.5659113 },
+    { "lat": 42.8280910, "lon": 74.5659037 },
+    { "lat": 42.8280820, "lon": 74.5660778 },
+    { "lat": 42.8282064, "lon": 74.5660897 },
+    { "lat": 42.8282249, "lon": 74.5657297 },
+    { "lat": 42.8281804, "lon": 74.5657255 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155553193,
+  "bounds": {
+    "minlat": 42.8290078,
+    "minlon": 74.5660172,
+    "maxlat": 42.8291251,
+    "maxlon": 74.5662413
+  },
+  "geometry": [
+    { "lat": 42.8291251, "lon": 74.5660219 },
+    { "lat": 42.8290126, "lon": 74.5660172 },
+    { "lat": 42.8290078, "lon": 74.5662367 },
+    { "lat": 42.8291202, "lon": 74.5662413 },
+    { "lat": 42.8291251, "lon": 74.5660219 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155553194,
+  "bounds": {
+    "minlat": 42.8286516,
+    "minlon": 74.5658108,
+    "maxlat": 42.8287518,
+    "maxlon": 74.5660271
+  },
+  "geometry": [
+    { "lat": 42.8287518, "lon": 74.5658180 },
+    { "lat": 42.8286604, "lon": 74.5658108 },
+    { "lat": 42.8286516, "lon": 74.5660199 },
+    { "lat": 42.8287430, "lon": 74.5660271 },
+    { "lat": 42.8287518, "lon": 74.5658180 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 155561122,
+  "bounds": {
+    "minlat": 42.8324779,
+    "minlon": 74.5724380,
+    "maxlat": 42.8336472,
+    "maxlon": 74.5752599
+  },
+  "geometry": [
+    { "lat": 42.8336472, "lon": 74.5752599 },
+    { "lat": 42.8330654, "lon": 74.5743299 },
+    { "lat": 42.8327880, "lon": 74.5740881 },
+    { "lat": 42.8327503, "lon": 74.5740552 },
+    { "lat": 42.8327169, "lon": 74.5739698 },
+    { "lat": 42.8325898, "lon": 74.5731217 },
+    { "lat": 42.8324779, "lon": 74.5724380 }
+  ],
+  "tags": {
+    "highway": "service",
+    "maxspeed:practical": "8"
+  }
+},
+{
+  "type": "way",
+  "id": 156145194,
+  "bounds": {
+    "minlat": 42.8281087,
+    "minlon": 74.5653675,
+    "maxlat": 42.8282138,
+    "maxlon": 74.5655324
+  },
+  "geometry": [
+    { "lat": 42.8282119, "lon": 74.5653675 },
+    { "lat": 42.8281087, "lon": 74.5653698 },
+    { "lat": 42.8281106, "lon": 74.5655324 },
+    { "lat": 42.8282138, "lon": 74.5655302 },
+    { "lat": 42.8282119, "lon": 74.5653675 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 156145198,
+  "bounds": {
+    "minlat": 42.8277417,
+    "minlon": 74.5653987,
+    "maxlat": 42.8278436,
+    "maxlon": 74.5655894
+  },
+  "geometry": [
+    { "lat": 42.8278427, "lon": 74.5653987 },
+    { "lat": 42.8277417, "lon": 74.5653996 },
+    { "lat": 42.8277427, "lon": 74.5655894 },
+    { "lat": 42.8278436, "lon": 74.5655885 },
+    { "lat": 42.8278427, "lon": 74.5653987 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 156145201,
+  "bounds": {
+    "minlat": 42.8282742,
+    "minlon": 74.5647406,
+    "maxlat": 42.8283803,
+    "maxlon": 74.5649060
+  },
+  "geometry": [
+    { "lat": 42.8283803, "lon": 74.5647532 },
+    { "lat": 42.8282851, "lon": 74.5647406 },
+    { "lat": 42.8282742, "lon": 74.5648934 },
+    { "lat": 42.8283695, "lon": 74.5649060 },
+    { "lat": 42.8283803, "lon": 74.5647532 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 156146347,
+  "bounds": {
+    "minlat": 42.8288013,
+    "minlon": 74.5720733,
+    "maxlat": 42.8289032,
+    "maxlon": 74.5722340
+  },
+  "geometry": [
+    { "lat": 42.8289032, "lon": 74.5720758 },
+    { "lat": 42.8288034, "lon": 74.5720733 },
+    { "lat": 42.8288013, "lon": 74.5722316 },
+    { "lat": 42.8289011, "lon": 74.5722340 },
+    { "lat": 42.8289032, "lon": 74.5720758 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 156199114,
+  "bounds": {
+    "minlat": 42.8282943,
+    "minlon": 74.5699427,
+    "maxlat": 42.8285034,
+    "maxlon": 74.5700101
+  },
+  "geometry": [
+    { "lat": 42.8285018, "lon": 74.5699427 },
+    { "lat": 42.8282943, "lon": 74.5699530 },
+    { "lat": 42.8282959, "lon": 74.5700101 },
+    { "lat": 42.8285034, "lon": 74.5699998 },
+    { "lat": 42.8285018, "lon": 74.5699427 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 156199230,
+  "bounds": {
+    "minlat": 42.8273132,
+    "minlon": 74.5702825,
+    "maxlat": 42.8274186,
+    "maxlon": 74.5704462
+  },
+  "geometry": [
+    { "lat": 42.8274186, "lon": 74.5702920 },
+    { "lat": 42.8273213, "lon": 74.5702825 },
+    { "lat": 42.8273132, "lon": 74.5704367 },
+    { "lat": 42.8274105, "lon": 74.5704462 },
+    { "lat": 42.8274186, "lon": 74.5702920 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 156199231,
+  "bounds": {
+    "minlat": 42.8266831,
+    "minlon": 74.5690226,
+    "maxlat": 42.8267874,
+    "maxlon": 74.5691717
+  },
+  "geometry": [
+    { "lat": 42.8267874, "lon": 74.5690287 },
+    { "lat": 42.8266878, "lon": 74.5690226 },
+    { "lat": 42.8266831, "lon": 74.5691656 },
+    { "lat": 42.8267826, "lon": 74.5691717 },
+    { "lat": 42.8267874, "lon": 74.5690287 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 156199256,
+  "bounds": {
+    "minlat": 42.8266552,
+    "minlon": 74.5697086,
+    "maxlat": 42.8267824,
+    "maxlon": 74.5698944
+  },
+  "geometry": [
+    { "lat": 42.8267146, "lon": 74.5698905 },
+    { "lat": 42.8267111, "lon": 74.5698027 },
+    { "lat": 42.8267824, "lon": 74.5697974 },
+    { "lat": 42.8267789, "lon": 74.5697086 },
+    { "lat": 42.8266552, "lon": 74.5697177 },
+    { "lat": 42.8266622, "lon": 74.5698944 },
+    { "lat": 42.8267146, "lon": 74.5698905 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 156199577,
+  "bounds": {
+    "minlat": 42.8267423,
+    "minlon": 74.5711292,
+    "maxlat": 42.8268741,
+    "maxlon": 74.5713865
+  },
+  "geometry": [
+    { "lat": 42.8268428, "lon": 74.5712175 },
+    { "lat": 42.8268411, "lon": 74.5711302 },
+    { "lat": 42.8268715, "lon": 74.5711292 },
+    { "lat": 42.8268741, "lon": 74.5712667 },
+    { "lat": 42.8268436, "lon": 74.5712677 },
+    { "lat": 42.8268457, "lon": 74.5713830 },
+    { "lat": 42.8267454, "lon": 74.5713865 },
+    { "lat": 42.8267423, "lon": 74.5712211 },
+    { "lat": 42.8268428, "lon": 74.5712175 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 156199579,
+  "bounds": {
+    "minlat": 42.8268472,
+    "minlon": 74.5711935,
+    "maxlat": 42.8271925,
+    "maxlon": 74.5713864
+  },
+  "geometry": [
+    { "lat": 42.8271024, "lon": 74.5712889 },
+    { "lat": 42.8271014, "lon": 74.5711954 },
+    { "lat": 42.8271904, "lon": 74.5711935 },
+    { "lat": 42.8271925, "lon": 74.5713790 },
+    { "lat": 42.8268483, "lon": 74.5713864 },
+    { "lat": 42.8268472, "lon": 74.5712944 },
+    { "lat": 42.8271024, "lon": 74.5712889 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 156199921,
+  "bounds": {
+    "minlat": 42.8263690,
+    "minlon": 74.5710160,
+    "maxlat": 42.8264876,
+    "maxlon": 74.5711690
+  },
+  "geometry": [
+    { "lat": 42.8264863, "lon": 74.5710160 },
+    { "lat": 42.8263690, "lon": 74.5710178 },
+    { "lat": 42.8263703, "lon": 74.5711690 },
+    { "lat": 42.8264876, "lon": 74.5711672 },
+    { "lat": 42.8264863, "lon": 74.5710160 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 156199923,
+  "bounds": {
+    "minlat": 42.8261804,
+    "minlon": 74.5689592,
+    "maxlat": 42.8263142,
+    "maxlon": 74.5691541
+  },
+  "geometry": [
+    { "lat": 42.8263142, "lon": 74.5689601 },
+    { "lat": 42.8261811, "lon": 74.5689592 },
+    { "lat": 42.8261804, "lon": 74.5691532 },
+    { "lat": 42.8263135, "lon": 74.5691541 },
+    { "lat": 42.8263142, "lon": 74.5689601 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 160599662,
+  "bounds": {
+    "minlat": 42.8291850,
+    "minlon": 74.5651153,
+    "maxlat": 42.8292534,
+    "maxlon": 74.5652892
+  },
+  "geometry": [
+    { "lat": 42.8292521, "lon": 74.5651153 },
+    { "lat": 42.8291850, "lon": 74.5651162 },
+    { "lat": 42.8291863, "lon": 74.5652892 },
+    { "lat": 42.8292534, "lon": 74.5652883 },
+    { "lat": 42.8292521, "lon": 74.5651153 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 163794860,
+  "bounds": {
+    "minlat": 42.8323758,
+    "minlon": 74.5691040,
+    "maxlat": 42.8324344,
+    "maxlon": 74.5713757
+  },
+  "geometry": [
+    { "lat": 42.8323762, "lon": 74.5691040 },
+    { "lat": 42.8323758, "lon": 74.5693367 },
+    { "lat": 42.8323774, "lon": 74.5693937 },
+    { "lat": 42.8324344, "lon": 74.5713757 }
+  ],
+  "tags": {
+    "addr:country": "KG",
+    "highway": "residential",
+    "name": "Курманов көчөсү",
+    "name:en": "Kurmanova street",
+    "name:ru": "улица Курманова"
+  }
+},
+{
+  "type": "way",
+  "id": 163794861,
+  "bounds": {
+    "minlat": 42.8314402,
+    "minlon": 74.5691670,
+    "maxlat": 42.8315020,
+    "maxlon": 74.5715259
+  },
+  "geometry": [
+    { "lat": 42.8314402, "lon": 74.5691670 },
+    { "lat": 42.8314450, "lon": 74.5693949 },
+    { "lat": 42.8314461, "lon": 74.5694535 },
+    { "lat": 42.8315020, "lon": 74.5715259 }
+  ],
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 163795006,
+  "bounds": {
+    "minlat": 42.8275604,
+    "minlon": 74.5652630,
+    "maxlat": 42.8276482,
+    "maxlon": 74.5654373
+  },
+  "geometry": [
+    { "lat": 42.8276482, "lon": 74.5652686 },
+    { "lat": 42.8275666, "lon": 74.5652630 },
+    { "lat": 42.8275604, "lon": 74.5654317 },
+    { "lat": 42.8276420, "lon": 74.5654373 },
+    { "lat": 42.8276482, "lon": 74.5652686 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 163795007,
+  "bounds": {
+    "minlat": 42.8284384,
+    "minlon": 74.5652645,
+    "maxlat": 42.8285580,
+    "maxlon": 74.5654173
+  },
+  "geometry": [
+    { "lat": 42.8285561, "lon": 74.5652645 },
+    { "lat": 42.8284384, "lon": 74.5652672 },
+    { "lat": 42.8284403, "lon": 74.5654173 },
+    { "lat": 42.8285580, "lon": 74.5654145 },
+    { "lat": 42.8285561, "lon": 74.5652645 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "2"
+  }
+},
+{
+  "type": "way",
+  "id": 163799298,
+  "bounds": {
+    "minlat": 42.8301501,
+    "minlon": 74.5687463,
+    "maxlat": 42.8307497,
+    "maxlon": 74.5689396
+  },
+  "geometry": [
+    { "lat": 42.8307436, "lon": 74.5687463 },
+    { "lat": 42.8301501, "lon": 74.5687914 },
+    { "lat": 42.8301562, "lon": 74.5689396 },
+    { "lat": 42.8307497, "lon": 74.5688945 },
+    { "lat": 42.8307436, "lon": 74.5687463 }
+  ],
+  "tags": {
+    "addr:housenumber": "11в",
+    "addr:street": "микрорайон Джал-29",
+    "building": "apartments",
+    "building:levels": "9"
+  }
+},
+{
+  "type": "way",
+  "id": 167646048,
+  "bounds": {
+    "minlat": 42.8304638,
+    "minlon": 74.5653279,
+    "maxlat": 42.8309023,
+    "maxlon": 74.5658790
+  },
+  "geometry": [
+    { "lat": 42.8309023, "lon": 74.5656527 },
+    { "lat": 42.8306267, "lon": 74.5656466 },
+    { "lat": 42.8306304, "lon": 74.5653314 },
+    { "lat": 42.8304702, "lon": 74.5653279 },
+    { "lat": 42.8304638, "lon": 74.5658694 },
+    { "lat": 42.8308996, "lon": 74.5658790 },
+    { "lat": 42.8309023, "lon": 74.5656527 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "addr:housenumber": "20",
+    "addr:place": "Джал микрорайон",
+    "addr:street": "Джал-15 микрорайон",
+    "building": "yes",
+    "building:levels": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 172438608,
+  "bounds": {
+    "minlat": 42.8328537,
+    "minlon": 74.5724109,
+    "maxlat": 42.8328809,
+    "maxlon": 74.5731029
+  },
+  "geometry": [
+    { "lat": 42.8328809, "lon": 74.5731029 },
+    { "lat": 42.8328537, "lon": 74.5724109 }
+  ],
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 172438611,
+  "bounds": {
+    "minlat": 42.8324779,
+    "minlon": 74.5723452,
+    "maxlat": 42.8337859,
+    "maxlon": 74.5731217
+  },
+  "geometry": [
+    { "lat": 42.8324779, "lon": 74.5724380 },
+    { "lat": 42.8328537, "lon": 74.5724109 },
+    { "lat": 42.8337623, "lon": 74.5723452 },
+    { "lat": 42.8337859, "lon": 74.5730447 },
+    { "lat": 42.8328809, "lon": 74.5731029 },
+    { "lat": 42.8325898, "lon": 74.5731217 }
+  ],
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 189481459,
+  "bounds": {
+    "minlat": 42.8327169,
+    "minlon": 74.5738273,
+    "maxlat": 42.8356165,
+    "maxlon": 74.5739698
+  },
+  "geometry": [
+    { "lat": 42.8356165, "lon": 74.5738975 },
+    { "lat": 42.8353211, "lon": 74.5738765 },
+    { "lat": 42.8346276, "lon": 74.5738273 },
+    { "lat": 42.8337896, "lon": 74.5739078 },
+    { "lat": 42.8327169, "lon": 74.5739698 }
+  ],
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 189481507,
+  "bounds": {
+    "minlat": 42.8299421,
+    "minlon": 74.5701165,
+    "maxlat": 42.8303947,
+    "maxlon": 74.5708146
+  },
+  "geometry": [
+    { "lat": 42.8303902, "lon": 74.5701165 },
+    { "lat": 42.8299421, "lon": 74.5701286 },
+    { "lat": 42.8299521, "lon": 74.5708146 },
+    { "lat": 42.8301818, "lon": 74.5708084 },
+    { "lat": 42.8301752, "lon": 74.5703558 },
+    { "lat": 42.8302585, "lon": 74.5703535 },
+    { "lat": 42.8302596, "lon": 74.5704317 },
+    { "lat": 42.8303947, "lon": 74.5704280 },
+    { "lat": 42.8303902, "lon": 74.5701165 }
+  ],
+  "tags": {
+    "addr:housenumber": "70/2",
+    "addr:street": "Масалиева Абсамата проспект",
+    "building": "apartments",
+    "building:levels": "10"
+  }
+},
+{
+  "type": "way",
+  "id": 191017192,
+  "bounds": {
+    "minlat": 42.8292533,
+    "minlon": 74.5631027,
+    "maxlat": 42.8295306,
+    "maxlon": 74.5831154
+  },
+  "geometry": [
+    { "lat": 42.8295087, "lon": 74.5631027 },
+    { "lat": 42.8295306, "lon": 74.5633559 },
+    { "lat": 42.8295290, "lon": 74.5640770 },
+    { "lat": 42.8295141, "lon": 74.5652728 },
+    { "lat": 42.8295079, "lon": 74.5658137 },
+    { "lat": 42.8294707, "lon": 74.5690845 },
+    { "lat": 42.8294657, "lon": 74.5693158 },
+    { "lat": 42.8294627, "lon": 74.5695369 },
+    { "lat": 42.8293928, "lon": 74.5741617 },
+    { "lat": 42.8293601, "lon": 74.5763297 },
+    { "lat": 42.8293575, "lon": 74.5765006 },
+    { "lat": 42.8293550, "lon": 74.5766554 },
+    { "lat": 42.8292877, "lon": 74.5808134 },
+    { "lat": 42.8292597, "lon": 74.5827151 },
+    { "lat": 42.8292579, "lon": 74.5829242 },
+    { "lat": 42.8292533, "lon": 74.5831154 }
+  ],
+  "tags": {
+    "alt_name": "Южная магистраль",
+    "highway": "primary",
+    "int_name": "Masaliev Prospekt",
+    "lanes": "3",
+    "maxspeed": "60",
+    "maxspeed:practical": "60",
+    "name": "Аалы Токомбаев проспекти",
+    "name:en": "Aaly Tokombayev avenue",
+    "name:ru": "проспект Аалы Токомбаева",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 191017196,
+  "bounds": {
+    "minlat": 42.8293960,
+    "minlon": 74.5631090,
+    "maxlat": 42.8296731,
+    "maxlon": 74.5829282
+  },
+  "geometry": [
+    { "lat": 42.8293960, "lon": 74.5829282 },
+    { "lat": 42.8294446, "lon": 74.5796617 },
+    { "lat": 42.8294457, "lon": 74.5795398 },
+    { "lat": 42.8294522, "lon": 74.5791139 },
+    { "lat": 42.8294667, "lon": 74.5781700 },
+    { "lat": 42.8294725, "lon": 74.5777897 },
+    { "lat": 42.8294781, "lon": 74.5774257 },
+    { "lat": 42.8294891, "lon": 74.5767107 },
+    { "lat": 42.8294898, "lon": 74.5766620 },
+    { "lat": 42.8294923, "lon": 74.5765004 },
+    { "lat": 42.8294949, "lon": 74.5763315 },
+    { "lat": 42.8295284, "lon": 74.5741729 },
+    { "lat": 42.8295446, "lon": 74.5731311 },
+    { "lat": 42.8295794, "lon": 74.5708854 },
+    { "lat": 42.8296006, "lon": 74.5695274 },
+    { "lat": 42.8296061, "lon": 74.5692988 },
+    { "lat": 42.8296078, "lon": 74.5690791 },
+    { "lat": 42.8296168, "lon": 74.5683078 },
+    { "lat": 42.8296283, "lon": 74.5673203 },
+    { "lat": 42.8296358, "lon": 74.5666861 },
+    { "lat": 42.8296498, "lon": 74.5653805 },
+    { "lat": 42.8296527, "lon": 74.5651348 },
+    { "lat": 42.8296559, "lon": 74.5648539 },
+    { "lat": 42.8296649, "lon": 74.5640773 },
+    { "lat": 42.8296731, "lon": 74.5633577 },
+    { "lat": 42.8296532, "lon": 74.5631090 }
+  ],
+  "tags": {
+    "alt_name": "Южная магистраль",
+    "highway": "primary",
+    "int_name": "Aaly Tokombayev avenue",
+    "lanes": "3",
+    "maxspeed": "60",
+    "maxspeed:practical": "60",
+    "name": "Аалы Токомбаев проспекти",
+    "name:en": "Aaly Tokombayev avenue",
+    "name:ru": "проспект Аалы Токомбаева",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 191709481,
+  "bounds": {
+    "minlat": 42.8308015,
+    "minlon": 74.5676793,
+    "maxlat": 42.8308896,
+    "maxlon": 74.5691949
+  },
+  "geometry": [
+    { "lat": 42.8308015, "lon": 74.5676793 },
+    { "lat": 42.8308575, "lon": 74.5686434 },
+    { "lat": 42.8308765, "lon": 74.5689693 },
+    { "lat": 42.8308896, "lon": 74.5691949 }
+  ],
+  "tags": {
+    "addr:country": "KG",
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 191709540,
+  "bounds": {
+    "minlat": 42.8296358,
+    "minlon": 74.5665092,
+    "maxlat": 42.8303335,
+    "maxlon": 74.5666861
+  },
+  "geometry": [
+    { "lat": 42.8303329, "lon": 74.5665092 },
+    { "lat": 42.8303335, "lon": 74.5666817 },
+    { "lat": 42.8299092, "lon": 74.5666844 },
+    { "lat": 42.8296358, "lon": 74.5666861 }
+  ],
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 191709928,
+  "bounds": {
+    "minlat": 42.8317347,
+    "minlon": 74.5632018,
+    "maxlat": 42.8332313,
+    "maxlon": 74.5646987
+  },
+  "geometry": [
+    { "lat": 42.8317347, "lon": 74.5632018 },
+    { "lat": 42.8317951, "lon": 74.5638115 },
+    { "lat": 42.8319056, "lon": 74.5640050 },
+    { "lat": 42.8320039, "lon": 74.5639315 },
+    { "lat": 42.8330878, "lon": 74.5638880 },
+    { "lat": 42.8331354, "lon": 74.5638444 },
+    { "lat": 42.8331399, "lon": 74.5639180 },
+    { "lat": 42.8331756, "lon": 74.5642232 },
+    { "lat": 42.8332313, "lon": 74.5646987 }
+  ],
+  "tags": {
+    "addr:country": "KG",
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 191710019,
+  "bounds": {
+    "minlat": 42.8340662,
+    "minlon": 74.5659819,
+    "maxlat": 42.8347133,
+    "maxlon": 74.5665575
+  },
+  "geometry": [
+    { "lat": 42.8347133, "lon": 74.5665363 },
+    { "lat": 42.8346746, "lon": 74.5665377 },
+    { "lat": 42.8343102, "lon": 74.5665505 },
+    { "lat": 42.8340662, "lon": 74.5665575 },
+    { "lat": 42.8340689, "lon": 74.5660624 },
+    { "lat": 42.8340761, "lon": 74.5660023 },
+    { "lat": 42.8341240, "lon": 74.5659819 },
+    { "lat": 42.8342597, "lon": 74.5659900 },
+    { "lat": 42.8342983, "lon": 74.5660023 },
+    { "lat": 42.8343187, "lon": 74.5660651 },
+    { "lat": 42.8343102, "lon": 74.5665505 }
+  ],
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 203657737,
+  "bounds": {
+    "minlat": 42.8051246,
+    "minlon": 74.5586082,
+    "maxlat": 42.8513756,
+    "maxlon": 74.5693926
+  },
+  "geometry": [
+    { "lat": 42.8051246, "lon": 74.5693926 },
+    { "lat": 42.8053619, "lon": 74.5692905 },
+    { "lat": 42.8053725, "lon": 74.5692865 },
+    { "lat": 42.8058753, "lon": 74.5690977 },
+    { "lat": 42.8063042, "lon": 74.5689142 },
+    { "lat": 42.8070174, "lon": 74.5685376 },
+    { "lat": 42.8083503, "lon": 74.5677226 },
+    { "lat": 42.8099620, "lon": 74.5667568 },
+    { "lat": 42.8100468, "lon": 74.5667081 },
+    { "lat": 42.8106790, "lon": 74.5663461 },
+    { "lat": 42.8110523, "lon": 74.5661595 },
+    { "lat": 42.8117789, "lon": 74.5658327 },
+    { "lat": 42.8119047, "lon": 74.5657761 },
+    { "lat": 42.8129029, "lon": 74.5653560 },
+    { "lat": 42.8130102, "lon": 74.5653132 },
+    { "lat": 42.8148165, "lon": 74.5645808 },
+    { "lat": 42.8149205, "lon": 74.5645436 },
+    { "lat": 42.8152924, "lon": 74.5643942 },
+    { "lat": 42.8163496, "lon": 74.5639724 },
+    { "lat": 42.8165568, "lon": 74.5638897 },
+    { "lat": 42.8168150, "lon": 74.5638097 },
+    { "lat": 42.8173513, "lon": 74.5636722 },
+    { "lat": 42.8175937, "lon": 74.5636311 },
+    { "lat": 42.8177676, "lon": 74.5636045 },
+    { "lat": 42.8180243, "lon": 74.5635785 },
+    { "lat": 42.8181467, "lon": 74.5635750 },
+    { "lat": 42.8195935, "lon": 74.5635025 },
+    { "lat": 42.8198348, "lon": 74.5635027 },
+    { "lat": 42.8206556, "lon": 74.5634505 },
+    { "lat": 42.8210274, "lon": 74.5634334 },
+    { "lat": 42.8211931, "lon": 74.5634211 },
+    { "lat": 42.8214836, "lon": 74.5634099 },
+    { "lat": 42.8218305, "lon": 74.5633973 },
+    { "lat": 42.8224828, "lon": 74.5633638 },
+    { "lat": 42.8233477, "lon": 74.5633169 },
+    { "lat": 42.8251623, "lon": 74.5632320 },
+    { "lat": 42.8252386, "lon": 74.5632300 },
+    { "lat": 42.8256049, "lon": 74.5632072 },
+    { "lat": 42.8258289, "lon": 74.5631932 },
+    { "lat": 42.8266707, "lon": 74.5631408 },
+    { "lat": 42.8275333, "lon": 74.5631076 },
+    { "lat": 42.8279377, "lon": 74.5630895 },
+    { "lat": 42.8280220, "lon": 74.5630875 },
+    { "lat": 42.8282304, "lon": 74.5630795 },
+    { "lat": 42.8282941, "lon": 74.5630754 },
+    { "lat": 42.8284740, "lon": 74.5630731 },
+    { "lat": 42.8285116, "lon": 74.5630709 },
+    { "lat": 42.8293248, "lon": 74.5630847 },
+    { "lat": 42.8293673, "lon": 74.5630955 },
+    { "lat": 42.8295087, "lon": 74.5631027 },
+    { "lat": 42.8296532, "lon": 74.5631090 },
+    { "lat": 42.8299572, "lon": 74.5631565 },
+    { "lat": 42.8307224, "lon": 74.5632925 },
+    { "lat": 42.8309348, "lon": 74.5633127 },
+    { "lat": 42.8310923, "lon": 74.5633068 },
+    { "lat": 42.8313181, "lon": 74.5632846 },
+    { "lat": 42.8317347, "lon": 74.5632018 },
+    { "lat": 42.8318230, "lon": 74.5631854 },
+    { "lat": 42.8332141, "lon": 74.5629165 },
+    { "lat": 42.8356515, "lon": 74.5624179 },
+    { "lat": 42.8383060, "lon": 74.5618738 },
+    { "lat": 42.8400036, "lon": 74.5615088 },
+    { "lat": 42.8404804, "lon": 74.5614061 },
+    { "lat": 42.8421593, "lon": 74.5610601 },
+    { "lat": 42.8425956, "lon": 74.5609636 },
+    { "lat": 42.8431712, "lon": 74.5608335 },
+    { "lat": 42.8437001, "lon": 74.5607139 },
+    { "lat": 42.8439930, "lon": 74.5606369 },
+    { "lat": 42.8446395, "lon": 74.5604104 },
+    { "lat": 42.8465276, "lon": 74.5598364 },
+    { "lat": 42.8480351, "lon": 74.5593583 },
+    { "lat": 42.8511326, "lon": 74.5586592 },
+    { "lat": 42.8513756, "lon": 74.5586082 }
+  ],
+  "tags": {
+    "highway": "secondary",
+    "int_name": "Sadyrbaev Dooronbek St",
+    "lanes": "2",
+    "lanes:backward": "1",
+    "lanes:forward": "1",
+    "maxspeed:practical": "50",
+    "name": "Дооронбек Садырбаев көчөсү",
+    "name:en": "Sadyrbaev Dooronbek street",
+    "name:ky": "Дооронбек Садырбаев көчөсү",
+    "name:ru": "Дооронбека Садырбаева  улица",
+    "old_name": "Баха улица;Школьная улица",
+    "old_name:ru": "Баха улица;Школьная улица"
+  }
+},
+{
+  "type": "way",
+  "id": 206478698,
+  "bounds": {
+    "minlat": 42.8285597,
+    "minlon": 74.5709063,
+    "maxlat": 42.8286295,
+    "maxlon": 74.5710080
+  },
+  "geometry": [
+    { "lat": 42.8286295, "lon": 74.5709080 },
+    { "lat": 42.8286282, "lon": 74.5710080 },
+    { "lat": 42.8285597, "lon": 74.5710063 },
+    { "lat": 42.8285610, "lon": 74.5709063 },
+    { "lat": 42.8286295, "lon": 74.5709080 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 206478712,
+  "bounds": {
+    "minlat": 42.8283834,
+    "minlon": 74.5720942,
+    "maxlat": 42.8284624,
+    "maxlon": 74.5722572
+  },
+  "geometry": [
+    { "lat": 42.8284624, "lon": 74.5720961 },
+    { "lat": 42.8284603, "lon": 74.5722572 },
+    { "lat": 42.8283834, "lon": 74.5722554 },
+    { "lat": 42.8283855, "lon": 74.5720942 },
+    { "lat": 42.8284624, "lon": 74.5720961 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 206478788,
+  "bounds": {
+    "minlat": 42.8285116,
+    "minlon": 74.5723669,
+    "maxlat": 42.8286788,
+    "maxlon": 74.5725061
+  },
+  "geometry": [
+    { "lat": 42.8286788, "lon": 74.5723709 },
+    { "lat": 42.8286770, "lon": 74.5725061 },
+    { "lat": 42.8285116, "lon": 74.5725021 },
+    { "lat": 42.8285134, "lon": 74.5723669 },
+    { "lat": 42.8286788, "lon": 74.5723709 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 206478827,
+  "bounds": {
+    "minlat": 42.8283742,
+    "minlon": 74.5713164,
+    "maxlat": 42.8284647,
+    "maxlon": 74.5714394
+  },
+  "geometry": [
+    { "lat": 42.8284647, "lon": 74.5713186 },
+    { "lat": 42.8284631, "lon": 74.5714394 },
+    { "lat": 42.8283742, "lon": 74.5714373 },
+    { "lat": 42.8283758, "lon": 74.5713164 },
+    { "lat": 42.8284647, "lon": 74.5713186 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 206478874,
+  "bounds": {
+    "minlat": 42.8277827,
+    "minlon": 74.5713248,
+    "maxlat": 42.8279077,
+    "maxlon": 74.5715091
+  },
+  "geometry": [
+    { "lat": 42.8279036, "lon": 74.5713248 },
+    { "lat": 42.8279077, "lon": 74.5715039 },
+    { "lat": 42.8277868, "lon": 74.5715091 },
+    { "lat": 42.8277827, "lon": 74.5713300 },
+    { "lat": 42.8279036, "lon": 74.5713248 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 206478886,
+  "bounds": {
+    "minlat": 42.8278714,
+    "minlon": 74.5709532,
+    "maxlat": 42.8279459,
+    "maxlon": 74.5710766
+  },
+  "geometry": [
+    { "lat": 42.8279459, "lon": 74.5709595 },
+    { "lat": 42.8279402, "lon": 74.5710766 },
+    { "lat": 42.8278714, "lon": 74.5710703 },
+    { "lat": 42.8278772, "lon": 74.5709532 },
+    { "lat": 42.8279459, "lon": 74.5709595 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 206478906,
+  "bounds": {
+    "minlat": 42.8288505,
+    "minlon": 74.5715727,
+    "maxlat": 42.8289937,
+    "maxlon": 74.5716296
+  },
+  "geometry": [
+    { "lat": 42.8289937, "lon": 74.5715762 },
+    { "lat": 42.8289930, "lon": 74.5716296 },
+    { "lat": 42.8288505, "lon": 74.5716262 },
+    { "lat": 42.8288512, "lon": 74.5715727 },
+    { "lat": 42.8289937, "lon": 74.5715762 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 206478958,
+  "bounds": {
+    "minlat": 42.8275656,
+    "minlon": 74.5707429,
+    "maxlat": 42.8276631,
+    "maxlon": 74.5708830
+  },
+  "geometry": [
+    { "lat": 42.8276631, "lon": 74.5707503 },
+    { "lat": 42.8276574, "lon": 74.5708830 },
+    { "lat": 42.8275656, "lon": 74.5708756 },
+    { "lat": 42.8275713, "lon": 74.5707429 },
+    { "lat": 42.8276631, "lon": 74.5707503 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 206478970,
+  "bounds": {
+    "minlat": 42.8275807,
+    "minlon": 74.5709762,
+    "maxlat": 42.8276425,
+    "maxlon": 74.5710895
+  },
+  "geometry": [
+    { "lat": 42.8276425, "lon": 74.5709814 },
+    { "lat": 42.8276372, "lon": 74.5710895 },
+    { "lat": 42.8275807, "lon": 74.5710844 },
+    { "lat": 42.8275860, "lon": 74.5709762 },
+    { "lat": 42.8276425, "lon": 74.5709814 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 206478982,
+  "bounds": {
+    "minlat": 42.8289479,
+    "minlon": 74.5711233,
+    "maxlat": 42.8290177,
+    "maxlon": 74.5712110
+  },
+  "geometry": [
+    { "lat": 42.8290177, "lon": 74.5711250 },
+    { "lat": 42.8290166, "lon": 74.5712110 },
+    { "lat": 42.8289479, "lon": 74.5712093 },
+    { "lat": 42.8289490, "lon": 74.5711233 },
+    { "lat": 42.8290177, "lon": 74.5711250 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 206479033,
+  "bounds": {
+    "minlat": 42.8273115,
+    "minlon": 74.5705585,
+    "maxlat": 42.8274043,
+    "maxlon": 74.5707128
+  },
+  "geometry": [
+    { "lat": 42.8274043, "lon": 74.5705598 },
+    { "lat": 42.8274032, "lon": 74.5707128 },
+    { "lat": 42.8273115, "lon": 74.5707115 },
+    { "lat": 42.8273126, "lon": 74.5705585 },
+    { "lat": 42.8274043, "lon": 74.5705598 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 206479077,
+  "bounds": {
+    "minlat": 42.8278429,
+    "minlon": 74.5721461,
+    "maxlat": 42.8279265,
+    "maxlon": 74.5723006
+  },
+  "geometry": [
+    { "lat": 42.8279230, "lon": 74.5721461 },
+    { "lat": 42.8279265, "lon": 74.5722972 },
+    { "lat": 42.8278463, "lon": 74.5723006 },
+    { "lat": 42.8278429, "lon": 74.5721495 },
+    { "lat": 42.8279230, "lon": 74.5721461 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 206479101,
+  "bounds": {
+    "minlat": 42.8275481,
+    "minlon": 74.5705666,
+    "maxlat": 42.8276253,
+    "maxlon": 74.5707034
+  },
+  "geometry": [
+    { "lat": 42.8276253, "lon": 74.5705863 },
+    { "lat": 42.8276024, "lon": 74.5707034 },
+    { "lat": 42.8275481, "lon": 74.5706837 },
+    { "lat": 42.8275710, "lon": 74.5705666 },
+    { "lat": 42.8276253, "lon": 74.5705863 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 206479145,
+  "bounds": {
+    "minlat": 42.8276827,
+    "minlon": 74.5721789,
+    "maxlat": 42.8277844,
+    "maxlon": 74.5723272
+  },
+  "geometry": [
+    { "lat": 42.8277811, "lon": 74.5721789 },
+    { "lat": 42.8277844, "lon": 74.5723230 },
+    { "lat": 42.8276860, "lon": 74.5723272 },
+    { "lat": 42.8276827, "lon": 74.5721831 },
+    { "lat": 42.8277811, "lon": 74.5721789 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 206479191,
+  "bounds": {
+    "minlat": 42.8283307,
+    "minlon": 74.5726981,
+    "maxlat": 42.8284234,
+    "maxlon": 74.5728696
+  },
+  "geometry": [
+    { "lat": 42.8284234, "lon": 74.5727003 },
+    { "lat": 42.8284212, "lon": 74.5728696 },
+    { "lat": 42.8283307, "lon": 74.5728674 },
+    { "lat": 42.8283329, "lon": 74.5726981 },
+    { "lat": 42.8284234, "lon": 74.5727003 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 206488452,
+  "bounds": {
+    "minlat": 42.8282304,
+    "minlon": 74.5630795,
+    "maxlat": 42.8282739,
+    "maxlon": 74.5642441
+  },
+  "geometry": [
+    { "lat": 42.8282739, "lon": 74.5642441 },
+    { "lat": 42.8282332, "lon": 74.5632118 },
+    { "lat": 42.8282304, "lon": 74.5630795 }
+  ],
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 206488458,
+  "bounds": {
+    "minlat": 42.8277480,
+    "minlon": 74.5686556,
+    "maxlat": 42.8278048,
+    "maxlon": 74.5687757
+  },
+  "geometry": [
+    { "lat": 42.8278048, "lon": 74.5686563 },
+    { "lat": 42.8278041, "lon": 74.5687757 },
+    { "lat": 42.8277480, "lon": 74.5687750 },
+    { "lat": 42.8277488, "lon": 74.5686556 },
+    { "lat": 42.8278048, "lon": 74.5686563 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 206488464,
+  "bounds": {
+    "minlat": 42.8270004,
+    "minlon": 74.5664920,
+    "maxlat": 42.8270526,
+    "maxlon": 74.5666325
+  },
+  "geometry": [
+    { "lat": 42.8270526, "lon": 74.5664926 },
+    { "lat": 42.8270517, "lon": 74.5666325 },
+    { "lat": 42.8270004, "lon": 74.5666319 },
+    { "lat": 42.8270013, "lon": 74.5664920 },
+    { "lat": 42.8270526, "lon": 74.5664926 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 206488468,
+  "bounds": {
+    "minlat": 42.8272987,
+    "minlon": 74.5676673,
+    "maxlat": 42.8274090,
+    "maxlon": 74.5677855
+  },
+  "geometry": [
+    { "lat": 42.8274090, "lon": 74.5676686 },
+    { "lat": 42.8274082, "lon": 74.5677855 },
+    { "lat": 42.8272987, "lon": 74.5677842 },
+    { "lat": 42.8272995, "lon": 74.5676673 },
+    { "lat": 42.8274090, "lon": 74.5676686 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 206488471,
+  "bounds": {
+    "minlat": 42.8260806,
+    "minlon": 74.5690026,
+    "maxlat": 42.8261602,
+    "maxlon": 74.5691813
+  },
+  "geometry": [
+    { "lat": 42.8261544, "lon": 74.5690026 },
+    { "lat": 42.8261602, "lon": 74.5691767 },
+    { "lat": 42.8260864, "lon": 74.5691813 },
+    { "lat": 42.8260806, "lon": 74.5690072 },
+    { "lat": 42.8261544, "lon": 74.5690026 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 206488476,
+  "bounds": {
+    "minlat": 42.8264156,
+    "minlon": 74.5686671,
+    "maxlat": 42.8264667,
+    "maxlon": 74.5687810
+  },
+  "geometry": [
+    { "lat": 42.8264667, "lon": 74.5686671 },
+    { "lat": 42.8264667, "lon": 74.5687810 },
+    { "lat": 42.8264156, "lon": 74.5687810 },
+    { "lat": 42.8264156, "lon": 74.5686671 },
+    { "lat": 42.8264667, "lon": 74.5686671 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 206488477,
+  "bounds": {
+    "minlat": 42.8269599,
+    "minlon": 74.5678686,
+    "maxlat": 42.8270422,
+    "maxlon": 74.5680453
+  },
+  "geometry": [
+    { "lat": 42.8270422, "lon": 74.5678696 },
+    { "lat": 42.8270410, "lon": 74.5680453 },
+    { "lat": 42.8269599, "lon": 74.5680443 },
+    { "lat": 42.8269611, "lon": 74.5678686 },
+    { "lat": 42.8270422, "lon": 74.5678696 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 206488483,
+  "bounds": {
+    "minlat": 42.8271394,
+    "minlon": 74.5652411,
+    "maxlat": 42.8272651,
+    "maxlon": 74.5654432
+  },
+  "geometry": [
+    { "lat": 42.8272651, "lon": 74.5652438 },
+    { "lat": 42.8272627, "lon": 74.5654432 },
+    { "lat": 42.8271394, "lon": 74.5654405 },
+    { "lat": 42.8271417, "lon": 74.5652411 },
+    { "lat": 42.8272651, "lon": 74.5652438 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 206488492,
+  "bounds": {
+    "minlat": 42.8259994,
+    "minlon": 74.5680862,
+    "maxlat": 42.8261405,
+    "maxlon": 74.5682289
+  },
+  "geometry": [
+    { "lat": 42.8261405, "lon": 74.5681083 },
+    { "lat": 42.8261294, "lon": 74.5682289 },
+    { "lat": 42.8259994, "lon": 74.5682068 },
+    { "lat": 42.8260105, "lon": 74.5680862 },
+    { "lat": 42.8261405, "lon": 74.5681083 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 206488493,
+  "bounds": {
+    "minlat": 42.8273336,
+    "minlon": 74.5652413,
+    "maxlat": 42.8274496,
+    "maxlon": 74.5654283
+  },
+  "geometry": [
+    { "lat": 42.8274496, "lon": 74.5652438 },
+    { "lat": 42.8274475, "lon": 74.5654283 },
+    { "lat": 42.8273336, "lon": 74.5654258 },
+    { "lat": 42.8273357, "lon": 74.5652413 },
+    { "lat": 42.8274496, "lon": 74.5652438 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 206488502,
+  "bounds": {
+    "minlat": 42.8271572,
+    "minlon": 74.5657170,
+    "maxlat": 42.8272616,
+    "maxlon": 74.5658987
+  },
+  "geometry": [
+    { "lat": 42.8272604, "lon": 74.5657170 },
+    { "lat": 42.8272616, "lon": 74.5658975 },
+    { "lat": 42.8271584, "lon": 74.5658987 },
+    { "lat": 42.8271572, "lon": 74.5657183 },
+    { "lat": 42.8272604, "lon": 74.5657170 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 206488508,
+  "bounds": {
+    "minlat": 42.8267891,
+    "minlon": 74.5681207,
+    "maxlat": 42.8268356,
+    "maxlon": 74.5682659
+  },
+  "geometry": [
+    { "lat": 42.8268356, "lon": 74.5681213 },
+    { "lat": 42.8268346, "lon": 74.5682659 },
+    { "lat": 42.8267891, "lon": 74.5682653 },
+    { "lat": 42.8267901, "lon": 74.5681207 },
+    { "lat": 42.8268356, "lon": 74.5681213 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 206488510,
+  "bounds": {
+    "minlat": 42.8271606,
+    "minlon": 74.5682583,
+    "maxlat": 42.8272198,
+    "maxlon": 74.5683626
+  },
+  "geometry": [
+    { "lat": 42.8272198, "lon": 74.5682590 },
+    { "lat": 42.8272191, "lon": 74.5683626 },
+    { "lat": 42.8271606, "lon": 74.5683619 },
+    { "lat": 42.8271613, "lon": 74.5682583 },
+    { "lat": 42.8272198, "lon": 74.5682590 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 206488511,
+  "bounds": {
+    "minlat": 42.8287775,
+    "minlon": 74.5648230,
+    "maxlat": 42.8288916,
+    "maxlon": 74.5649858
+  },
+  "geometry": [
+    { "lat": 42.8288916, "lon": 74.5648275 },
+    { "lat": 42.8288881, "lon": 74.5649858 },
+    { "lat": 42.8287775, "lon": 74.5649813 },
+    { "lat": 42.8287810, "lon": 74.5648230 },
+    { "lat": 42.8288916, "lon": 74.5648275 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 206488516,
+  "bounds": {
+    "minlat": 42.8288668,
+    "minlon": 74.5671355,
+    "maxlat": 42.8289668,
+    "maxlon": 74.5672808
+  },
+  "geometry": [
+    { "lat": 42.8289668, "lon": 74.5671400 },
+    { "lat": 42.8289633, "lon": 74.5672808 },
+    { "lat": 42.8288668, "lon": 74.5672764 },
+    { "lat": 42.8288703, "lon": 74.5671355 },
+    { "lat": 42.8289668, "lon": 74.5671400 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 206488521,
+  "bounds": {
+    "minlat": 42.8260499,
+    "minlon": 74.5675148,
+    "maxlat": 42.8261440,
+    "maxlon": 74.5676667
+  },
+  "geometry": [
+    { "lat": 42.8261428, "lon": 74.5675148 },
+    { "lat": 42.8261440, "lon": 74.5676653 },
+    { "lat": 42.8260511, "lon": 74.5676667 },
+    { "lat": 42.8260499, "lon": 74.5675162 },
+    { "lat": 42.8261428, "lon": 74.5675148 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 206488523,
+  "bounds": {
+    "minlat": 42.8266638,
+    "minlon": 74.5684157,
+    "maxlat": 42.8267961,
+    "maxlon": 74.5685170
+  },
+  "geometry": [
+    { "lat": 42.8267961, "lon": 74.5684173 },
+    { "lat": 42.8267954, "lon": 74.5685170 },
+    { "lat": 42.8266638, "lon": 74.5685154 },
+    { "lat": 42.8266644, "lon": 74.5684157 },
+    { "lat": 42.8267961, "lon": 74.5684173 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 206488529,
+  "bounds": {
+    "minlat": 42.8272999,
+    "minlon": 74.5670787,
+    "maxlat": 42.8274241,
+    "maxlon": 74.5672329
+  },
+  "geometry": [
+    { "lat": 42.8274241, "lon": 74.5670846 },
+    { "lat": 42.8274202, "lon": 74.5672329 },
+    { "lat": 42.8272999, "lon": 74.5672270 },
+    { "lat": 42.8273038, "lon": 74.5670787 },
+    { "lat": 42.8274241, "lon": 74.5670846 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 206488532,
+  "bounds": {
+    "minlat": 42.8264467,
+    "minlon": 74.5661789,
+    "maxlat": 42.8265098,
+    "maxlon": 74.5663483
+  },
+  "geometry": [
+    { "lat": 42.8265085, "lon": 74.5661789 },
+    { "lat": 42.8265098, "lon": 74.5663473 },
+    { "lat": 42.8264481, "lon": 74.5663483 },
+    { "lat": 42.8264467, "lon": 74.5661798 },
+    { "lat": 42.8265085, "lon": 74.5661789 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 206488539,
+  "bounds": {
+    "minlat": 42.8286418,
+    "minlon": 74.5654807,
+    "maxlat": 42.8287370,
+    "maxlon": 74.5656004
+  },
+  "geometry": [
+    { "lat": 42.8287370, "lon": 74.5654828 },
+    { "lat": 42.8287356, "lon": 74.5656004 },
+    { "lat": 42.8286418, "lon": 74.5655983 },
+    { "lat": 42.8286432, "lon": 74.5654807 },
+    { "lat": 42.8287370, "lon": 74.5654828 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 206488551,
+  "bounds": {
+    "minlat": 42.8264087,
+    "minlon": 74.5672869,
+    "maxlat": 42.8265188,
+    "maxlon": 74.5674198
+  },
+  "geometry": [
+    { "lat": 42.8265178, "lon": 74.5672869 },
+    { "lat": 42.8265188, "lon": 74.5674182 },
+    { "lat": 42.8264098, "lon": 74.5674198 },
+    { "lat": 42.8264087, "lon": 74.5672885 },
+    { "lat": 42.8265178, "lon": 74.5672869 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 206488559,
+  "bounds": {
+    "minlat": 42.8263147,
+    "minlon": 74.5669402,
+    "maxlat": 42.8263610,
+    "maxlon": 74.5670779
+  },
+  "geometry": [
+    { "lat": 42.8263599, "lon": 74.5669402 },
+    { "lat": 42.8263610, "lon": 74.5670773 },
+    { "lat": 42.8263158, "lon": 74.5670779 },
+    { "lat": 42.8263147, "lon": 74.5669409 },
+    { "lat": 42.8263599, "lon": 74.5669402 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 206488566,
+  "bounds": {
+    "minlat": 42.8280023,
+    "minlon": 74.5677747,
+    "maxlat": 42.8281345,
+    "maxlon": 74.5679091
+  },
+  "geometry": [
+    { "lat": 42.8281345, "lon": 74.5677810 },
+    { "lat": 42.8281311, "lon": 74.5679091 },
+    { "lat": 42.8280023, "lon": 74.5679028 },
+    { "lat": 42.8280057, "lon": 74.5677747 },
+    { "lat": 42.8281345, "lon": 74.5677810 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 206488570,
+  "bounds": {
+    "minlat": 42.8264252,
+    "minlon": 74.5670574,
+    "maxlat": 42.8265047,
+    "maxlon": 74.5671650
+  },
+  "geometry": [
+    { "lat": 42.8265038, "lon": 74.5670574 },
+    { "lat": 42.8265047, "lon": 74.5671638 },
+    { "lat": 42.8264260, "lon": 74.5671650 },
+    { "lat": 42.8264252, "lon": 74.5670585 },
+    { "lat": 42.8265038, "lon": 74.5670574 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 206488593,
+  "bounds": {
+    "minlat": 42.8284478,
+    "minlon": 74.5646527,
+    "maxlat": 42.8285619,
+    "maxlon": 74.5648259
+  },
+  "geometry": [
+    { "lat": 42.8285619, "lon": 74.5646597 },
+    { "lat": 42.8285561, "lon": 74.5648259 },
+    { "lat": 42.8284478, "lon": 74.5648189 },
+    { "lat": 42.8284536, "lon": 74.5646527 },
+    { "lat": 42.8285619, "lon": 74.5646597 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 206488605,
+  "bounds": {
+    "minlat": 42.8260447,
+    "minlon": 74.5678218,
+    "maxlat": 42.8261515,
+    "maxlon": 74.5678978
+  },
+  "geometry": [
+    { "lat": 42.8261509, "lon": 74.5678218 },
+    { "lat": 42.8261515, "lon": 74.5678962 },
+    { "lat": 42.8260453, "lon": 74.5678978 },
+    { "lat": 42.8260447, "lon": 74.5678234 },
+    { "lat": 42.8261509, "lon": 74.5678218 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 206488609,
+  "bounds": {
+    "minlat": 42.8262926,
+    "minlon": 74.5675306,
+    "maxlat": 42.8263471,
+    "maxlon": 74.5676715
+  },
+  "geometry": [
+    { "lat": 42.8263459, "lon": 74.5675306 },
+    { "lat": 42.8263471, "lon": 74.5676707 },
+    { "lat": 42.8262937, "lon": 74.5676715 },
+    { "lat": 42.8262926, "lon": 74.5675314 },
+    { "lat": 42.8263459, "lon": 74.5675306 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 206488612,
+  "bounds": {
+    "minlat": 42.8285259,
+    "minlon": 74.5642514,
+    "maxlat": 42.8286025,
+    "maxlon": 74.5645094
+  },
+  "geometry": [
+    { "lat": 42.8286025, "lon": 74.5642514 },
+    { "lat": 42.8286025, "lon": 74.5645094 },
+    { "lat": 42.8285259, "lon": 74.5645094 },
+    { "lat": 42.8285259, "lon": 74.5642514 },
+    { "lat": 42.8286025, "lon": 74.5642514 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 206488630,
+  "bounds": {
+    "minlat": 42.8275669,
+    "minlon": 74.5684204,
+    "maxlat": 42.8277004,
+    "maxlon": 74.5685028
+  },
+  "geometry": [
+    { "lat": 42.8277004, "lon": 74.5684220 },
+    { "lat": 42.8276998, "lon": 74.5685028 },
+    { "lat": 42.8275669, "lon": 74.5685012 },
+    { "lat": 42.8275674, "lon": 74.5684204 },
+    { "lat": 42.8277004, "lon": 74.5684220 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 206488646,
+  "bounds": {
+    "minlat": 42.8280184,
+    "minlon": 74.5685240,
+    "maxlat": 42.8280904,
+    "maxlon": 74.5686287
+  },
+  "geometry": [
+    { "lat": 42.8280904, "lon": 74.5685249 },
+    { "lat": 42.8280897, "lon": 74.5686287 },
+    { "lat": 42.8280184, "lon": 74.5686278 },
+    { "lat": 42.8280191, "lon": 74.5685240 },
+    { "lat": 42.8280904, "lon": 74.5685249 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 206488648,
+  "bounds": {
+    "minlat": 42.8268390,
+    "minlon": 74.5685175,
+    "maxlat": 42.8269249,
+    "maxlon": 74.5686652
+  },
+  "geometry": [
+    { "lat": 42.8269249, "lon": 74.5685186 },
+    { "lat": 42.8269240, "lon": 74.5686652 },
+    { "lat": 42.8268390, "lon": 74.5686642 },
+    { "lat": 42.8268400, "lon": 74.5685175 },
+    { "lat": 42.8269249, "lon": 74.5685186 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 206488666,
+  "bounds": {
+    "minlat": 42.8261671,
+    "minlon": 74.5682037,
+    "maxlat": 42.8262542,
+    "maxlon": 74.5683568
+  },
+  "geometry": [
+    { "lat": 42.8262542, "lon": 74.5682096 },
+    { "lat": 42.8262484, "lon": 74.5683568 },
+    { "lat": 42.8261671, "lon": 74.5683509 },
+    { "lat": 42.8261729, "lon": 74.5682037 },
+    { "lat": 42.8262542, "lon": 74.5682096 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 206488669,
+  "bounds": {
+    "minlat": 42.8264260,
+    "minlon": 74.5683632,
+    "maxlat": 42.8264969,
+    "maxlon": 74.5684550
+  },
+  "geometry": [
+    { "lat": 42.8264969, "lon": 74.5683632 },
+    { "lat": 42.8264969, "lon": 74.5684550 },
+    { "lat": 42.8264260, "lon": 74.5684550 },
+    { "lat": 42.8264260, "lon": 74.5683632 },
+    { "lat": 42.8264969, "lon": 74.5683632 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 206488673,
+  "bounds": {
+    "minlat": 42.8268864,
+    "minlon": 74.5659146,
+    "maxlat": 42.8270433,
+    "maxlon": 74.5661143
+  },
+  "geometry": [
+    { "lat": 42.8270433, "lon": 74.5659370 },
+    { "lat": 42.8270283, "lon": 74.5661143 },
+    { "lat": 42.8268864, "lon": 74.5660919 },
+    { "lat": 42.8269015, "lon": 74.5659146 },
+    { "lat": 42.8270433, "lon": 74.5659370 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 206488678,
+  "bounds": {
+    "minlat": 42.8279465,
+    "minlon": 74.5685323,
+    "maxlat": 42.8279883,
+    "maxlon": 74.5686457
+  },
+  "geometry": [
+    { "lat": 42.8279883, "lon": 74.5685328 },
+    { "lat": 42.8279875, "lon": 74.5686457 },
+    { "lat": 42.8279465, "lon": 74.5686452 },
+    { "lat": 42.8279472, "lon": 74.5685323 },
+    { "lat": 42.8279883, "lon": 74.5685328 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 206488683,
+  "bounds": {
+    "minlat": 42.8271281,
+    "minlon": 74.5670499,
+    "maxlat": 42.8272488,
+    "maxlon": 74.5672127
+  },
+  "geometry": [
+    { "lat": 42.8272488, "lon": 74.5670513 },
+    { "lat": 42.8272477, "lon": 74.5672127 },
+    { "lat": 42.8271281, "lon": 74.5672112 },
+    { "lat": 42.8271292, "lon": 74.5670499 },
+    { "lat": 42.8272488, "lon": 74.5670513 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 206488688,
+  "bounds": {
+    "minlat": 42.8289525,
+    "minlon": 74.5652673,
+    "maxlat": 42.8291096,
+    "maxlon": 74.5653949
+  },
+  "geometry": [
+    { "lat": 42.8291096, "lon": 74.5652707 },
+    { "lat": 42.8291086, "lon": 74.5653595 },
+    { "lat": 42.8290376, "lon": 74.5653580 },
+    { "lat": 42.8290372, "lon": 74.5653949 },
+    { "lat": 42.8289525, "lon": 74.5653930 },
+    { "lat": 42.8289539, "lon": 74.5652673 },
+    { "lat": 42.8291096, "lon": 74.5652707 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 206488695,
+  "bounds": {
+    "minlat": 42.8259408,
+    "minlon": 74.5684819,
+    "maxlat": 42.8260453,
+    "maxlon": 74.5686639
+  },
+  "geometry": [
+    { "lat": 42.8260453, "lon": 74.5684819 },
+    { "lat": 42.8260453, "lon": 74.5686006 },
+    { "lat": 42.8260000, "lon": 74.5686006 },
+    { "lat": 42.8260000, "lon": 74.5686639 },
+    { "lat": 42.8259408, "lon": 74.5686639 },
+    { "lat": 42.8259408, "lon": 74.5684819 },
+    { "lat": 42.8260453, "lon": 74.5684819 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 253024931,
+  "bounds": {
+    "minlat": 42.8314281,
+    "minlon": 74.5677153,
+    "maxlat": 42.8317206,
+    "maxlon": 74.5680692
+  },
+  "geometry": [
+    { "lat": 42.8317196, "lon": 74.5677153 },
+    { "lat": 42.8317206, "lon": 74.5680678 },
+    { "lat": 42.8314291, "lon": 74.5680692 },
+    { "lat": 42.8314281, "lon": 74.5677168 },
+    { "lat": 42.8317196, "lon": 74.5677153 }
+  ],
+  "tags": {
+    "addr:housenumber": "9/4",
+    "addr:street": "микрорайон Джал-29 Тыналиева",
+    "building": "apartments",
+    "building:levels": "10"
+  }
+},
+{
+  "type": "way",
+  "id": 262759168,
+  "bounds": {
+    "minlat": 42.8295290,
+    "minlon": 74.5640770,
+    "maxlat": 42.8296649,
+    "maxlon": 74.5640773
+  },
+  "geometry": [
+    { "lat": 42.8296649, "lon": 74.5640773 },
+    { "lat": 42.8295290, "lon": 74.5640770 }
+  ],
+  "tags": {
+    "highway": "primary_link",
+    "maxspeed": "40",
+    "oneway": "no",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 312400375,
+  "bounds": {
+    "minlat": 42.8257221,
+    "minlon": 74.5447079,
+    "maxlat": 42.8295793,
+    "maxlon": 74.5631027
+  },
+  "geometry": [
+    { "lat": 42.8257221, "lon": 74.5447079 },
+    { "lat": 42.8258262, "lon": 74.5449856 },
+    { "lat": 42.8260510, "lon": 74.5456228 },
+    { "lat": 42.8267056, "lon": 74.5474774 },
+    { "lat": 42.8268242, "lon": 74.5478139 },
+    { "lat": 42.8268472, "lon": 74.5478788 },
+    { "lat": 42.8271705, "lon": 74.5487901 },
+    { "lat": 42.8273046, "lon": 74.5491707 },
+    { "lat": 42.8277062, "lon": 74.5503374 },
+    { "lat": 42.8277499, "lon": 74.5504644 },
+    { "lat": 42.8278097, "lon": 74.5506380 },
+    { "lat": 42.8279023, "lon": 74.5509039 },
+    { "lat": 42.8279917, "lon": 74.5511608 },
+    { "lat": 42.8282369, "lon": 74.5519033 },
+    { "lat": 42.8286128, "lon": 74.5529408 },
+    { "lat": 42.8287128, "lon": 74.5532168 },
+    { "lat": 42.8288195, "lon": 74.5535250 },
+    { "lat": 42.8289465, "lon": 74.5538915 },
+    { "lat": 42.8291187, "lon": 74.5544639 },
+    { "lat": 42.8292162, "lon": 74.5548530 },
+    { "lat": 42.8293230, "lon": 74.5553529 },
+    { "lat": 42.8293255, "lon": 74.5553663 },
+    { "lat": 42.8293762, "lon": 74.5556421 },
+    { "lat": 42.8294367, "lon": 74.5560026 },
+    { "lat": 42.8294903, "lon": 74.5564007 },
+    { "lat": 42.8295519, "lon": 74.5571453 },
+    { "lat": 42.8295793, "lon": 74.5576910 },
+    { "lat": 42.8295756, "lon": 74.5584265 },
+    { "lat": 42.8295634, "lon": 74.5592870 },
+    { "lat": 42.8295427, "lon": 74.5602892 },
+    { "lat": 42.8295150, "lon": 74.5615839 },
+    { "lat": 42.8295024, "lon": 74.5621738 },
+    { "lat": 42.8295140, "lon": 74.5624899 },
+    { "lat": 42.8295099, "lon": 74.5628977 },
+    { "lat": 42.8295079, "lon": 74.5629337 },
+    { "lat": 42.8295087, "lon": 74.5631027 }
+  ],
+  "tags": {
+    "highway": "primary",
+    "lanes": "2",
+    "name": "Аалы Токомбаев проспекти",
+    "name:ru": "проспект Аалы Токомбаева",
+    "oneway": "yes",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 313043929,
+  "bounds": {
+    "minlat": 42.8296061,
+    "minlon": 74.5687998,
+    "maxlat": 42.8368041,
+    "maxlon": 74.5692988
+  },
+  "geometry": [
+    { "lat": 42.8296061, "lon": 74.5692988 },
+    { "lat": 42.8298797, "lon": 74.5692758 },
+    { "lat": 42.8304066, "lon": 74.5692363 },
+    { "lat": 42.8308896, "lon": 74.5691949 },
+    { "lat": 42.8310115, "lon": 74.5691909 },
+    { "lat": 42.8314402, "lon": 74.5691670 },
+    { "lat": 42.8318481, "lon": 74.5691446 },
+    { "lat": 42.8319216, "lon": 74.5691395 },
+    { "lat": 42.8323762, "lon": 74.5691040 },
+    { "lat": 42.8326410, "lon": 74.5690882 },
+    { "lat": 42.8332873, "lon": 74.5690497 },
+    { "lat": 42.8333193, "lon": 74.5690468 },
+    { "lat": 42.8333867, "lon": 74.5690411 },
+    { "lat": 42.8337289, "lon": 74.5690169 },
+    { "lat": 42.8342005, "lon": 74.5689836 },
+    { "lat": 42.8343026, "lon": 74.5689753 },
+    { "lat": 42.8346282, "lon": 74.5689478 },
+    { "lat": 42.8347331, "lon": 74.5689390 },
+    { "lat": 42.8351966, "lon": 74.5688923 },
+    { "lat": 42.8352788, "lon": 74.5688853 },
+    { "lat": 42.8367321, "lon": 74.5688038 },
+    { "lat": 42.8368041, "lon": 74.5687998 }
+  ],
+  "tags": {
+    "highway": "secondary",
+    "lane_markings": "yes",
+    "lanes": "4",
+    "lanes:backward": "2",
+    "lanes:forward": "2",
+    "maxspeed:practical": "45",
+    "name": "Карыбек Тыналиев көчөсү",
+    "name:en": "Karybek Tynaliev street",
+    "name:ky": "Карыбек Тыналиев көчөсү",
+    "name:ru": "улица Карыбека Тыналиева",
+    "old_name": "Некрасова улица",
+    "oneway": "no",
+    "sidewalk": "separate"
+  }
+},
+{
+  "type": "way",
+  "id": 313043931,
+  "bounds": {
+    "minlat": 42.8294657,
+    "minlon": 74.5692988,
+    "maxlat": 42.8296061,
+    "maxlon": 74.5693158
+  },
+  "geometry": [
+    { "lat": 42.8296061, "lon": 74.5692988 },
+    { "lat": 42.8294657, "lon": 74.5693158 }
+  ],
+  "tags": {
+    "highway": "primary_link",
+    "maxspeed": "50",
+    "surface": "asphalt"
+  }
+},
+{
+  "type": "way",
+  "id": 320899831,
+  "bounds": {
+    "minlat": 42.8299501,
+    "minlon": 74.5667353,
+    "maxlat": 42.8303493,
+    "maxlon": 74.5671687
+  },
+  "geometry": [
+    { "lat": 42.8303493, "lon": 74.5667415 },
+    { "lat": 42.8300980, "lon": 74.5667376 },
+    { "lat": 42.8299537, "lon": 74.5667353 },
+    { "lat": 42.8299501, "lon": 74.5671666 },
+    { "lat": 42.8300854, "lon": 74.5671687 },
+    { "lat": 42.8300873, "lon": 74.5669524 },
+    { "lat": 42.8303475, "lon": 74.5669565 },
+    { "lat": 42.8303493, "lon": 74.5667415 }
+  ],
+  "tags": {
+    "addr:housenumber": "16",
+    "addr:street": "Масалиева Абсамата проспект",
+    "building": "apartments",
+    "building:levels": "13"
+  }
+},
+{
+  "type": "way",
+  "id": 322892342,
+  "bounds": {
+    "minlat": 42.8287223,
+    "minlon": 74.5687134,
+    "maxlat": 42.8288219,
+    "maxlon": 74.5688479
+  },
+  "geometry": [
+    { "lat": 42.8287642, "lon": 74.5687134 },
+    { "lat": 42.8287223, "lon": 74.5687765 },
+    { "lat": 42.8287801, "lon": 74.5688479 },
+    { "lat": 42.8288219, "lon": 74.5687848 },
+    { "lat": 42.8287642, "lon": 74.5687134 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 322892450,
+  "bounds": {
+    "minlat": 42.8290730,
+    "minlon": 74.5683210,
+    "maxlat": 42.8291251,
+    "maxlon": 74.5684644
+  },
+  "geometry": [
+    { "lat": 42.8291251, "lon": 74.5683223 },
+    { "lat": 42.8291231, "lon": 74.5684644 },
+    { "lat": 42.8290730, "lon": 74.5684631 },
+    { "lat": 42.8290750, "lon": 74.5683210 },
+    { "lat": 42.8291251, "lon": 74.5683223 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 322892491,
+  "bounds": {
+    "minlat": 42.8286950,
+    "minlon": 74.5701010,
+    "maxlat": 42.8287555,
+    "maxlon": 74.5702142
+  },
+  "geometry": [
+    { "lat": 42.8287550, "lon": 74.5701010 },
+    { "lat": 42.8286950, "lon": 74.5701016 },
+    { "lat": 42.8286956, "lon": 74.5702142 },
+    { "lat": 42.8287555, "lon": 74.5702136 },
+    { "lat": 42.8287550, "lon": 74.5701010 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes",
+    "building:levels": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 333987630,
+  "bounds": {
+    "minlat": 42.8305455,
+    "minlon": 74.5666794,
+    "maxlat": 42.8306820,
+    "maxlon": 74.5671621
+  },
+  "geometry": [
+    { "lat": 42.8305541, "lon": 74.5666794 },
+    { "lat": 42.8305455, "lon": 74.5671578 },
+    { "lat": 42.8306734, "lon": 74.5671621 },
+    { "lat": 42.8306820, "lon": 74.5666837 },
+    { "lat": 42.8305541, "lon": 74.5666794 }
+  ],
+  "tags": {
+    "addr:housenumber": "14",
+    "building": "apartments",
+    "building:levels": "12"
+  }
+},
+{
+  "type": "way",
+  "id": 333988544,
+  "bounds": {
+    "minlat": 42.8315819,
+    "minlon": 74.5668302,
+    "maxlat": 42.8317564,
+    "maxlon": 74.5673807
+  },
+  "geometry": [
+    { "lat": 42.8317550, "lon": 74.5668302 },
+    { "lat": 42.8315819, "lon": 74.5668310 },
+    { "lat": 42.8315833, "lon": 74.5673807 },
+    { "lat": 42.8317564, "lon": 74.5673799 },
+    { "lat": 42.8317550, "lon": 74.5668302 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "addr:housenumber": "18",
+    "addr:street": "Джал-29 микрорайон",
+    "amenity": "clinic",
+    "building": "hospital",
+    "building:levels": "4",
+    "healthcare": "clinic",
+    "int_name": "Asımbekovanın klinikası",
+    "name": "Асымбекованын клиникасы",
+    "name:ky": "Асымбекованын клиникасы",
+    "name:ru": "Клиника Асымбековой"
+  }
+},
+{
+  "type": "way",
+  "id": 361365963,
+  "bounds": {
+    "minlat": 42.8291592,
+    "minlon": 74.5676182,
+    "maxlat": 42.8291784,
+    "maxlon": 74.5693525
+  },
+  "geometry": [
+    { "lat": 42.8291784, "lon": 74.5676182 },
+    { "lat": 42.8291610, "lon": 74.5691110 },
+    { "lat": 42.8291592, "lon": 74.5693525 }
+  ],
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 361365974,
+  "bounds": {
+    "minlat": 42.8291667,
+    "minlon": 74.5663371,
+    "maxlat": 42.8291806,
+    "maxlon": 74.5676182
+  },
+  "geometry": [
+    { "lat": 42.8291667, "lon": 74.5663371 },
+    { "lat": 42.8291668, "lon": 74.5666380 },
+    { "lat": 42.8291806, "lon": 74.5668606 },
+    { "lat": 42.8291784, "lon": 74.5676182 }
+  ],
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 361366044,
+  "bounds": {
+    "minlat": 42.8287852,
+    "minlon": 74.5641973,
+    "maxlat": 42.8292593,
+    "maxlon": 74.5643741
+  },
+  "geometry": [
+    { "lat": 42.8292593, "lon": 74.5641973 },
+    { "lat": 42.8290468, "lon": 74.5643339 },
+    { "lat": 42.8287852, "lon": 74.5643741 }
+  ],
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 361366241,
+  "bounds": {
+    "minlat": 42.8282941,
+    "minlon": 74.5630754,
+    "maxlat": 42.8283820,
+    "maxlon": 74.5635957
+  },
+  "geometry": [
+    { "lat": 42.8282941, "lon": 74.5630754 },
+    { "lat": 42.8282989, "lon": 74.5632046 },
+    { "lat": 42.8283132, "lon": 74.5635957 },
+    { "lat": 42.8283820, "lon": 74.5635910 }
+  ],
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 361366242,
+  "bounds": {
+    "minlat": 42.8284740,
+    "minlon": 74.5630731,
+    "maxlat": 42.8284859,
+    "maxlon": 74.5634456
+  },
+  "geometry": [
+    { "lat": 42.8284740, "lon": 74.5630731 },
+    { "lat": 42.8284779, "lon": 74.5631967 },
+    { "lat": 42.8284859, "lon": 74.5634456 }
+  ],
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 361366252,
+  "bounds": {
+    "minlat": 42.8279377,
+    "minlon": 74.5630895,
+    "maxlat": 42.8279420,
+    "maxlon": 74.5636256
+  },
+  "geometry": [
+    { "lat": 42.8279377, "lon": 74.5630895 },
+    { "lat": 42.8279388, "lon": 74.5632273 },
+    { "lat": 42.8279420, "lon": 74.5636256 }
+  ],
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 369363861,
+  "bounds": {
+    "minlat": 42.8296527,
+    "minlon": 74.5651348,
+    "maxlat": 42.8311590,
+    "maxlon": 74.5656458
+  },
+  "geometry": [
+    { "lat": 42.8296527, "lon": 74.5651348 },
+    { "lat": 42.8297919, "lon": 74.5651819 },
+    { "lat": 42.8299265, "lon": 74.5652275 },
+    { "lat": 42.8311520, "lon": 74.5652195 },
+    { "lat": 42.8311590, "lon": 74.5656458 }
+  ],
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 441419831,
+  "bounds": {
+    "minlat": 42.8333193,
+    "minlon": 74.5690468,
+    "maxlat": 42.8333274,
+    "maxlon": 74.5713730
+  },
+  "geometry": [
+    { "lat": 42.8333193, "lon": 74.5690468 },
+    { "lat": 42.8333213, "lon": 74.5692820 },
+    { "lat": 42.8333216, "lon": 74.5693427 },
+    { "lat": 42.8333274, "lon": 74.5713730 }
+  ],
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 621293419,
+  "bounds": {
+    "minlat": 42.8318481,
+    "minlon": 74.5640050,
+    "maxlat": 42.8319056,
+    "maxlon": 74.5691446
+  },
+  "geometry": [
+    { "lat": 42.8319056, "lon": 74.5640050 },
+    { "lat": 42.8319014, "lon": 74.5643837 },
+    { "lat": 42.8318923, "lon": 74.5651935 },
+    { "lat": 42.8318873, "lon": 74.5656417 },
+    { "lat": 42.8318650, "lon": 74.5676320 },
+    { "lat": 42.8318647, "lon": 74.5676618 },
+    { "lat": 42.8318507, "lon": 74.5689152 },
+    { "lat": 42.8318481, "lon": 74.5691446 }
+  ],
+  "tags": {
+    "addr:country": "KG",
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 621293432,
+  "bounds": {
+    "minlat": 42.8315928,
+    "minlon": 74.5660994,
+    "maxlat": 42.8317947,
+    "maxlon": 74.5667303
+  },
+  "geometry": [
+    { "lat": 42.8315944, "lon": 74.5667303 },
+    { "lat": 42.8315928, "lon": 74.5661004 },
+    { "lat": 42.8317931, "lon": 74.5660994 },
+    { "lat": 42.8317938, "lon": 74.5663494 },
+    { "lat": 42.8317418, "lon": 74.5663497 },
+    { "lat": 42.8317422, "lon": 74.5664811 },
+    { "lat": 42.8317941, "lon": 74.5664809 },
+    { "lat": 42.8317947, "lon": 74.5667293 },
+    { "lat": 42.8315944, "lon": 74.5667303 }
+  ],
+  "tags": {
+    "addr:housenumber": "19",
+    "addr:street": "микрорайон Джал-29",
+    "building": "apartments",
+    "building:levels": "10"
+  }
+},
+{
+  "type": "way",
+  "id": 621293433,
+  "bounds": {
+    "minlat": 42.8310015,
+    "minlon": 74.5677736,
+    "maxlat": 42.8312196,
+    "maxlon": 74.5680928
+  },
+  "geometry": [
+    { "lat": 42.8312187, "lon": 74.5677736 },
+    { "lat": 42.8312196, "lon": 74.5680917 },
+    { "lat": 42.8310024, "lon": 74.5680928 },
+    { "lat": 42.8310015, "lon": 74.5677747 },
+    { "lat": 42.8312187, "lon": 74.5677736 }
+  ],
+  "tags": {
+    "addr:housenumber": "9/2 стр",
+    "addr:street": "микрорайон Джал-29,Тыналиева",
+    "building": "apartments",
+    "building:levels": "12"
+  }
+},
+{
+  "type": "way",
+  "id": 621293434,
+  "bounds": {
+    "minlat": 42.8304555,
+    "minlon": 74.5660488,
+    "maxlat": 42.8307726,
+    "maxlon": 74.5664702
+  },
+  "geometry": [
+    { "lat": 42.8307717, "lon": 74.5664702 },
+    { "lat": 42.8304555, "lon": 74.5664674 },
+    { "lat": 42.8304575, "lon": 74.5660488 },
+    { "lat": 42.8306070, "lon": 74.5660501 },
+    { "lat": 42.8306059, "lon": 74.5662797 },
+    { "lat": 42.8307726, "lon": 74.5662811 },
+    { "lat": 42.8307717, "lon": 74.5664702 }
+  ],
+  "tags": {
+    "addr:housenumber": "14/1",
+    "addr:street": "микрорайон Джал-29",
+    "building": "apartments",
+    "building:levels": "12"
+  }
+},
+{
+  "type": "way",
+  "id": 629093294,
+  "bounds": {
+    "minlat": 42.8306256,
+    "minlon": 74.5678004,
+    "maxlat": 42.8307473,
+    "maxlon": 74.5686089
+  },
+  "geometry": [
+    { "lat": 42.8306256, "lon": 74.5678068 },
+    { "lat": 42.8306556, "lon": 74.5686089 },
+    { "lat": 42.8307473, "lon": 74.5686025 },
+    { "lat": 42.8307173, "lon": 74.5678004 },
+    { "lat": 42.8306256, "lon": 74.5678068 }
+  ],
+  "tags": {
+    "addr:housenumber": "11Б",
+    "addr:street": "микрорайон Джал-29",
+    "building": "apartments"
+  }
+},
+{
+  "type": "way",
+  "id": 632728345,
+  "bounds": {
+    "minlat": 42.8342005,
+    "minlon": 74.5689836,
+    "maxlat": 42.8345468,
+    "maxlon": 74.5713088
+  },
+  "geometry": [
+    { "lat": 42.8342005, "lon": 74.5689836 },
+    { "lat": 42.8342092, "lon": 74.5692159 },
+    { "lat": 42.8342120, "lon": 74.5692925 },
+    { "lat": 42.8342852, "lon": 74.5713088 },
+    { "lat": 42.8345468, "lon": 74.5712927 }
+  ],
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 632728347,
+  "bounds": {
+    "minlat": 42.8304066,
+    "minlon": 74.5692363,
+    "maxlat": 42.8305084,
+    "maxlon": 74.5763395
+  },
+  "geometry": [
+    { "lat": 42.8304474, "lon": 74.5763395 },
+    { "lat": 42.8304918, "lon": 74.5731309 },
+    { "lat": 42.8304936, "lon": 74.5729134 },
+    { "lat": 42.8305046, "lon": 74.5715796 },
+    { "lat": 42.8305084, "lon": 74.5700688 },
+    { "lat": 42.8304826, "lon": 74.5699367 },
+    { "lat": 42.8304229, "lon": 74.5696700 },
+    { "lat": 42.8304152, "lon": 74.5695293 },
+    { "lat": 42.8304117, "lon": 74.5694665 },
+    { "lat": 42.8304066, "lon": 74.5692363 }
+  ],
+  "tags": {
+    "addr:country": "KG",
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 632728348,
+  "bounds": {
+    "minlat": 42.8308280,
+    "minlon": 74.5712471,
+    "maxlat": 42.8309957,
+    "maxlon": 74.5714536
+  },
+  "geometry": [
+    { "lat": 42.8309886, "lon": 74.5712471 },
+    { "lat": 42.8309957, "lon": 74.5714427 },
+    { "lat": 42.8308352, "lon": 74.5714536 },
+    { "lat": 42.8308280, "lon": 74.5712580 },
+    { "lat": 42.8309886, "lon": 74.5712471 }
+  ],
+  "tags": {
+    "addr:housenumber": "34/4",
+    "addr:street": "Тыналиева улица",
+    "building": "house"
+  }
+},
+{
+  "type": "way",
+  "id": 754272147,
+  "bounds": {
+    "minlat": 42.8305807,
+    "minlon": 74.5710055,
+    "maxlat": 42.8307969,
+    "maxlon": 74.5714568
+  },
+  "geometry": [
+    { "lat": 42.8307969, "lon": 74.5714487 },
+    { "lat": 42.8306061, "lon": 74.5714568 },
+    { "lat": 42.8305807, "lon": 74.5710177 },
+    { "lat": 42.8307835, "lon": 74.5710055 },
+    { "lat": 42.8307969, "lon": 74.5714487 }
+  ],
+  "tags": {
+    "addr:housenumber": "12д",
+    "addr:street": "Тыналиева улица",
+    "building": "office"
+  }
+},
+{
+  "type": "way",
+  "id": 754576140,
+  "bounds": {
+    "minlat": 42.8299815,
+    "minlon": 74.5675718,
+    "maxlat": 42.8300143,
+    "maxlon": 74.5676267
+  },
+  "geometry": [
+    { "lat": 42.8300143, "lon": 74.5675718 },
+    { "lat": 42.8300143, "lon": 74.5676246 },
+    { "lat": 42.8299815, "lon": 74.5676267 },
+    { "lat": 42.8299829, "lon": 74.5675738 },
+    { "lat": 42.8300143, "lon": 74.5675718 }
+  ],
+  "tags": {
+    "addr:housenumber": "11а",
+    "addr:street": "микрорайон Джал-29",
+    "building": "commercial"
+  }
+},
+{
+  "type": "way",
+  "id": 754637433,
+  "bounds": {
+    "minlat": 42.8299913,
+    "minlon": 74.5653202,
+    "maxlat": 42.8302044,
+    "maxlon": 74.5656306
+  },
+  "geometry": [
+    { "lat": 42.8302044, "lon": 74.5653202 },
+    { "lat": 42.8302044, "lon": 74.5656305 },
+    { "lat": 42.8299913, "lon": 74.5656306 },
+    { "lat": 42.8299913, "lon": 74.5653202 },
+    { "lat": 42.8302044, "lon": 74.5653202 }
+  ],
+  "tags": {
+    "addr:housenumber": "79",
+    "addr:street": "Масалиева Абсамата проспект",
+    "building": "apartments",
+    "building:levels": "13"
+  }
+},
+{
+  "type": "way",
+  "id": 754637434,
+  "bounds": {
+    "minlat": 42.8300226,
+    "minlon": 74.5646240,
+    "maxlat": 42.8303327,
+    "maxlon": 74.5651822
+  },
+  "geometry": [
+    { "lat": 42.8303327, "lon": 74.5649890 },
+    { "lat": 42.8303293, "lon": 74.5651822 },
+    { "lat": 42.8300226, "lon": 74.5651722 },
+    { "lat": 42.8300322, "lon": 74.5646240 },
+    { "lat": 42.8301833, "lon": 74.5646289 },
+    { "lat": 42.8301771, "lon": 74.5649839 },
+    { "lat": 42.8303327, "lon": 74.5649890 }
+  ],
+  "tags": {
+    "addr:housenumber": "81",
+    "addr:street": "Масалиева Абсамата проспект",
+    "building": "apartments",
+    "building:levels": "13"
+  }
+},
+{
+  "type": "way",
+  "id": 754650347,
+  "bounds": {
+    "minlat": 42.8317196,
+    "minlon": 74.5674530,
+    "maxlat": 42.8317496,
+    "maxlon": 74.5674922
+  },
+  "geometry": [
+    { "lat": 42.8317496, "lon": 74.5674530 },
+    { "lat": 42.8317209, "lon": 74.5674530 },
+    { "lat": 42.8317196, "lon": 74.5674922 },
+    { "lat": 42.8317483, "lon": 74.5674904 },
+    { "lat": 42.8317496, "lon": 74.5674530 }
+  ],
+  "tags": {
+    "addr:housenumber": "18а",
+    "addr:street": "микрорайон Джал-29",
+    "building": "commercial"
+  }
+},
+{
+  "type": "way",
+  "id": 754650348,
+  "bounds": {
+    "minlat": 42.8316797,
+    "minlon": 74.5681976,
+    "maxlat": 42.8317249,
+    "maxlon": 74.5682645
+  },
+  "geometry": [
+    { "lat": 42.8317249, "lon": 74.5682002 },
+    { "lat": 42.8316797, "lon": 74.5681976 },
+    { "lat": 42.8316797, "lon": 74.5682620 },
+    { "lat": 42.8317231, "lon": 74.5682645 },
+    { "lat": 42.8317249, "lon": 74.5682002 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "addr:housenumber": "9/4а",
+    "addr:street": "Джал-29 Тыналиева микрорайон",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 867236103,
+  "bounds": {
+    "minlat": 42.8307840,
+    "minlon": 74.5661094,
+    "maxlat": 42.8312069,
+    "maxlon": 74.5665452
+  },
+  "geometry": [
+    { "lat": 42.8312069, "lon": 74.5661107 },
+    { "lat": 42.8312050, "lon": 74.5665452 },
+    { "lat": 42.8307840, "lon": 74.5665416 },
+    { "lat": 42.8307849, "lon": 74.5663398 },
+    { "lat": 42.8310524, "lon": 74.5663420 },
+    { "lat": 42.8310535, "lon": 74.5661094 },
+    { "lat": 42.8312069, "lon": 74.5661107 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "addr:housenumber": "14/2",
+    "addr:street": "Джал-29 микрорайон",
+    "building": "apartments",
+    "building:levels": "12",
+    "name": "Султан-Ордо 2"
+  }
+},
+{
+  "type": "way",
+  "id": 996698679,
+  "bounds": {
+    "minlat": 42.8332313,
+    "minlon": 74.5646987,
+    "maxlat": 42.8332873,
+    "maxlon": 74.5690497
+  },
+  "geometry": [
+    { "lat": 42.8332313, "lon": 74.5646987 },
+    { "lat": 42.8332579, "lon": 74.5649812 },
+    { "lat": 42.8332770, "lon": 74.5659846 },
+    { "lat": 42.8332786, "lon": 74.5664675 },
+    { "lat": 42.8332788, "lon": 74.5675986 },
+    { "lat": 42.8332857, "lon": 74.5688183 },
+    { "lat": 42.8332873, "lon": 74.5690497 }
+  ],
+  "tags": {
+    "addr:country": "KG",
+    "highway": "residential",
+    "maxspeed:practical": "8"
+  }
+},
+{
+  "type": "way",
+  "id": 1102409521,
+  "bounds": {
+    "minlat": 42.8295794,
+    "minlon": 74.5699367,
+    "maxlat": 42.8304826,
+    "maxlon": 74.5708854
+  },
+  "geometry": [
+    { "lat": 42.8295794, "lon": 74.5708854 },
+    { "lat": 42.8297194, "lon": 74.5708852 },
+    { "lat": 42.8298147, "lon": 74.5708850 },
+    { "lat": 42.8298597, "lon": 74.5708013 },
+    { "lat": 42.8298643, "lon": 74.5699507 },
+    { "lat": 42.8303703, "lon": 74.5699372 },
+    { "lat": 42.8304826, "lon": 74.5699367 }
+  ],
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1102409522,
+  "bounds": {
+    "minlat": 42.8298643,
+    "minlon": 74.5696700,
+    "maxlat": 42.8304229,
+    "maxlon": 74.5699507
+  },
+  "geometry": [
+    { "lat": 42.8304229, "lon": 74.5696700 },
+    { "lat": 42.8303686, "lon": 74.5697502 },
+    { "lat": 42.8299830, "lon": 74.5697671 },
+    { "lat": 42.8298643, "lon": 74.5699507 }
+  ],
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1102409523,
+  "bounds": {
+    "minlat": 42.8303686,
+    "minlon": 74.5697502,
+    "maxlat": 42.8303703,
+    "maxlon": 74.5699372
+  },
+  "geometry": [
+    { "lat": 42.8303686, "lon": 74.5697502 },
+    { "lat": 42.8303703, "lon": 74.5699372 }
+  ],
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1102409524,
+  "bounds": {
+    "minlat": 42.8295446,
+    "minlon": 74.5731309,
+    "maxlat": 42.8304918,
+    "maxlon": 74.5731316
+  },
+  "geometry": [
+    { "lat": 42.8304918, "lon": 74.5731309 },
+    { "lat": 42.8296853, "lon": 74.5731316 },
+    { "lat": 42.8296137, "lon": 74.5731313 },
+    { "lat": 42.8295446, "lon": 74.5731311 }
+  ],
+  "tags": {
+    "addr:country": "KG",
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1131468151,
+  "bounds": {
+    "minlat": 42.8327461,
+    "minlon": 74.5713598,
+    "maxlat": 42.8335801,
+    "maxlon": 74.5714268
+  },
+  "geometry": [
+    { "lat": 42.8335801, "lon": 74.5713598 },
+    { "lat": 42.8333274, "lon": 74.5713730 },
+    { "lat": 42.8327461, "lon": 74.5714268 }
+  ],
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1131468152,
+  "bounds": {
+    "minlat": 42.8336971,
+    "minlon": 74.5665425,
+    "maxlat": 42.8340662,
+    "maxlon": 74.5665575
+  },
+  "geometry": [
+    { "lat": 42.8340662, "lon": 74.5665575 },
+    { "lat": 42.8336971, "lon": 74.5665425 }
+  ],
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1131468154,
+  "bounds": {
+    "minlat": 42.8339430,
+    "minlon": 74.5674939,
+    "maxlat": 42.8339784,
+    "maxlon": 74.5684496
+  },
+  "geometry": [
+    { "lat": 42.8339430, "lon": 74.5674939 },
+    { "lat": 42.8339784, "lon": 74.5684496 }
+  ],
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1131468155,
+  "bounds": {
+    "minlat": 42.8337286,
+    "minlon": 74.5669556,
+    "maxlat": 42.8349127,
+    "maxlon": 74.5687285
+  },
+  "geometry": [
+    { "lat": 42.8349009, "lon": 74.5669556 },
+    { "lat": 42.8348731, "lon": 74.5674447 },
+    { "lat": 42.8349127, "lon": 74.5682162 },
+    { "lat": 42.8348969, "lon": 74.5682511 },
+    { "lat": 42.8348615, "lon": 74.5682618 },
+    { "lat": 42.8346058, "lon": 74.5682752 },
+    { "lat": 42.8345606, "lon": 74.5682886 },
+    { "lat": 42.8345193, "lon": 74.5683315 },
+    { "lat": 42.8344800, "lon": 74.5683476 },
+    { "lat": 42.8340964, "lon": 74.5683745 },
+    { "lat": 42.8339784, "lon": 74.5684496 },
+    { "lat": 42.8337286, "lon": 74.5687285 }
+  ],
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1131468156,
+  "bounds": {
+    "minlat": 42.8336401,
+    "minlon": 74.5674223,
+    "maxlat": 42.8352974,
+    "maxlon": 74.5690169
+  },
+  "geometry": [
+    { "lat": 42.8352974, "lon": 74.5674223 },
+    { "lat": 42.8348731, "lon": 74.5674447 },
+    { "lat": 42.8346795, "lon": 74.5674549 },
+    { "lat": 42.8345605, "lon": 74.5674612 },
+    { "lat": 42.8339430, "lon": 74.5674939 },
+    { "lat": 42.8336735, "lon": 74.5675081 },
+    { "lat": 42.8336460, "lon": 74.5675483 },
+    { "lat": 42.8336401, "lon": 74.5676127 },
+    { "lat": 42.8336440, "lon": 74.5684710 },
+    { "lat": 42.8336676, "lon": 74.5685515 },
+    { "lat": 42.8337050, "lon": 74.5686185 },
+    { "lat": 42.8337286, "lon": 74.5687285 },
+    { "lat": 42.8337289, "lon": 74.5687905 },
+    { "lat": 42.8337289, "lon": 74.5690169 }
+  ],
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1245149604,
+  "bounds": {
+    "minlat": 42.8316052,
+    "minlon": 74.5746897,
+    "maxlat": 42.8324806,
+    "maxlon": 74.5761806
+  },
+  "geometry": [
+    { "lat": 42.8322106, "lon": 74.5761806 },
+    { "lat": 42.8317813, "lon": 74.5759852 },
+    { "lat": 42.8317154, "lon": 74.5759517 },
+    { "lat": 42.8316576, "lon": 74.5759239 },
+    { "lat": 42.8316357, "lon": 74.5759054 },
+    { "lat": 42.8316205, "lon": 74.5758816 },
+    { "lat": 42.8316082, "lon": 74.5758441 },
+    { "lat": 42.8316052, "lon": 74.5758216 },
+    { "lat": 42.8318855, "lon": 74.5747863 },
+    { "lat": 42.8319170, "lon": 74.5747246 },
+    { "lat": 42.8319426, "lon": 74.5747004 },
+    { "lat": 42.8319770, "lon": 74.5746897 },
+    { "lat": 42.8320252, "lon": 74.5746924 },
+    { "lat": 42.8321009, "lon": 74.5747206 },
+    { "lat": 42.8322081, "lon": 74.5747608 },
+    { "lat": 42.8323134, "lon": 74.5748024 },
+    { "lat": 42.8324112, "lon": 74.5748580 },
+    { "lat": 42.8324530, "lon": 74.5749070 },
+    { "lat": 42.8324707, "lon": 74.5749425 },
+    { "lat": 42.8324776, "lon": 74.5749760 },
+    { "lat": 42.8324806, "lon": 74.5750102 },
+    { "lat": 42.8324756, "lon": 74.5750652 },
+    { "lat": 42.8323586, "lon": 74.5755118 },
+    { "lat": 42.8322106, "lon": 74.5761806 }
+  ],
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1245159091,
+  "bounds": {
+    "minlat": 42.8315745,
+    "minlon": 74.5642754,
+    "maxlat": 42.8318923,
+    "maxlon": 74.5651935
+  },
+  "geometry": [
+    { "lat": 42.8318923, "lon": 74.5651935 },
+    { "lat": 42.8316701, "lon": 74.5651510 },
+    { "lat": 42.8316359, "lon": 74.5651358 },
+    { "lat": 42.8316003, "lon": 74.5650910 },
+    { "lat": 42.8315821, "lon": 74.5650120 },
+    { "lat": 42.8315779, "lon": 74.5645980 },
+    { "lat": 42.8315745, "lon": 74.5642754 }
+  ],
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1307190060,
+  "bounds": {
+    "minlat": 42.8293248,
+    "minlon": 74.5624899,
+    "maxlat": 42.8295140,
+    "maxlon": 74.5630847
+  },
+  "geometry": [
+    { "lat": 42.8295140, "lon": 74.5624899 },
+    { "lat": 42.8294067, "lon": 74.5626032 },
+    { "lat": 42.8293422, "lon": 74.5626909 },
+    { "lat": 42.8293343, "lon": 74.5628900 },
+    { "lat": 42.8293248, "lon": 74.5630847 }
+  ],
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1307190061,
+  "bounds": {
+    "minlat": 42.8291002,
+    "minlon": 74.5635840,
+    "maxlat": 42.8292951,
+    "maxlon": 74.5641323
+  },
+  "geometry": [
+    { "lat": 42.8292951, "lon": 74.5641323 },
+    { "lat": 42.8292182, "lon": 74.5640185 },
+    { "lat": 42.8291612, "lon": 74.5638737 },
+    { "lat": 42.8291336, "lon": 74.5636886 },
+    { "lat": 42.8291002, "lon": 74.5635840 }
+  ],
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1334085063,
+  "bounds": {
+    "minlat": 42.8297905,
+    "minlon": 74.5656417,
+    "maxlat": 42.8318873,
+    "maxlon": 74.5660240
+  },
+  "geometry": [
+    { "lat": 42.8318873, "lon": 74.5656417 },
+    { "lat": 42.8311590, "lon": 74.5656458 },
+    { "lat": 42.8311556, "lon": 74.5660240 },
+    { "lat": 42.8303904, "lon": 74.5659609 },
+    { "lat": 42.8303202, "lon": 74.5658914 },
+    { "lat": 42.8302884, "lon": 74.5658262 },
+    { "lat": 42.8302724, "lon": 74.5657349 },
+    { "lat": 42.8299205, "lon": 74.5657306 },
+    { "lat": 42.8297905, "lon": 74.5657230 }
+  ],
+  "tags": {
+    "highway": "service",
+    "horse": "no",
+    "maxspeed": "20",
+    "oneway": "no"
+  }
+},
+{
+  "type": "way",
+  "id": 1346016984,
+  "bounds": {
+    "minlat": 42.8302117,
+    "minlon": 74.5677055,
+    "maxlat": 42.8302450,
+    "maxlon": 74.5684898
+  },
+  "geometry": [
+    { "lat": 42.8302117, "lon": 74.5677055 },
+    { "lat": 42.8302450, "lon": 74.5684898 }
+  ],
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1346016985,
+  "bounds": {
+    "minlat": 42.8296283,
+    "minlon": 74.5673203,
+    "maxlat": 42.8307596,
+    "maxlon": 74.5673422
+  },
+  "geometry": [
+    { "lat": 42.8296283, "lon": 74.5673203 },
+    { "lat": 42.8296891, "lon": 74.5673252 },
+    { "lat": 42.8298627, "lon": 74.5673391 },
+    { "lat": 42.8299018, "lon": 74.5673422 },
+    { "lat": 42.8305067, "lon": 74.5673378 },
+    { "lat": 42.8307596, "lon": 74.5673341 }
+  ],
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1346016986,
+  "bounds": {
+    "minlat": 42.8303592,
+    "minlon": 74.5676990,
+    "maxlat": 42.8305460,
+    "maxlon": 74.5686507
+  },
+  "geometry": [
+    { "lat": 42.8303592, "lon": 74.5676990 },
+    { "lat": 42.8303631, "lon": 74.5685944 },
+    { "lat": 42.8303847, "lon": 74.5686373 },
+    { "lat": 42.8304319, "lon": 74.5686507 },
+    { "lat": 42.8305460, "lon": 74.5686427 }
+  ],
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1346016987,
+  "bounds": {
+    "minlat": 42.8305342,
+    "minlon": 74.5676912,
+    "maxlat": 42.8308575,
+    "maxlon": 74.5686749
+  },
+  "geometry": [
+    { "lat": 42.8308575, "lon": 74.5686434 },
+    { "lat": 42.8306227, "lon": 74.5686749 },
+    { "lat": 42.8305460, "lon": 74.5686427 },
+    { "lat": 42.8305342, "lon": 74.5676912 }
+  ],
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1346016988,
+  "bounds": {
+    "minlat": 42.8298974,
+    "minlon": 74.5676320,
+    "maxlat": 42.8318650,
+    "maxlon": 74.5677195
+  },
+  "geometry": [
+    { "lat": 42.8298974, "lon": 74.5677195 },
+    { "lat": 42.8302117, "lon": 74.5677055 },
+    { "lat": 42.8303592, "lon": 74.5676990 },
+    { "lat": 42.8305020, "lon": 74.5676926 },
+    { "lat": 42.8305342, "lon": 74.5676912 },
+    { "lat": 42.8307557, "lon": 74.5676814 },
+    { "lat": 42.8308015, "lon": 74.5676793 },
+    { "lat": 42.8318650, "lon": 74.5676320 }
+  ],
+  "tags": {
+    "addr:country": "KG",
+    "highway": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1346016989,
+  "bounds": {
+    "minlat": 42.8305020,
+    "minlon": 74.5673378,
+    "maxlat": 42.8305067,
+    "maxlon": 74.5676926
+  },
+  "geometry": [
+    { "lat": 42.8305020, "lon": 74.5676926 },
+    { "lat": 42.8305067, "lon": 74.5673378 }
+  ],
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1346016990,
+  "bounds": {
+    "minlat": 42.8307557,
+    "minlon": 74.5665051,
+    "maxlat": 42.8312375,
+    "maxlon": 74.5676814
+  },
+  "geometry": [
+    { "lat": 42.8312375, "lon": 74.5665051 },
+    { "lat": 42.8312236, "lon": 74.5666350 },
+    { "lat": 42.8307663, "lon": 74.5667356 },
+    { "lat": 42.8307596, "lon": 74.5673341 },
+    { "lat": 42.8307557, "lon": 74.5676814 }
+  ],
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1427557540,
+  "bounds": {
+    "minlat": 42.8308996,
+    "minlon": 74.5652996,
+    "maxlat": 42.8310771,
+    "maxlon": 74.5658828
+  },
+  "geometry": [
+    { "lat": 42.8310771, "lon": 74.5653033 },
+    { "lat": 42.8310702, "lon": 74.5658828 },
+    { "lat": 42.8308996, "lon": 74.5658790 },
+    { "lat": 42.8309023, "lon": 74.5656527 },
+    { "lat": 42.8309065, "lon": 74.5652996 },
+    { "lat": 42.8310771, "lon": 74.5653033 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1427557541,
+  "bounds": {
+    "minlat": 42.8307976,
+    "minlon": 74.5668794,
+    "maxlat": 42.8312393,
+    "maxlon": 74.5671389
+  },
+  "geometry": [
+    { "lat": 42.8312393, "lon": 74.5671389 },
+    { "lat": 42.8307976, "lon": 74.5671389 },
+    { "lat": 42.8307976, "lon": 74.5669953 },
+    { "lat": 42.8308791, "lon": 74.5669953 },
+    { "lat": 42.8308791, "lon": 74.5668794 },
+    { "lat": 42.8311544, "lon": 74.5668794 },
+    { "lat": 42.8311544, "lon": 74.5669953 },
+    { "lat": 42.8312393, "lon": 74.5669953 },
+    { "lat": 42.8312393, "lon": 74.5671389 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:city:de": "Bischkek",
+    "addr:city:en": "Bishkek",
+    "addr:country": "KG",
+    "amenity": "kindergarten",
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1428214941,
+  "bounds": {
+    "minlat": 42.8302863,
+    "minlon": 74.5632925,
+    "maxlat": 42.8307224,
+    "maxlon": 74.5640226
+  },
+  "geometry": [
+    { "lat": 42.8302863, "lon": 74.5640226 },
+    { "lat": 42.8305696, "lon": 74.5637181 },
+    { "lat": 42.8306207, "lon": 74.5636377 },
+    { "lat": 42.8307034, "lon": 74.5634472 },
+    { "lat": 42.8307224, "lon": 74.5632925 }
+  ],
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1428214942,
+  "bounds": {
+    "minlat": 42.8309082,
+    "minlon": 74.5626823,
+    "maxlat": 42.8310923,
+    "maxlon": 74.5633068
+  },
+  "geometry": [
+    { "lat": 42.8310923, "lon": 74.5633068 },
+    { "lat": 42.8310743, "lon": 74.5626823 },
+    { "lat": 42.8309082, "lon": 74.5626913 }
+  ],
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1428214943,
+  "bounds": {
+    "minlat": 42.8296694,
+    "minlon": 74.5619787,
+    "maxlat": 42.8302932,
+    "maxlon": 74.5621181
+  },
+  "geometry": [
+    { "lat": 42.8296694, "lon": 74.5621181 },
+    { "lat": 42.8298246, "lon": 74.5621040 },
+    { "lat": 42.8299254, "lon": 74.5620243 },
+    { "lat": 42.8299805, "lon": 74.5619868 },
+    { "lat": 42.8302932, "lon": 74.5619787 }
+  ],
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1451299960,
+  "bounds": {
+    "minlat": 42.8332579,
+    "minlon": 74.5649721,
+    "maxlat": 42.8339457,
+    "maxlon": 74.5649812
+  },
+  "geometry": [
+    { "lat": 42.8332579, "lon": 74.5649812 },
+    { "lat": 42.8339457, "lon": 74.5649721 }
+  ],
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1518633652,
+  "bounds": {
+    "minlat": 42.8297885,
+    "minlon": 74.5651819,
+    "maxlat": 42.8297919,
+    "maxlon": 74.5665026
+  },
+  "geometry": [
+    { "lat": 42.8297885, "lon": 74.5665026 },
+    { "lat": 42.8297905, "lon": 74.5657230 },
+    { "lat": 42.8297919, "lon": 74.5651819 }
+  ],
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1518633657,
+  "bounds": {
+    "minlat": 42.8290792,
+    "minlon": 74.5751600,
+    "maxlat": 42.8291495,
+    "maxlon": 74.5765391
+  },
+  "geometry": [
+    { "lat": 42.8290792, "lon": 74.5765391 },
+    { "lat": 42.8291371, "lon": 74.5762255 },
+    { "lat": 42.8291495, "lon": 74.5751600 }
+  ],
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1547854814,
+  "bounds": {
+    "minlat": 42.8290869,
+    "minlon": 74.5676990,
+    "maxlat": 42.8291400,
+    "maxlon": 74.5678210
+  },
+  "geometry": [
+    { "lat": 42.8291400, "lon": 74.5676996 },
+    { "lat": 42.8290874, "lon": 74.5676990 },
+    { "lat": 42.8290869, "lon": 74.5678203 },
+    { "lat": 42.8291394, "lon": 74.5678210 },
+    { "lat": 42.8291400, "lon": 74.5676996 }
+  ],
+  "tags": {
+    "addr:city": "Bishkek",
+    "addr:housenumber": "77",
+    "addr:street": "улица Кениш Гул",
+    "building": "commercial",
+    "building:levels": "1",
+    "height": "5",
+    "name": "Nur_shop"
+  }
+},
+{
+  "type": "way",
+  "id": 1569664039,
+  "bounds": {
+    "minlat": 42.8258289,
+    "minlon": 74.5626789,
+    "maxlat": 42.8258289,
+    "maxlon": 74.5631932
+  },
+  "geometry": [
+    { "lat": 42.8258289, "lon": 74.5626789 },
+    { "lat": 42.8258289, "lon": 74.5629895 },
+    { "lat": 42.8258289, "lon": 74.5631932 }
+  ],
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1569664040,
+  "bounds": {
+    "minlat": 42.8256049,
+    "minlon": 74.5626769,
+    "maxlat": 42.8256078,
+    "maxlon": 74.5632072
+  },
+  "geometry": [
+    { "lat": 42.8256049, "lon": 74.5632072 },
+    { "lat": 42.8256061, "lon": 74.5629986 },
+    { "lat": 42.8256078, "lon": 74.5626769 }
+  ],
+  "tags": {
+    "highway": "service"
+  }
+},
+{
+  "type": "way",
+  "id": 1569664041,
+  "bounds": {
+    "minlat": 42.8256061,
+    "minlon": 74.5629895,
+    "maxlat": 42.8258289,
+    "maxlon": 74.5629986
+  },
+  "geometry": [
+    { "lat": 42.8258289, "lon": 74.5629895 },
+    { "lat": 42.8256061, "lon": 74.5629986 }
+  ],
+  "tags": {
+    "highway": "service",
+    "service": "parking_aisle"
+  }
+},
+{
+  "type": "way",
+  "id": 1569664045,
+  "bounds": {
+    "minlat": 42.8266619,
+    "minlon": 74.5634036,
+    "maxlat": 42.8270134,
+    "maxlon": 74.5636145
+  },
+  "geometry": [
+    { "lat": 42.8266619, "lon": 74.5634093 },
+    { "lat": 42.8268335, "lon": 74.5634065 },
+    { "lat": 42.8270116, "lon": 74.5634036 },
+    { "lat": 42.8270134, "lon": 74.5636145 }
+  ],
+  "tags": {
+    "highway": "service",
+    "service": "parking_aisle"
+  }
+},
+{
+  "type": "way",
+  "id": 1569664046,
+  "bounds": {
+    "minlat": 42.8268317,
+    "minlon": 74.5634065,
+    "maxlat": 42.8268335,
+    "maxlon": 74.5636145
+  },
+  "geometry": [
+    { "lat": 42.8268335, "lon": 74.5634065 },
+    { "lat": 42.8268317, "lon": 74.5636145 }
+  ],
+  "tags": {
+    "highway": "service",
+    "service": "parking_aisle"
+  }
+},
+{
+  "type": "way",
+  "id": 1570816650,
+  "bounds": {
+    "minlat": 42.8272512,
+    "minlon": 74.5686162,
+    "maxlat": 42.8272566,
+    "maxlon": 74.5695088
+  },
+  "geometry": [
+    { "lat": 42.8272512, "lon": 74.5695088 },
+    { "lat": 42.8272566, "lon": 74.5686162 }
+  ],
+  "tags": {
+    "highway": "service",
+    "service": "parking_aisle"
+  }
+},
+{
+  "type": "way",
+  "id": 1571950237,
+  "bounds": {
+    "minlat": 42.8332770,
+    "minlon": 74.5659846,
+    "maxlat": 42.8335871,
+    "maxlon": 74.5665299
+  },
+  "geometry": [
+    { "lat": 42.8332770, "lon": 74.5659846 },
+    { "lat": 42.8335871, "lon": 74.5659925 },
+    { "lat": 42.8335852, "lon": 74.5665299 }
+  ],
+  "tags": {
+    "highway": "service"
+  }
+}
+
+  ]
+}

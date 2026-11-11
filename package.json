@@ -1,0 +1,26 @@
+{
+  "name": "radian-kg-3d",
+  "version": "0.1.0",
+  "private": true,
+  "description": "RADIAN GROUP — сайт продаж с интерактивной 3D-моделью комплекса",
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "build": "node scripts/build.mjs",
+    "preview": "node scripts/dev.mjs --no-watch",
+    "walls": "python -I scripts/extract-walls.py",
+    "osm": "python -I scripts/prepare-osm.py",
+    "deploy": "node scripts/build.mjs --base=radian-kg --out=.deploy --origin=https://seitek2002.github.io/radian-kg --noindex && gh-pages -d .deploy --dotfiles -m \"Обновление демо\"",
+    "check-seo": "node scripts/build.mjs --out=.check && node scripts/check-seo.mjs .check"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "three": "^0.170.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.24.0",
+    "gh-pages": "^6.3.0"
+  }
+}
