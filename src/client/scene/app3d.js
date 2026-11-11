@@ -146,7 +146,18 @@ export async function createApp3D(stage, hooks = {}) {
     camera.position.set(...v0.pos);
     camera.lookAt(...v0.target);
     rig.controls.target.set(...v0.target);
-    try { await renderer.compileAsync(scene, camera, scene); } catch { renderer.compile(scene, camera); }
+    // по одному материалу за шаг: прогресс движется, а главный поток не занят надолго
+    const seen = new Set(); const items = [];
+    scene.traverse((o) => {
+      if (!o.material) return;
+      // один материал может давать разные шейдеры: обычная/инстансная модель, тени, цвета вершин
+      const key = `${(Array.isArray(o.material) ? o.material : [o.material]).map((m) => m.uuid).join()}|${o.type}|${o.receiveShadow}|${!!o.geometry?.attributes?.color}`;
+      if (!seen.has(key)) { seen.add(key); items.push(o); }
+    });
+    for (let i = 0; i < items.length; i++) {
+      try { await renderer.compileAsync(items[i], camera, scene); } catch { renderer.compile(items[i], camera, scene); }
+      P(0.74 + 0.1 * ((i + 1) / items.length));
+    }
     P(0.84, 'Готовим тени…');
     await nextFrame();
     engine.updateShadows();

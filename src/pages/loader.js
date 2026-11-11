@@ -1,10 +1,18 @@
-// Полноэкранный предзагрузчик с анимированным логотипом RADIAN GROUP.
-// Логотип берётся из public/assets/brand/logo-h-white.svg и раскладывается
-// на детали для анимации (по мотивам LoadingOverlay из проекта avangard):
-//   • 4 колонны знака «вырастают» снизу вверх — слоями цвета, как строящиеся башни;
-//   • дуга-горизонт прорисовывается слева направо;
-//   • знак отъезжает влево, надпись RADIAN GROUP проявляется по буквам;
-//   • раскрывается линия горизонта и слоган; пока идёт загрузка — по знаку бежит блик.
+// Полноэкранный предзагрузчик с анимированным логотипом RADIAN GROUP
+// (по мотивам LoadingOverlay из проекта avangard).
+//
+// Почему логотип разобран на HTML-слои, а не анимируется внутри одного SVG:
+// анимации clip-path и transform у элементов SVG браузер считает в главном потоке,
+// а он в это время занят подготовкой 3D — анимация дёргается. Здесь каждая
+// деталь — отдельный слой, и двигаются только transform/opacity: такие анимации
+// идут в потоке композитора и остаются плавными, даже когда JS занят.
+// Эффект «шторки» — два встречных сдвига: рамка едет в одну сторону,
+// содержимое — в другую, видна только движущаяся граница.
+//
+// Сценарий: 4 колонны знака «вырастают» слоями цвета (как строящиеся башни) →
+// дуга-горизонт прорисовывается → знак уменьшается и уезжает влево, надпись
+// RADIAN GROUP проявляется по буквам → раскрывается линия горизонта и слоган →
+// пока идёт загрузка, по линии горизонта бежит блик.
 // Работает только в Node (сборка страниц).
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
@@ -34,43 +42,60 @@ function letters(d) {
   for (const s of subs) {
     const w = s.b.x1 - s.b.x0;
     const host = out.find((l) => Math.min(l.b.x1, s.b.x1) - Math.max(l.b.x0, s.b.x0) > w * 0.5);
-    if (host) host.d += s.d; else out.push({ d: s.d, b: { ...s.b } });
+    if (host) {
+      host.d += s.d;
+      host.b = { x0: Math.min(host.b.x0, s.b.x0), y0: Math.min(host.b.y0, s.b.y0), x1: Math.max(host.b.x1, s.b.x1), y1: Math.max(host.b.y1, s.b.y1) };
+    } else out.push({ d: s.d, b: { ...s.b } });
   }
   return out.sort((a, b) => a.b.x0 - b.b.x0);
 }
+
+const r2 = (v) => Math.round(v * 1000) / 1000;
 
 let cache = null;
 export function loaderLogo() {
   if (cache) return cache;
   const svg = readFileSync(SRC, 'utf8');
-  const view = svg.match(/viewBox="([^"]+)"/)[1];
+  const [vx, vy, vw, vh] = svg.match(/viewBox="([^"]+)"/)[1].split(/\s+/).map(Number);
+  // в файле две соседние группы: знак (дуга + 4 колонны) и надпись
   const groups = [...svg.matchAll(/<g transform="([^"]+)">([\s\S]*?)<\/g>/g)];
   const paths = (s) => [...s.matchAll(/<path[^>]*\sd="([^"]+)"/g)].map((m) => m[1]);
-  // группа 1 — знак (дуга + 4 колонны), группа 2 (соседняя) — надпись
-  const [markT, markInner] = [groups[0][1], groups[0][2]];
-  const mark = paths(markInner);
-  const wordG = svg.match(/<g transform="(translate\([^)]+\) scale\([^)]+\))">\s*(<path[\s\S]*?)<\/g>/);
-  const word = letters(paths(wordG[2])[0]);
-  const [swoosh, ...bars] = mark;
+  const markT = groups[0][1];
+  const [mtx, mty] = markT.match(/-?\d*\.?\d+/g).map(Number);
+  const [swoosh, ...bars] = paths(groups[0][2]);
+  const wordT = groups[1][1];
+  const [wtx, wty, ws] = wordT.match(/-?\d*\.?\d+/g).map(Number);
+  const word = letters(paths(groups[1][2])[0]);
+
+  // деталь логотипа: свой <svg> в своей рамке; позиция — в % от всего логотипа
+  const PAD = 3;
+  const part = (cls, style, d, T, b, wrap) => {
+    const x0 = b.x0 - PAD; const y0 = b.y0 - PAD; const w = b.x1 - b.x0 + PAD * 2; const h = b.y1 - b.y0 + PAD * 2;
+    const pos = `left:${r2(((x0 - vx) / vw) * 100)}%;top:${r2(((y0 - vy) / vh) * 100)}%;width:${r2((w / vw) * 100)}%;height:${r2((h / vh) * 100)}%`;
+    const inner = `<svg viewBox="${r2(x0)} ${r2(y0)} ${r2(w)} ${r2(h)}" preserveAspectRatio="none"><g transform="${T}"><path d="${d}"/></g></svg>`;
+    return `<span class="pl-p ${cls}" style="${pos};${style}">${wrap ? `<span class="pl-in">${inner}</span>` : inner}</span>`;
+  };
+  const inMark = (b) => ({ x0: b.x0 + mtx, y0: b.y0 + mty, x1: b.x1 + mtx, y1: b.y1 + mty });
+  const inWord = (b) => ({ x0: wtx + b.x0 * ws, y0: wty + b.y0 * ws, x1: wtx + b.x1 * ws, y1: wty + b.y1 * ws });
+
+  // колонны «строятся» слева направо, каждая — тремя слоями цвета
   const COLORS = ['#E6CB96', '#A8834B', '#D2AB67']; // светлое золото → бронза → золото
-  // колонны «строятся» слева направо
-  const order = bars.map((d) => bbox(d).x0).map((x, _, all) => [...all].sort((a, b) => a - b).indexOf(x));
-  const barEls = bars.map((d, i) => COLORS.map((c, k) => `<path d="${d}" fill="${c}" class="pl-bar" style="--i:${order[i]};--k:${k}"/>`).join('')).join('');
-  const letterEls = word.map((l, i) => `<path d="${l.d}" class="pl-l" style="--i:${i}"/>`).join('');
-  cache = `<svg class="pl-logo" viewBox="${view}" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-<defs>
-  <clipPath id="pl-clip"><g transform="${markT}">${mark.map((d) => `<path d="${d}"/>`).join('')}</g></clipPath>
-  <linearGradient id="pl-shine" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
-</defs>
-<g class="pl-mark">
-  <g transform="${markT}">
-    <path d="${swoosh}" fill="#D2AB67" class="pl-swoosh"/>
-    ${barEls}
-  </g>
-</g>
-<g clip-path="url(#pl-clip)"><rect class="pl-shine" x="-260" y="-20" width="220" height="460" fill="url(#pl-shine)"/></g>
-<g transform="${wordG[1]}" fill="#F7F3EB" class="pl-word">${letterEls}</g>
-</svg>`;
+  const barBoxes = bars.map((d) => inMark(bbox(d)));
+  const sorted = [...barBoxes].sort((p, q) => p.x0 - q.x0);
+  const barEls = bars.map((d, i) => COLORS.map((c, k) => part('pl-bar', `--i:${sorted.indexOf(barBoxes[i])};--k:${k};color:${c}`, d, markT, barBoxes[i], true)).join('')).join('');
+  const swooshBox = inMark(bbox(swoosh));
+  const markBox = [swooshBox, ...barBoxes].reduce((a, b) => ({ x0: Math.min(a.x0, b.x0), y0: Math.min(a.y0, b.y0), x1: Math.max(a.x1, b.x1), y1: Math.max(a.y1, b.y1) }));
+  // насколько сдвинуть знак, чтобы он стоял по центру логотипа (в % ширины логотипа)
+  const shift = r2((((vx + vw / 2) - (markBox.x0 + markBox.x1) / 2) / vw) * 100);
+  // центр знака — точка, вокруг которой он масштабируется
+  const ox = r2((((markBox.x0 + markBox.x1) / 2 - vx) / vw) * 100);
+  const oy = r2((((markBox.y0 + markBox.y1) / 2 - vy) / vh) * 100);
+  const letterEls = word.map((l, i) => part('pl-l', `--i:${i}`, l.d, wordT, inWord(l.b), false)).join('');
+
+  cache = `<div class="pl-logo" style="aspect-ratio:${vw}/${vh}" aria-hidden="true">
+  <span class="pl-mark" data-shift="${shift}" style="transform-origin:${ox}% ${oy}%">${part('pl-sw', 'color:#D2AB67', swoosh, markT, swooshBox, true)}${barEls}</span>
+  <span class="pl-word">${letterEls}</span>
+</div>`;
   return cache;
 }
 
@@ -78,7 +103,7 @@ export function loaderMarkup() {
   return `<div class="pl" id="pl" data-pl role="status" aria-live="polite" aria-label="Загрузка 3D-модели">
   <div class="pl-c">
     ${loaderLogo()}
-    <i class="pl-horizon" aria-hidden="true"></i>
+    <span class="pl-horizon" aria-hidden="true"><i></i></span>
     <p class="pl-tag">Живите шире горизонта</p>
   </div>
   <div class="pl-foot">

@@ -14,6 +14,9 @@ const pre = {
   text: pl?.querySelector('[data-pre-text]'),
 };
 const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+// Тяжёлая работа (разбор движка, сборка сцены) — только после вступления логотипа,
+// чтобы анимация заставки не делила время с JS. Скачивание идёт параллельно.
+const introDone = () => new Promise((r) => setTimeout(r, Math.max(0, (reduced ? 0 : 2400) - performance.now())));
 
 // Убираем предзагрузчик не раньше, чем доиграет анимация логотипа (~2,9 с от начала
 // загрузки страницы). Промис — момент, когда экран начинает гаснуть.
@@ -22,18 +25,24 @@ function hideLoader(minMs = reduced ? 0 : 2900) {
   if (import.meta.env.DEV && location.search.includes('pl-debug')) return new Promise(() => {}); // заставка остаётся — для отладки анимации
   const wait = Math.max(0, minMs - performance.now());
   return new Promise((resolve) => setTimeout(() => {
-    pl.classList.add('done');
-    document.documentElement.classList.remove('pl-on');
-    setTimeout(() => pl.remove(), 900);
-    resolve();
+    // страница под заставкой не рисовалась (visibility: hidden) — проявляем её,
+    // пока заставка ещё непрозрачна, и только через пару кадров начинаем гасить
+    document.documentElement.classList.add('pl-reveal');
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      pl.classList.add('done');
+      document.documentElement.classList.remove('pl-on');
+      setTimeout(() => { pl.remove(); document.documentElement.classList.remove('pl-reveal'); }, 900);
+      resolve();
+    }));
   }, wait));
 }
 let shown = 0;
 function progress(p, text) {
+  if (text) performance.mark(`3d:${text}`); // этапы загрузки — видны в DevTools → Performance
   shown = Math.max(shown, p); // проценты только растут
   const v = Math.round(shown * 100);
   if (pre.pct) pre.pct.textContent = `${v}%`;
-  if (pre.bar) pre.bar.style.width = `${v}%`;
+  if (pre.bar) pre.bar.style.transform = `scaleX(${shown})`; // transform — без пересчёта вёрстки
   if (text && pre.text) pre.text.textContent = text;
 }
 
@@ -57,12 +66,9 @@ const page = createPage(scene);
 const router = createRouter({ onPage: (main, url) => page.mount(main, url) });
 page.mount(document.querySelector('main'), location);
 
-function webgl() {
-  try {
-    const c = document.createElement('canvas');
-    return !!(window.WebGL2RenderingContext && c.getContext('webgl2'));
-  } catch { return false; }
-}
+// Только наличие API: пробный контекст WebGL стоит 200–300 мс главного потока.
+// Если контекст на деле не создастся — это поймает запуск движка (catch ниже).
+const webgl = () => !!window.WebGL2RenderingContext;
 
 // Скачиваем чанк 3D-движка с прогрессом по байтам; import() затем возьмёт его из кэша
 async function download(meta) {
@@ -90,7 +96,9 @@ async function boot3D() {
   progress(0.02, 'Загружаем 3D-модель комплекса…');
   try {
     await download(document.querySelector('meta[name="x-3d"]'));
+    await introDone();
     progress(0.34, 'Запускаем 3D-движок…');
+    await new Promise((r) => requestAnimationFrame(() => setTimeout(r, 0))); // дать отрисовать текст
     const { createApp3D } = await import('./scene/app3d.js');
     const a = await createApp3D(stage, {
       progress,
@@ -124,8 +132,6 @@ if (navigator.connection?.saveData) {
   b.textContent = 'Загрузить 3D-модель (≈ 1,3 МБ)';
   b.addEventListener('click', () => { b.remove(); boot3D(); }, { once: true });
   stage?.querySelector('.stage-frame')?.append(b);
-} else if (document.readyState === 'complete') {
-  boot3D();
 } else {
-  addEventListener('load', () => boot3D(), { once: true });
+  boot3D(); // сразу: заставка закрывает страницу, ждать загрузки картинок незачем
 }
