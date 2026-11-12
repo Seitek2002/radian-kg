@@ -4,6 +4,7 @@
 import { initDom, openLead } from './ui/dom.js';
 import { createRouter } from './router.js';
 import { createPage } from './page.js';
+import { asset } from './base.js';
 
 const stage = document.querySelector('[data-stage]');
 const pl = document.querySelector('[data-pl]'); // полноэкранная заставка
@@ -49,8 +50,25 @@ const scene = {
 
 initDom();
 const page = createPage(scene);
-createRouter({ onPage: (main) => page.mount(main, { fly: true }) });
+const router = createRouter({ onPage: (main) => page.mount(main, { fly: true }) });
 page.mount(document.querySelector('main'), { fly: false });
+
+// вид модели: приблизить, отдалить, вернуть кадр секции (поворот — перетаскиванием самой модели)
+const view = document.querySelector('[data-view]');
+const viewReset = view?.querySelector('[data-view-key="reset"]');
+const viewStore = { get used() { try { return localStorage.getItem('radian.view') === '1'; } catch { return false; } }, set used(v) { try { localStorage.setItem('radian.view', v ? '1' : ''); } catch { /* приватный режим */ } } };
+if (viewStore.used) document.body.classList.add('view-used');
+function onView(changed) {
+  if (viewReset) viewReset.disabled = !changed;
+  if (changed && !document.body.classList.contains('view-used')) { document.body.classList.add('view-used'); viewStore.used = true; }
+}
+view?.addEventListener('click', (e) => {
+  const b = e.target.closest('button');
+  if (!b || !app) return;
+  const k = b.dataset.viewKey;
+  if (k === 'reset') app.resetView(); else app.zoom(k === 'in' ? 0.78 : 1.28);
+  (window.dataLayer = window.dataLayer || []).push({ event: 'model_view', action: k });
+});
 
 // время суток на модели
 const tod = document.querySelector('[data-tod]');
@@ -93,7 +111,7 @@ async function boot3D() {
     progress(0.34, 'Запускаем 3D-движок…');
     await new Promise((r) => requestAnimationFrame(() => setTimeout(r, 0)));
     const { createApp3D } = await import('./scene/app3d.js');
-    const a = await createApp3D(stage, { progress, lead: (ctx) => openLead(ctx) });
+    const a = await createApp3D(stage, { progress, lead: (ctx) => openLead(ctx), view: onView, navigate: (path) => router.go(asset(path)) });
     if (import.meta.env.DEV) window.__app = a;
     syncTod(a.timeOfDay);
     await hideLoader();

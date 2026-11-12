@@ -97,6 +97,10 @@ export async function buildWorld(engine, { progress = () => {} } = {}) {
 
   // ── земля
   const groundMat = new THREE.MeshStandardMaterial({ map: T.grass(), color: C('#9a987e'), roughness: 1, envMapIntensity: 0.25 });
+  // дымка у горизонта: дальняя земля растворяется в небе, а не обрывается тёмной полосой
+  groundMat.onBeforeCompile = (sh) => {
+    sh.fragmentShader = sh.fragmentShader.replace('#include <fog_fragment>', 'gl_FragColor.rgb = mix( gl_FragColor.rgb, fogColor, smoothstep( 420.0, 7000.0, vFogDepth ) * 0.96 );');
+  };
   const gg = new THREE.CircleGeometry(60000, 72).rotateX(-Math.PI / 2);
   { const p = gg.attributes.position; const uv = gg.attributes.uv; for (let i = 0; i < p.count; i++) uv.setXY(i, p.getX(i), -p.getZ(i)); }
   const ground = new THREE.Mesh(gg, groundMat); ground.receiveShadow = true; ground.position.y = -0.03; root.add(ground);
@@ -188,11 +192,19 @@ export async function buildWorld(engine, { progress = () => {} } = {}) {
   for (const row of CONTEXT.treeRows) walk(row, 8, (x, z) => { if (!inSite(x, z, 2)) trees.push([x, z, 0, 0.8 + rnd() * 0.35, 1]); }, 2);
   // ели вдоль Южной магистрали — как на визуализациях
   for (const r of CONTEXT.roads) if (r.c === 'primary') walk(r.pts, 13, (x, z, dx, dz) => { const off = -(r.w / 2 + 3.2); const tx = x - dz * off; const tz = z + dx * off; if (Math.abs(tx) < 700 && free(tx, tz)) trees.push([tx, tz, 1, 0.75 + rnd() * 0.3, 1]); });
+  // коридор между магистралью и фасадом: только невысокие ели, а у самого дома — ничего,
+  // чтобы деревья не загораживали комплекс с главных ракурсов
+  const corridor = (x, z) => x > -82 && x < 66 && z > -100 && z < -9;
+  for (let i = trees.length - 1; i >= 0; i--) {
+    const tr = trees[i];
+    if (!corridor(tr[0], tr[1])) continue;
+    if (tr[1] > -36) trees.splice(i, 1); else { tr[2] = 1; tr[3] = 0.36 + rnd() * 0.12; }
+  }
   const must = trees.length;
   const N = 2600; const R = 640;
   for (let i = 0; i < N * 4 && trees.length < must + N; i++) {
     const a = rnd() * 6.283; const d = Math.sqrt(rnd()) * R; const x = Math.cos(a) * d; const z = Math.sin(a) * d;
-    if (!free(x, z)) continue;
+    if (!free(x, z) || corridor(x, z)) continue;
     trees.push([x, z, rnd() < 0.16 ? 1 : 0, 0.6 + rnd() * 0.75, 0]);
     if (i % 900 === 0) { progress(0.5 + 0.4 * ((trees.length - must) / N)); await pause(); }
   }

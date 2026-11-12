@@ -6,6 +6,18 @@ import * as THREE from 'three';
 const C = (h) => new THREE.Color(h);
 const RAD = Math.PI / 180;
 
+// Тени плавно сходят на нет у границы карты теней — без резкого обрыва на земле.
+// (Правка стандартного шейдера three.js: первая функция в блоке — getShadow для солнца.)
+{
+  const key = 'return mix( 1.0, shadow, shadowIntensity );';
+  const src = THREE.ShaderChunk.shadowmap_pars_fragment;
+  if (src.includes(key) && !src.includes('sfade')) {
+    THREE.ShaderChunk.shadowmap_pars_fragment = src.replace(key, `vec2 sfe = abs( shadowCoord.xy - 0.5 ) * 2.0;
+		float sfade = 1.0 - smoothstep( 0.62, 0.98, max( sfe.x, sfe.y ) );
+		return mix( 1.0, shadow, shadowIntensity * sfade );`);
+  }
+}
+
 const SKY_VS = /* glsl */`
 varying vec3 vDir;
 void main() {

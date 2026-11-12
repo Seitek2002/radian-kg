@@ -169,8 +169,14 @@ function stage() {
   <img class="stage-poster" src="/assets/renders/front-day.webp" alt="" width="2200" height="1426" decoding="async">
   <div class="labels" data-labels></div>
 </div>
-<div class="tod" data-tod role="group" aria-label="Время суток на модели">
-  <button type="button" data-tod-key="" aria-pressed="true">Авто</button><button type="button" data-tod-key="front" aria-pressed="false">День</button><button type="button" data-tod-key="dusk" aria-pressed="false">Вечер</button><button type="button" data-tod-key="night" aria-pressed="false">Ночь</button>
+<div class="dock">
+  <span class="view-hint">Потяните модель, чтобы повернуть</span>
+  <div class="view" data-view role="group" aria-label="Вид модели">
+    <button type="button" data-view-key="out" aria-label="Отдалить модель">−</button><button type="button" data-view-key="in" aria-label="Приблизить модель">+</button><button type="button" data-view-key="reset" disabled>Сброс<span class="wide"> вида</span></button>
+  </div>
+  <div class="tod" data-tod role="group" aria-label="Время суток на модели">
+    <button type="button" data-tod-key="" aria-pressed="true">Авто</button><button type="button" data-tod-key="front" aria-pressed="false">День</button><button type="button" data-tod-key="dusk" aria-pressed="false">Вечер</button><button type="button" data-tod-key="night" aria-pressed="false">Ночь</button>
+  </div>
 </div>
 <nav class="chapters" data-chapters aria-label="Разделы страницы"></nav>`;
 }
@@ -308,7 +314,7 @@ ${scene('location', 'left', 'Расположение', `
 `, { id: 'location' })}
 ${scene('plans', 'right', 'Планировки', `
   <h2>Двенадцать планировок от 39,49 м²</h2>
-  <p class="lead">От одной до четырёх комнат и особый вариант с террасой. На модели открыт типовой этаж: так квартиры расположены на самом деле.</p>
+  <p class="lead">От одной до четырёх комнат и особый вариант с террасой. На модели открыт типовой этаж: нажмите на квартиру, чтобы открыть её планировку.</p>
   <div class="rooms">${ROOM_PAGES.map((r) => `<a href="/planirovki/${r.slug}/"><b>${r.rooms}-комнатные</b><span>${PLANS.filter((p) => p.rooms === r.rooms).map((p) => fmtArea(p.area)).join(', ')} м²</span></a>`).join('')}</div>
   <div class="actions"><a class="btn btn-primary" href="/planirovki/">Все планировки</a></div>
 `, { id: 'plans' })}
@@ -363,7 +369,7 @@ ${contactsScene()}`,
 ${scene('plans', 'left', 'Этаж', `
   ${crumbs(rp ? [['Планировки', '/planirovki/'], [rp.h1]] : [['Планировки']])}
   <h1>${h1}</h1>
-  <p class="lead">${rp ? rp.lead : 'Двенадцать вариантов из проекта и особый вариант с террасой. На модели открыт типовой этаж: наведите на планировку ниже, и она подсветится на плане.'}</p>
+  <p class="lead">${rp ? rp.lead : 'Двенадцать вариантов из проекта и особый вариант с террасой. На модели открыт типовой этаж: нажмите на квартиру на плане, чтобы открыть её планировку.'}</p>
   <div class="filters" data-filters>
     <fieldset><legend>Комнат</legend><div class="seg">${rooms.map(([v, l, href]) => `<a href="${href}"${String(rp?.rooms || 'all') === String(v) ? ' aria-current="true"' : ''}>${l}</a>`).join('')}</div></fieldset>
   </div>
@@ -411,7 +417,7 @@ ${contactsScene()}`,
 ${scene('apartment', 'left', 'На этаже', `
   ${crumbs([['Планировки', '/planirovki/'], [rp.h1, `/planirovki/${rp.slug}/`], [t]])}
   <h1>${t}</h1>
-  <p class="lead">${p.note || `Золотом на плане отмечено место квартиры на этаже. Окна: ${sides}.`}</p>
+  <p class="lead">${p.note || `Золотом на плане отмечено место квартиры на этаже. Окна: ${sides}. Соседние квартиры открываются нажатием.`}</p>
   ${facts([[one ? 'Этаж' : 'Этажи', floorsLabel(p.slug)], ['Секция', L.section], ['Потолки', '3 м'], ['Цена', `от ${SITE.priceFromFmt} за м²`]])}
   <div class="actions">${btnLead('Уточнить наличие и стоимость', t)}</div>
 `, { plan: p.slug })}

@@ -60,8 +60,10 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 
 /* ─────────── 3D-сцена: неподвижный фон на весь экран ─────────── */
 .stage { position: fixed; inset: 0; z-index: 0; height: 100lvh; overflow: hidden; background: var(--color-paper); }
-.stage canvas { position: absolute; inset: 0; width: 100% !important; height: 100% !important; display: block; }
-.stage-poster { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: opacity 0.9s var(--ease-out); }
+.stage canvas { position: absolute; inset: 0; width: 100% !important; height: 100% !important; display: block; cursor: grab; touch-action: pan-y; }
+.stage canvas.pick { cursor: pointer; }
+.stage canvas.dragging { cursor: grabbing; }
+.stage-poster { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; transition: opacity 0.9s var(--ease-out); }
 .stage.ready .stage-poster { opacity: 0; }
 .stage.no3d .stage-poster { opacity: 1; }
 .labels { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
@@ -70,6 +72,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 .lbl.road, .lbl.far { font-size: var(--text-sm); font-weight: 600; }
 .lbl.site { background: var(--color-accent); color: var(--color-accent-ink); border: 0; font-weight: 600; }
 .lbl.stop { color: var(--color-ink-2); border-color: var(--color-muted); }
+.lbl.apt { border-left-color: var(--color-muted); }
+.lbl.apt.sel { background: var(--color-accent); color: var(--color-accent-ink); border: 0; font-weight: 600; }
 
 /* ─────────── страница: сцены (3D видно) и листы (плотный фон) ─────────── */
 main { position: relative; z-index: 1; padding-top: var(--nav-h); }
@@ -78,9 +82,17 @@ body.nav-leave main > * { opacity: 0; }
 body.nav-enter main > * { animation: enter 0.45s var(--ease-out) both; }
 @keyframes enter { from { opacity: 0; transform: translateY(12px); } }
 
-.scene { position: relative; min-height: calc(100svh - var(--nav-h)); display: grid; align-items: center; padding-block: var(--space-3xl); }
-.scene::before { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, var(--color-scrim) 0%, var(--color-scrim) 30%, var(--color-clear) 62%); }
-.scene[data-side="right"]::before { background: linear-gradient(270deg, var(--color-scrim) 0%, var(--color-scrim) 30%, var(--color-clear) 62%); }
+/* модель под сценой можно тянуть и нажимать: события проходят сквозь пустые места страницы */
+body.scene-on main { pointer-events: none; }
+body.scene-on main > :not(.scene), body.scene-on .scene-body { pointer-events: auto; }
+
+.scene { --fade: var(--space-3xl); position: relative; min-height: calc(100svh - var(--nav-h)); display: grid; align-items: center; padding-block: var(--space-3xl); }
+/* подложка под текстом растворяется к верхнему и нижнему краю секции: между сценами нет резкой границы */
+.scene::before { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, var(--color-scrim) 0%, var(--color-scrim) 34%, var(--color-clear) 64%);
+  -webkit-mask-image: linear-gradient(180deg, var(--color-clear) 0, var(--color-paper) var(--fade-top, var(--fade)), var(--color-paper) calc(100% - var(--fade)), var(--color-clear) 100%);
+  mask-image: linear-gradient(180deg, var(--color-clear) 0, var(--color-paper) var(--fade-top, var(--fade)), var(--color-paper) calc(100% - var(--fade)), var(--color-clear) 100%); }
+.scene:first-child::before { --fade-top: 0px; }
+.scene[data-side="right"]::before { background: linear-gradient(270deg, var(--color-scrim) 0%, var(--color-scrim) 44%, var(--color-clear) 68%); }
 .scene > .container { position: relative; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gap-columns); }
 .scene-body { grid-column: 1 / span 5; display: grid; gap: var(--space-lg); align-content: center; }
 .scene[data-side="right"] .scene-body { grid-column: 7 / span 5; }
@@ -88,8 +100,9 @@ body.nav-enter main > * { animation: enter 0.45s var(--ease-out) both; }
 .scene h2 { max-width: 16ch; }
 .hero-facts { margin-top: var(--space-md); }
 @media (max-width: 62rem) {
-  .scene { align-items: end; padding-block: 46svh var(--space-xl); }
-  .scene::before, .scene[data-side="right"]::before { background: linear-gradient(0deg, var(--color-scrim) 0%, var(--color-scrim) 52%, var(--color-clear) 82%); }
+  .scene { --pad: 46svh; --fade: var(--space-xl); --fade-top: 0px; align-items: end; padding-block: var(--pad) var(--space-2xl); }
+  .scene[data-shot="apartment"], .scene[data-shot="plans"] { --pad: 56svh; } /* плану этажа — больше места над текстом */
+  .scene::before, .scene[data-side="right"]::before { background: linear-gradient(180deg, var(--color-clear) 0, var(--color-clear) calc(var(--pad) - 12svh), var(--color-scrim) calc(var(--pad) + 1svh)); }
   .scene-body, .scene[data-side="right"] .scene-body { grid-column: 1 / -1; }
 }
 
@@ -201,12 +214,18 @@ figcaption { font-size: var(--text-sm); color: var(--color-muted); }
 @media (max-width: 62rem) { .ftr-top { grid-template-columns: minmax(0, 1fr); } }
 
 /* ─────────── время суток и навигация по главам ─────────── */
-.tod { position: fixed; right: var(--space-md); bottom: var(--space-md); z-index: var(--z-sticky); display: flex; background: var(--color-paper); border: var(--rule-hair) solid var(--color-rule); border-radius: var(--radius-card); }
-.tod button { min-height: 44px; padding: 0 var(--space-sm); background: none; border: 0; color: var(--color-ink-2); font-size: var(--text-sm); cursor: pointer; white-space: nowrap; transition: color var(--dur-short) var(--ease-out), background-color var(--dur-short) var(--ease-out); }
-.tod button:hover { color: var(--color-ink); }
-.tod button:active { background: var(--color-paper-3); }
+.dock { position: fixed; right: var(--space-md); bottom: var(--space-md); z-index: var(--z-sticky); display: flex; align-items: center; justify-content: flex-end; gap: var(--space-sm); pointer-events: none; }
+.dock > * { pointer-events: auto; }
+.tod, .view { display: flex; background: var(--color-paper); border: var(--rule-hair) solid var(--color-rule); border-radius: var(--radius-card); }
+.dock button { min-height: 44px; min-width: 44px; padding: 0 var(--space-sm); background: none; border: 0; color: var(--color-ink-2); font-size: var(--text-sm); cursor: pointer; white-space: nowrap; transition: color var(--dur-short) var(--ease-out), background-color var(--dur-short) var(--ease-out); }
+.dock button:hover { color: var(--color-ink); }
+.dock button:active { background: var(--color-paper-3); }
+.dock button:disabled { color: var(--color-muted); cursor: default; background: none; }
 .tod button[aria-pressed="true"] { background: var(--color-paper-3); color: var(--color-ink); box-shadow: inset 0 -2px 0 var(--color-accent); }
-body:not(.scene-on) .tod, body.covered .tod { display: none; }
+.view button[data-view-key="in"], .view button[data-view-key="out"] { font-size: var(--text-lg); line-height: 1; }
+.view-hint { font-size: var(--text-xs); color: var(--color-ink-2); background: var(--color-veil); padding: var(--space-xs) var(--space-sm); pointer-events: none; transition: opacity var(--dur-long) var(--ease-out); }
+body.view-used .view-hint { opacity: 0; }
+body:not(.scene-on) .dock, body.covered .dock { display: none; }
 .chapters { position: fixed; right: var(--space-md); top: 50%; transform: translateY(-50%); z-index: var(--z-sticky); display: grid; gap: var(--space-2xs); justify-items: end; }
 .chapters a { font-size: var(--text-xs); color: var(--color-muted); text-decoration: none; padding: var(--space-2xs) var(--space-sm); border-right: 2px solid var(--color-rule); background: var(--color-veil); white-space: nowrap; transition: color var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out); }
 .chapters a:hover { color: var(--color-ink); }
@@ -232,7 +251,7 @@ body.covered .chapters { display: none; }
 /* ─────────── заставка: логотип собирается, пока готовится 3D ───────────
    только transform и opacity: анимация идёт в потоке композитора */
 html.pl-on { overflow-y: clip; }
-html.js.pl-on:not(.pl-reveal) :is(.hdr, main, .ftr, .stage-poster, .tod, .chapters) { visibility: hidden; }
+html.js.pl-on:not(.pl-reveal) :is(.hdr, main, .ftr, .stage-poster, .dock, .chapters) { visibility: hidden; }
 .pl { position: fixed; inset: 0; z-index: var(--z-tooltip); background: var(--color-paper); color: var(--color-ink); display: grid; place-items: center; transition: opacity 0.8s var(--ease-out), visibility 0.8s; }
 html:not(.js) .pl, html.pl-timeout .pl { display: none; }
 html.js .pl.done { opacity: 0; visibility: hidden; pointer-events: none; }
@@ -273,7 +292,10 @@ html.js .pl.done { opacity: 0; visibility: hidden; pointer-events: none; }
   body.nav-enter main > * { animation: none; }
 }
 @media (max-width: 62rem) {
-  .labels { display: none; } /* на телефоне текст внизу экрана: подписи на модели мешали бы чтению */
-  .tod { top: calc(var(--nav-h) + var(--space-xs)); bottom: auto; right: var(--space-xs); }
-  .tod button { min-height: 36px; font-size: var(--text-xs); }
+  .lbl:not(.apt) { display: none; } /* на телефоне текст внизу экрана: подписи на модели мешали бы чтению; квартиры на плане подписаны */
+  .dock { top: calc(var(--nav-h) + var(--space-xs)); bottom: auto; left: var(--space-xs); right: var(--space-xs); justify-content: space-between; flex-wrap: wrap; gap: var(--space-xs); }
+  .dock button { min-height: 36px; min-width: 32px; padding: 0 var(--space-2xs); font-size: var(--text-xs); }
+  .dock .wide { display: none; }
+  .lbl.apt { font-size: 0.6875rem; padding: var(--space-2xs) var(--space-xs); }
+  .view { order: 1; } .tod { order: 2; } .view-hint { order: 3; margin-inline: auto; }
 }

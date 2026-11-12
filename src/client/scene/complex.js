@@ -384,19 +384,38 @@ export function createComplex(engine, shared) {
     }
     return planTex.get(name);
   };
-  const usePlan = async (name) => { const t = await loadPlan(name); if (t) { planMat.map = t; planMat.needsUpdate = true; } };
+  // шейдер пересобирается только при первом чертеже; дальше меняется одна текстура
+  const usePlan = async (name) => { const t = await loadPlan(name); if (t && planMat.map !== t) { const first = !planMat.map; planMat.map = t; if (first) planMat.needsUpdate = true; } };
 
-  // подсветка квартиры: золотые плиты по её контуру на плане (до 3 прямоугольников)
-  const hlMat = new THREE.MeshBasicMaterial({ color: '#D2AB67', transparent: true, opacity: 0.42, depthWrite: false, toneMapped: false });
-  const hl = [0, 1, 2].map(() => { const m = new THREE.Mesh(new THREE.BoxGeometry(1, 1, 1), hlMat); m.visible = false; m.renderOrder = 5; west.add(m); return m; });
-  function highlight(rects, y) {
-    hl.forEach((m, i) => {
-      const r = rects && rects[i];
-      m.visible = !!r;
-      if (r) { m.scale.set(r[2] - r[0], 0.5, r[3] - r[1]); m.position.set((r[0] + r[2]) / 2, y + 0.3, -(r[1] + r[3]) / 2); }
-    });
+  // квартиры на плане этажа: выбранная — золотая, соседние — приглушены, под курсором — подсвечена
+  const unitMats = {
+    sel: new THREE.MeshBasicMaterial({ color: '#D2AB67', transparent: true, opacity: 0.2, depthWrite: false, toneMapped: false }),
+    dim: new THREE.MeshBasicMaterial({ color: '#14181F', transparent: true, opacity: 0.4, depthWrite: false, toneMapped: false }),
+    hov: new THREE.MeshBasicMaterial({ color: '#D2AB67', transparent: true, opacity: 0.3, depthWrite: false, toneMapped: false }),
+    none: new THREE.MeshBasicMaterial({ visible: false }),
+  };
+  const unitBoxes = Array.from({ length: 30 }, () => { const m = new THREE.Mesh(new THREE.BoxGeometry(1, 1, 1), unitMats.none); m.visible = false; m.renderOrder = 5; west.add(m); return m; });
+  let units = []; let unitHover = null;
+  const paintUnits = () => {
+    for (const u of units) for (const m of u.meshes) m.material = unitMats[u.slug === unitHover && u.state !== 'sel' ? 'hov' : u.state];
     engine.invalidate();
+  };
+  // list: [{ slug, rects, state: 'sel' | 'dim' | 'none' }], y — уровень пола
+  function showUnits(list, y) {
+    let i = 0; units = [];
+    for (const u of list || []) {
+      const meshes = [];
+      for (const r of u.rects) {
+        const m = unitBoxes[i++]; if (!m) break;
+        m.visible = true; m.scale.set(r[2] - r[0] - 0.1, 0.12, r[3] - r[1] - 0.1); m.position.set((r[0] + r[2]) / 2, y + 0.12, -(r[1] + r[3]) / 2);
+        meshes.push(m);
+      }
+      units.push({ ...u, meshes });
+    }
+    for (; i < unitBoxes.length; i++) unitBoxes[i].visible = false;
+    unitHover = null; paintUnits();
   }
+  function hoverUnit(slug) { if (slug !== unitHover) { unitHover = slug; paintUnits(); } }
 
   let clipY = 1e5;
   // y — высота среза; capY — где лежит «перекрытие» (null — без него); plan — прозрачность чертежа 0..1;
@@ -444,7 +463,7 @@ export function createComplex(engine, shared) {
   }
 
   return {
-    group, west, east, materials: M, setCut, setConstruction, loadPlan, usePlan, highlight,
+    group, west, east, materials: M, setCut, setConstruction, loadPlan, usePlan, showUnits, hoverUnit,
     get clipY() { return clipY; },
     // точка в координатах плана → мировые координаты (west = чертёж)
     world(px, py, h = 0, mirror = false) { return new THREE.Vector3(SITE.axisX + (mirror ? -1 : 1) * (px - MIRROR_X), h, SITE.frontZ + (B.y1 - py)); },
