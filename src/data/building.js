@@ -1,117 +1,83 @@
-// Геометрия комплекса и размещение квартир («шахматка») для 3D-модели.
+// Геометрия комплекса — по проектным чертежам (планы 3–14, 15 и 16 этажей)
+// и проектным визуализациям.
 //
-// ВАЖНО: размещение квартир по этажам — ДЕМОНСТРАЦИОННОЕ. Реальной шахматки на
-// radian.kg нет, поэтому типы планировок расставлены условно по стоякам.
-// Чтобы подключить реальные данные, замените RISERS / TOP_FLOORS (или весь
-// массив UNITS — например, загрузкой из CRM). Демо-данные не попадают в
-// индексируемый HTML: они используются только в 3D.
+// Комплекс — два зеркальных Г-образных корпуса. Каждый корпус — две секции:
+//   • секция А (оси 1–3 × А–Д): коричневый объём, 14 этажей + отступающий 15-й;
+//   • секция Б (оси 4–7 × В/1–Е/1): белая башня с пилонами, 16 этажей.
+// Двухэтажный стилобат с порталами выходит к улице.
 //
-// Размеры — оценка по проектным визуализациям (фронтальный вид, 2 башни,
-// 2-этажный стилобат). Оси: x — восток, z — юг (север = −z), y — вверх, метры.
-// Начало — центр комплекса; ORIGIN — его смещение от точки объекта на карте.
+// Координаты плана (как на чертеже), метры: px — от оси 1 на восток,
+// py — от оси А на север (к Южной магистрали). Чертёж — западный корпус,
+// восточный — его зеркало.
 
-export const DEMO_LAYOUT = true;
-
-export const ORIGIN = [-6, 0, 0];
-
-export const GEO = {
-  podium: { x0: -39.5, x1: 39.5, z0: -16.5, z1: 8, floors: 2, fh: 3.6 },
-  fh: 3.3, // высота жилого этажа (потолок 3 м + перекрытие)
-  firstRes: 3,
-  topRes: 16,
-  // Башня 1 (западная). Башня 2 — зеркально по x.
-  white: { x0: -22.5, x1: -3.5, z0: -16.5, z1: 4 }, // белый объём с пилонами
-  strip: { x0: -26, x1: -22.5, z0: -15.5, z1: 3 }, // полоса балконов
-  dark: { x0: -39.5, x1: -26, z0: -14.5, z1: 6, topFloor: 14 }, // тёмный объём
-  crown: 4.6, // высота «короны» из пилонов над кровлей
-  bridge: { x0: -3.5, x1: 3.5, z0: -9, z1: -1 }, // стеклянный переход на 2-м этаже
+// Отметки, м (с чертежей: 3-й этаж +8,400; 15-й +48,000; 16-й +51,300)
+export const LV = {
+  f1: 0, f2: 4.2, podium: 8.4, fh: 3.3,
+  roofA: 48.0, // кровля коричневого объёма (над 14-м этажом)
+  f16: 51.3, // пол 16-го этажа / кровля отступающего 15-го
+  roofB: 54.6, parapetB: 56.0,
 };
+export const floorY = (f) => (f <= 1 ? 0 : f === 2 ? LV.f2 : LV.podium + (f - 3) * LV.fh);
+export const floorH = (f) => (f <= 2 ? 4.2 : LV.fh);
 
-export function floorY(f) {
-  const { fh: pfh } = GEO.podium;
-  if (f <= 2) return (f - 1) * pfh;
-  return 2 * pfh + (f - GEO.firstRes) * GEO.fh;
-}
-export const floorH = (f) => (f <= 2 ? GEO.podium.fh : GEO.fh);
-export const roofY = floorY(GEO.topRes + 1);
-export const darkRoofY = floorY(GEO.dark.topFloor + 1);
-
-// Жилая секция = белый объём + полоса балконов. Делим на 4 квадранта.
-const SEC = { x0: GEO.strip.x0, x1: GEO.white.x1, z0: GEO.white.z0, z1: GEO.white.z1 };
-const XM = (SEC.x0 + SEC.x1) / 2;
-const ZM = (SEC.z0 + SEC.z1) / 2;
-
-const QUAD = {
-  NO: { x0: SEC.x0, x1: XM, z0: SEC.z0, z1: ZM }, // север, наружная сторона
-  NI: { x0: XM, x1: SEC.x1, z0: SEC.z0, z1: ZM }, // север, к переходу
-  SO: { x0: SEC.x0, x1: XM, z0: ZM, z1: SEC.z1 },
-  SI: { x0: XM, x1: SEC.x1, z0: ZM, z1: SEC.z1 },
-  N: { x0: SEC.x0, x1: SEC.x1, z0: SEC.z0, z1: ZM },
-  S: { x0: SEC.x0, x1: SEC.x1, z0: ZM, z1: SEC.z1 },
-  ALL: { ...SEC },
+// Контуры секций в плане
+export const PLAN = {
+  A: { x0: -1.8, x1: 13.4, y0: -0.3, y1: 27.4, xe: 14.8, ye: 10.7, bay: { x0: 0, x1: 13.1, y0: -2.0 } },
+  B: { x0: 13.4, x1: 34.3, y0: 12.9, y1: 31.2 },
+  stack: { x0: 13.4, x1: 16.9, y0: 27.4 }, // стопка балконов в углу между объёмами
+  podium: { x0: -3.4, x1: 34.3, y1: 31.5 },
+  gap: 6.0, // просвет между корпусами
 };
+export const MIRROR_X = PLAN.B.x1 + PLAN.gap / 2; // ось симметрии комплекса в координатах плана
 
-// Стояки: [позиция, [этажи 3–8], [этажи 9–14]] — slug планировки
-const RISERS = {
-  1: [
-    ['NO', '1k-39-49', '1k-40-52'],
-    ['NI', '2k-77-87', '2k-85-92'],
-    ['SO', '1k-48-16', '2k-56-75'],
-    ['SI', '3k-73-09', '3k-104-10'],
-  ],
-  2: [
-    ['NO', '1k-48-34', '1k-48-16'],
-    ['NI', '2k-56-75', '2k-77-87'],
-    ['SO', '1k-40-52', '2k-85-92'],
-    ['SI', '3k-104-10', '3k-73-09'],
-  ],
-};
-// Верхние этажи: [башня, этаж, позиция, slug]
-const TOP_FLOORS = [
-  [1, 15, 'ALL', '3k-terrace-228-06'], // терраса — на кровле тёмного объёма
-  [1, 16, 'N', '4k-128-34'],
-  [1, 16, 'S', '4k-136-67'],
-  [2, 15, 'N', '4k-136-67'],
-  [2, 15, 'S', '4k-128-34'],
-  [2, 16, 'N', '4k-128-34'],
-  [2, 16, 'S', '4k-136-67'],
+// Посадка на местности. Сцена: x — восток, z — юг, начало — точка объекта (radian.kg).
+// Фасад стоит в 3,5 м к северу от точки; ось симметрии — на 8 м западнее.
+export const SITE = { axisX: -8, frontZ: -3.5 };
+// план → сцена для западного корпуса
+// (фасад py = 31,2 → z = −3,5; тыл py = −2 → z = +29,7)
+export const toScene = (px, py, mirror = false) => [
+  SITE.axisX + (mirror ? -1 : 1) * (px - MIRROR_X),
+  SITE.frontZ + (PLAN.B.y1 - py),
 ];
 
-function mirror(b, tower) {
-  return tower === 1 ? { ...b } : { x0: -b.x1, x1: -b.x0, z0: b.z0, z1: b.z1 };
-}
+// Расположение квартир на этаже — с чертежа. rects — прямоугольники [x0, y0, x1, y1] в координатах плана.
+// side: front — на Южную магистраль, yard — во двор (в сторону гор), flank — на торец.
+export const LAYOUT = {
+  '3k-104-10': { section: 'А', floors: [3, 15], side: ['front', 'flank'], rects: [[-1.8, 19.2, 13.2, 27.4]] },
+  '1k-40-52': { section: 'А', floors: [3, 14], side: ['flank'], rects: [[-1.8, 12.8, 6.2, 19.2]] },
+  '1k-39-49': { section: 'А', floors: [3, 14], side: ['flank'], rects: [[-1.8, 6.4, 6.2, 12.8]] },
+  '2k-56-75': { section: 'А', floors: [3, 14], side: ['flank', 'yard'], rects: [[-1.8, -0.3, 6.4, 6.4], [0, -2.0, 6.4, -0.3]] },
+  '3k-73-09': { section: 'А', floors: [3, 14], side: ['yard'], rects: [[6.4, -2.0, 14.8, 10.5]] },
+  '2k-85-92': { section: 'Б', floors: [3, 15], side: ['front', 'yard'], rects: [[13.4, 19.2, 20.5, 31.2], [13.4, 12.9, 17.4, 19.2]] },
+  '1k-48-34': { section: 'Б', floors: [3, 15], side: ['yard'], rects: [[17.4, 12.9, 23.9, 21.8]] },
+  '1k-48-16': { section: 'Б', floors: [3, 15], side: ['yard'], rects: [[23.9, 12.9, 30.6, 21.8]] },
+  '2k-77-87': { section: 'Б', floors: [3, 15], side: ['front', 'yard'], rects: [[27.6, 21.8, 34.3, 31.2], [30.6, 12.9, 34.3, 21.8]] },
+  '3k-terrace-228-06': { section: 'А', floors: [15, 15], side: ['flank', 'yard'], rects: [[-1.8, 6.4, 13.2, 19.2], [-1.8, -2.0, 13.2, 6.4]] },
+  '4k-136-67': { section: 'Б', floors: [16, 16], side: ['front', 'yard'], rects: [[13.4, 12.9, 24.0, 31.2]] },
+  '4k-128-34': { section: 'Б', floors: [16, 16], side: ['front', 'yard'], rects: [[24.0, 12.9, 34.3, 31.2]] },
+};
+export const SIDE_LABEL = { front: 'на Южную магистраль', yard: 'во двор, в сторону гор', flank: 'на торец корпуса' };
 
-function orient(pos, tower) {
-  const o = [];
-  if (pos.startsWith('N')) o.push('N');
-  if (pos.startsWith('S')) o.push('S');
-  if (pos === 'ALL') o.push('N', 'S');
-  if (pos.endsWith('O') || pos === 'N' || pos === 'S' || pos === 'ALL') o.push(tower === 1 ? 'W' : 'E');
-  return o;
-}
+// Сколько квартир каждого типа в корпусе (этажи включительно): в сумме 116 —
+// столько квартир указано в проекте.
+export const unitCount = (slug) => {
+  const l = LAYOUT[slug];
+  return l ? l.floors[1] - l.floors[0] + 1 : 0;
+};
+export const floorsLabel = (slug) => {
+  const [a, b] = LAYOUT[slug].floors;
+  return a === b ? `${a}` : `${a}–${b}`;
+};
 
-function make(tower, floor, pos, plan) {
-  return {
-    id: `${tower}-${floor}-${pos}`,
-    tower,
-    floor,
-    pos,
-    plan,
-    box: mirror(QUAD[pos], tower),
-    orient: orient(pos, tower),
-  };
-}
+// Изображение типового этажа (public/assets/floors/typical.webp) покрывает в плане:
+export const PLAN_IMAGE = { x0: -4, x1: 36, y0: -3, y1: 33 };
 
-export const UNITS = [];
-for (const tower of [1, 2]) {
-  for (let f = GEO.firstRes; f <= 14; f++) {
-    for (const [pos, low, high] of RISERS[tower]) UNITS.push(make(tower, f, pos, f <= 8 ? low : high));
-  }
-}
-for (const [t, f, pos, plan] of TOP_FLOORS) UNITS.push(make(t, f, pos, plan));
-
-export const unitById = Object.fromEntries(UNITS.map((u) => [u.id, u]));
-export const unitsByPlan = (slug) => UNITS.filter((u) => u.plan === slug);
-
-export const ORIENT_LABEL = { N: 'север', S: 'юг', W: 'запад', E: 'восток' };
-export const towerLabel = (t) => `Блок ${t}`;
+// Первый этаж — по проекту (состав с radian.kg; размещение по витринам — условное)
+export const TENANTS = [
+  { name: 'Супермаркет', block: 'west', from: 1, to: 4 },
+  { name: 'Аптека', block: 'west', from: 5, to: 6 },
+  { name: 'Офис продаж', block: 'west', from: 8, to: 9, office: true },
+  { name: 'Турецкий ресторан', block: 'east', from: 7, to: 9 },
+  { name: 'Национальный ресторан', block: 'east', from: 4, to: 6 },
+  { name: 'Французский ресторан', block: 'east', from: 1, to: 3 },
+];

@@ -8,10 +8,10 @@
     "dev": "node scripts/dev.mjs",
     "build": "node scripts/build.mjs",
     "preview": "node scripts/dev.mjs --no-watch",
-    "walls": "python -I scripts/extract-walls.py",
     "osm": "python -I scripts/prepare-osm.py",
     "deploy": "node scripts/build.mjs --base=radian-kg --out=.deploy --origin=https://seitek2002.github.io/radian-kg --noindex && gh-pages -d .deploy --dotfiles -m \"Обновление демо\"",
-    "check-seo": "node scripts/build.mjs --out=.check && node scripts/check-seo.mjs .check"
+    "check-seo": "node scripts/build.mjs --out=.check && node scripts/check-seo.mjs .check",
+    "devscene": "node scripts/devscene.mjs"
   },
   "engines": {
     "node": ">=20"

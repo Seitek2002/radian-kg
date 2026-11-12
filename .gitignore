@@ -5,3 +5,9 @@ dist/
 .preview/
 .deploy/
 .check/
+Render11.rar
+*.pdf
+.hallmark/before/
+.hallmark/*.json
+.hallmark/*.txt
+.preview-dev/

@@ -7,6 +7,7 @@ import {
   PLANS, ROOM_PAGES, AREA_RANGES, planTitle, planShort, fmtArea, ROOM_WORD,
 } from '../data/plans.js';
 import { loaderMarkup } from './loader.js';
+import { LAYOUT, SIDE_LABEL, floorsLabel } from '../data/building.js';
 
 export const esc = (s) => String(s)
   .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -68,7 +69,7 @@ function baseGraph(page) {
 export const complexNode = () => ({
   '@type': 'ApartmentComplex', '@id': ID.complex, name: `Комплекс ${SITE.brand}`, url: `${SITE.origin}/`,
   description: 'Многофункциональный комплекс высотой до 16 этажей в ж/м Арча-Бешик на первой линии Южной магистрали: квартиры от 1 до 4 комнат, потолки 3 м, закрытый двор, 111 машино-мест.',
-  image: [`${SITE.origin}/assets/img/hero.jpg`, `${SITE.origin}/assets/img/front.jpg`],
+  image: [`${SITE.origin}/assets/img/og.jpg`, `${SITE.origin}/assets/renders/front-day.webp`, `${SITE.origin}/assets/renders/aerial-north.webp`],
   numberOfAccommodationUnits: SITE.apartmentsTotal,
   address: { '@type': 'PostalAddress', streetAddress: SITE.address, addressLocality: SITE.city, addressRegion: 'Бишкек', addressCountry: 'KG' },
   geo: { '@type': 'GeoCoordinates', latitude: SITE.geo.lat, longitude: SITE.geo.lng },
@@ -123,7 +124,7 @@ ${alt && !page.noindex && !opts.noindex ? [`<link rel="alternate" hreflang="ru" 
 <meta name="theme-color" content="#14181F">
 <link rel="icon" href="/assets/brand/mark-gold.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Golos+Text:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Golos+Text:wght@400;600&display=swap" rel="stylesheet">
 ${page.preload ? `<link rel="preload" as="image" href="${page.preload}" fetchpriority="high">` : ''}
 <link rel="stylesheet" href="${opts.assets.css}">
 ${scene}
@@ -149,11 +150,11 @@ function header(page) {
     ? `<a href="${page.path}" lang="ru" aria-current="true">${name}</a>`
     : `<a href="${SITE.prodOrigin}${alt[l]}" lang="${l}" hreflang="${l}"${l === 'ar' ? ' dir="rtl"' : ''} data-external>${name}</a>`).join('');
   return `<header class="hdr" data-hdr>
-  <div class="hdr-in">
-    <a class="logo" href="/" aria-label="${SITE.brand} — на главную"><img src="/assets/brand/logo-h-white.svg" alt="${SITE.brand}" width="168" height="40"></a>
+  <div class="container hdr-in">
+    <a class="logo" href="/" aria-label="${SITE.brand}, на главную"><img src="/assets/brand/logo-h-white.svg" alt="${SITE.brand}" width="168" height="40"></a>
     <nav class="nav" aria-label="Основное меню">${links}<a href="/pokupka/"${active('/pokupka/')}>Покупка</a></nav>
     <div class="hdr-end">
-      <details class="lang"><summary aria-label="Выбрать язык">RU</summary><div class="lang-list">${langs}</div></details>
+      <details class="lang"><summary aria-label="Выбрать язык">Русский</summary><div class="lang-list">${langs}</div></details>
       ${tel('hdr-tel')}
       <button type="button" class="menu-btn" aria-expanded="false" aria-controls="mmenu" data-menu>Меню</button>
     </div>
@@ -162,14 +163,16 @@ function header(page) {
 </header>`;
 }
 
-function stage(page) {
-  const poster = page.poster || { src: '/assets/img/front.webp', alt: 'Проектная визуализация: фронтальный вид двух башен комплекса RADIAN GROUP со стороны Южной магистрали', w: 2000, h: 1119 };
-  return `<div class="stage" id="stage" data-stage>
-  <div class="stage-frame">
-    <img class="stage-poster${poster.contain ? ' contain' : ''}" src="${poster.src}" alt="${esc(poster.alt)}" width="${poster.w}" height="${poster.h}" ${page.preload === poster.src ? 'fetchpriority="high"' : 'loading="eager"'} decoding="async">
-  </div>
-  <div class="stage-ui" data-stage-ui></div>
-</div>`;
+// Неподвижный фон: 3D-сцена. Пока её нет (или WebGL недоступен) — проектная визуализация.
+function stage() {
+  return `<div class="stage" id="stage" data-stage aria-hidden="true">
+  <img class="stage-poster" src="/assets/renders/front-day.webp" alt="" width="2200" height="1426" decoding="async">
+  <div class="labels" data-labels></div>
+</div>
+<div class="tod" data-tod role="group" aria-label="Время суток на модели">
+  <button type="button" data-tod-key="" aria-pressed="true">Авто</button><button type="button" data-tod-key="front" aria-pressed="false">День</button><button type="button" data-tod-key="dusk" aria-pressed="false">Вечер</button><button type="button" data-tod-key="night" aria-pressed="false">Ночь</button>
+</div>
+<nav class="chapters" data-chapters aria-label="Разделы страницы"></nav>`;
 }
 
 function footer() {
@@ -177,14 +180,16 @@ function footer() {
     .map((n) => `<a href="${n.href}">${n.label}</a>`).join('');
   const rooms = ROOM_PAGES.map((r) => `<a href="/planirovki/${r.slug}/">${r.rooms}-комнатные квартиры</a>`).join('');
   return `<footer class="ftr">
-  <div class="ftr-in">
-    <div class="ftr-brand"><img src="/assets/brand/logo-h-white.svg" alt="${SITE.brand}" width="160" height="38" loading="lazy"><p>${SITE.descriptor}</p><p class="tagline">${SITE.tagline}</p></div>
-    <nav class="ftr-nav" aria-label="Разделы">${links}</nav>
-    <nav class="ftr-nav" aria-label="Квартиры по числу комнат">${rooms}</nav>
-    <div class="ftr-contact">${tel('ftr-tel')}<p>Объект по проекту: ${SITE.city}, ${SITE.district}, ${SITE.address}</p></div>
+  <div class="container">
+    <div class="ftr-top">
+      <div class="ftr-brand"><img src="/assets/brand/logo-h-white.svg" alt="${SITE.brand}" width="320" height="76" loading="lazy"><p class="lead">${SITE.tagline}</p>${tel('big-tel')}</div>
+      <nav class="ftr-nav" aria-label="Разделы">${links}</nav>
+      <nav class="ftr-nav" aria-label="Квартиры по числу комнат">${rooms}<p class="muted">Объект по проекту: ${SITE.city}, ${SITE.district}, ${SITE.address}</p></nav>
+    </div>
+    <p class="ftr-legal">${DISCLAIMER}</p>
+    <p class="ftr-legal">3D-модель построена по проектным чертежам и визуализациям. Размещение магазинов и ресторанов на первом этаже, благоустройство двора и интерьер офиса продаж показаны условно. Улицы и дома вокруг: © участники OpenStreetMap (ODbL).</p>
+    <p class="ftr-legal">© ${SITE.brand}, 2026</p>
   </div>
-  <p class="ftr-legal">${DISCLAIMER} 3D-модель — схематичная, построена по проектным визуализациям; размещение квартир по этажам на модели условное. Карта окружения: © участники OpenStreetMap (ODbL).</p>
-  <p class="ftr-legal">© ${SITE.brand}, 2026</p>
 </footer>`;
 }
 
@@ -192,11 +197,10 @@ function leadDialog() {
   return `<dialog class="ldlg" id="lead" aria-labelledby="lead-t">
   <form method="dialog" class="ldlg-in">
     <button class="ldlg-x" value="close" aria-label="Закрыть">×</button>
-    <p class="eyebrow">Запросить подбор</p>
     <h2 id="lead-t">Ответим по телефону</h2>
-    <p>Онлайн-форма скоро заработает. Сейчас быстрее всего позвонить в отдел продаж — расскажем о наличии, стоимости и условиях.</p>
+    <p>Онлайн-форма скоро заработает. Сейчас быстрее всего позвонить в отдел продаж: расскажем о наличии, стоимости и условиях.</p>
     <p class="ldlg-ctx" data-lead-ctx hidden>Ваш выбор: <b data-lead-ctx-text></b></p>
-    ${tel('btn btn-gold')}
+    ${tel('btn btn-primary')}
   </form>
 </dialog>`;
 }
@@ -205,12 +209,12 @@ export function renderPage(page, opts) {
   return `<!doctype html>
 <html lang="ru" dir="ltr">
 ${head(page, opts)}
-<body data-route="${page.route}" data-layout="${page.layout}">
+<body data-route="${page.route}">
 ${loaderMarkup()}
 <a class="skip" href="#main">Перейти к содержанию</a>
 ${header(page)}
-${stage(page)}
-<main id="main" tabindex="-1" data-route="${page.route}" data-layout="${page.layout}" data-view="${page.view}"${page.plan ? ` data-plan="${page.plan}"` : ''}${page.rooms ? ` data-rooms="${page.rooms}"` : ''} data-title="${esc(page.title)}" data-description="${esc(page.description)}">
+${stage()}
+<main id="main" tabindex="-1" data-route="${page.route}"${page.plan ? ` data-plan="${page.plan}"` : ''}${page.rooms ? ` data-rooms="${page.rooms}"` : ''}>
 ${page.body}
 </main>
 ${footer()}
@@ -219,226 +223,160 @@ ${leadDialog()}
 </html>`;
 }
 
-// ───────────────────────── блоки контента ─────────────────────────
+// ───────────────────────── блоки ─────────────────────────
+// Сцена: 3D видно, текст сбоку. shot — кадр камеры (src/client/scene/app3d.js), side — где текст.
+const scene = (shot, side, title, inner, { id = '', plan = '' } = {}) =>
+  `<section class="scene" data-shot="${shot}" data-side="${side}" data-title="${title}"${id ? ` id="${id}"` : ''}${plan ? ` data-plan="${plan}"` : ''}><div class="container"><div class="scene-body">${inner}</div></div></section>`;
+// Лист: плотный фон, содержимое во всю ширину контейнера.
+const sheet = (inner, { alt = false, title = '', id = '', bleed = '' } = {}) =>
+  `<section class="sheet${alt ? ' alt' : ''}"${title ? ` data-title="${title}"` : ''}${id ? ` id="${id}"` : ''}><div class="container">${inner}</div>${bleed}</section>`;
+const crumbs = (items) => `<nav class="crumbs" aria-label="Навигационная цепочка"><a href="/">Главная</a>${items.map(([n, h]) => (h ? `<a href="${h}">${n}</a>` : `<span aria-current="page">${n}</span>`)).join('')}</nav>`;
+const facts = (rows, cls = '') => `<dl class="facts ${cls}">${rows.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join('')}</dl>`;
+const btnLead = (label = 'Запросить подбор', ctx = '', cls = 'btn-primary') => `<button type="button" class="btn ${cls}" data-lead${ctx ? ` data-lead-ctx="${esc(ctx)}"` : ''}>${label}</button>`;
+const tenants = () => `<ul class="tenants">${GROUND_FLOOR.map(([n, s]) => `<li><b>${n}</b><span>${s}</span></li>`).join('')}</ul>`;
+const yardFigures = () => `<div class="figures"><div><b>466 м²</b><span>детская площадка по проекту</span></div><div><b>202 м²</b><span>озеленение по проекту</span></div><div><b>78</b><span>машино-мест в подземном паркинге</span></div><div><b>33</b><span>наземных машино-места</span></div></div>`;
 
-const crumbs = (items) => `<nav class="crumbs" aria-label="Навигационная цепочка"><a href="/">Главная</a>${items.map(([n, h]) => h ? `<a href="${h}">${n}</a>` : `<span aria-current="page">${n}</span>`).join('')}</nav>`;
+const planCard = (p) => `<li class="card" data-area="${p.area}" data-plan-card="${p.slug}"><a href="/planirovki/${p.slug}/">
+  <img src="/assets/plans/${p.code}-s.webp" alt="Иллюстрация планировки: ${esc(planTitle(p))}" width="720" height="540" loading="lazy" decoding="async">
+  <h3>${p.rooms}-комнатная${p.terrace ? ' с террасой' : ''}</h3><span>${fmtArea(p.area)} м², этаж${LAYOUT[p.slug].floors[0] === LAYOUT[p.slug].floors[1] ? '' : 'и'} ${floorsLabel(p.slug)}</span></a></li>`;
 
-const dl = (rows, cls = 'facts') => `<dl class="${cls}">${rows.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join('')}</dl>`;
+const RENDERS = [
+  ['front-day', 'Вид со стороны Южной магистрали'], ['aerial-north', 'Комплекс с высоты: первая линия магистрали'], ['yard-sunset', 'Двор на закате: беседки и сосны'],
+  ['podium', 'Первые этажи: витрины и порталы'], ['yard-pergolas', 'Зона отдыха и детская площадка во дворе'],
+];
+const rendersRail = () => `<div class="rail" tabindex="0" aria-label="Проектные визуализации">${RENDERS.map(([f, c]) => `<figure><img src="/assets/renders/${f}.webp" alt="Проектная визуализация. ${c}" width="2200" height="1426" loading="lazy" decoding="async"><figcaption>${c}. Проектная визуализация.</figcaption></figure>`).join('')}</div>`;
 
-const btnLead = (label = 'Запросить подбор', ctx = '') =>
-  `<button type="button" class="btn btn-gold" data-lead${ctx ? ` data-lead-ctx="${esc(ctx)}"` : ''}>${label}</button>`;
+const contactsScene = (h = 'h2') => scene('office', 'left', 'Контакты', `
+  <${h}>Поговорите с отделом продаж</${h}>
+  <p class="lead">Расскажем о наличии, рассчитаем стоимость выбранной квартиры и условия рассрочки.</p>
+  ${tel('big-tel')}
+  <div class="actions">${btnLead()}<a class="btn btn-quiet" href="/raspolozhenie/">Как добраться</a></div>
+  <p class="muted">Объект по проекту: ${SITE.city}, ${SITE.district}, ${SITE.address}. Это адрес строящегося объекта, а не офиса продаж.</p>
+`, { id: 'contacts' });
 
-const sec = (view, inner, { id = '', cls = '', layout = 'split' } = {}) =>
-  `<section class="sec ${cls}" data-view="${view}" data-layout="${layout}"${id ? ` id="${id}"` : ''}><div class="sec-in">${inner}</div></section>`;
-
-function planCard(p, { h = 'h3' } = {}) {
-  const ori = /L(2-77|2-85|3-73|4-|3T)/.test(p.code) ? 'tall' : 'wide';
-  return `<li class="card" data-rooms="${p.rooms}" data-area="${p.area}" data-plan-card="${p.slug}">
-  <a href="/planirovki/${p.slug}/">
-    <img src="/assets/plans/${p.code}-s.webp" alt="Иллюстрация планировки: ${esc(planTitle(p))}" loading="lazy" decoding="async" class="${ori}">
-    <${h} class="card-t">${p.rooms}-комнатная${p.terrace ? ' с террасой' : ''}</${h}>
-    <span class="card-a">${fmtArea(p.area)} м²</span>
-    ${p.kitchen ? '<span class="card-n">Отдельная кухня</span>' : ''}${p.terrace ? `<span class="card-n">Терраса ${fmtArea(p.terrace)} м² · ${p.floor} этаж</span>` : ''}
-  </a>
-</li>`;
-}
-
-function planFilters(active = 0) {
-  const rooms = [['all', 'Все'], [1, '1'], [2, '2'], [3, '3'], [4, '4']];
-  return `<div class="filters" data-filters>
-  <fieldset><legend>Комнат</legend><div class="seg">${rooms.map(([v, l]) => {
-    const href = v === 'all' ? '/planirovki/' : `/planirovki/${v}-komnatnye/`;
-    const on = String(active || 'all') === String(v);
-    return `<a href="${href}" data-f-rooms="${v}"${on ? ' aria-current="true"' : ''}>${l}</a>`;
-  }).join('')}</div></fieldset>
-  <fieldset><legend>Площадь</legend><div class="seg seg-sm">${AREA_RANGES.map((r, i) => `<button type="button" data-f-area="${r.id}"${i === 0 ? ' aria-pressed="true"' : ' aria-pressed="false"'}>${r.label}</button>`).join('')}</div></fieldset>
-  <p class="filters-count" data-f-count aria-live="polite"></p>
-</div>`;
-}
-
-const contactsBlock = () => sec('contacts', `
-  <p class="eyebrow">Контакты</p>
-  <h2>Поговорите с отделом продаж</h2>
-  <p>Расскажем о наличии, рассчитаем стоимость выбранной квартиры и условия рассрочки.</p>
-  <p class="big-tel">${tel('')}</p>
-  ${dl([['Объект по проекту', `${SITE.city}, ${SITE.district}, ${SITE.address}`], ['Сайт', 'radian.kg']])}
-  <p class="note">Это адрес строящегося объекта, а не офиса продаж.</p>
-  <div class="row">${btnLead()}<a class="btn btn-line" href="/raspolozhenie/">Подробнее о расположении</a></div>
-`, { cls: 'dark', id: 'contacts' });
-
-const devBlock = (h = 'h2') => sec('developer', `
-  <p class="eyebrow">Застройщик и документы</p>
-  <${h}>Строим на своей земле и на свои средства</${h}>
-  <p>${SITE.brand} — девелопер жилой и коммерческой недвижимости премиум-класса. Мы говорим о проекте конкретно и показываем то, что можно проверить.</p>
-  <ul class="ticks">
-    <li><b>Собственный участок.</b> Компания строит комплекс на собственном земельном участке.</li>
-    <li><b>Собственные средства.</b> Строительство финансируется за счёт собственных средств компании.</li>
-    <li><b>ЕНИ-код участка — по запросу.</b> Менеджер сообщит ЕНИ-код, чтобы вы могли проверить сведения об участке самостоятельно.</li>
-  </ul>
-  <p class="note">Проект застройки опубликован Департаментом градостроительства и архитектуры ${SITE.dga.date}. <a href="${SITE.dga.url}" rel="noopener" target="_blank">Открыть публикацию ДГА</a></p>
-  ${btnLead('Запросить информацию об участке', 'ЕНИ-код участка')}
-`, { cls: 'paper' });
-
-const faqList = (items, h = 'h3') => `<div class="faq">${items.map(([q, a]) => `<details><summary><${h}>${q}</${h}></summary><p>${a}</p></details>`).join('')}</div>`;
+const developerSheet = () => sheet(`
+  <div class="split">
+    <div class="sheet-head"><h2>Строим на своей земле и на свои средства</h2><p class="lead">${SITE.brand}: девелопер жилой и коммерческой недвижимости премиум-класса. Мы говорим о проекте конкретно и показываем то, что можно проверить.</p>${btnLead('Запросить информацию об участке', 'ЕНИ-код участка', 'btn-quiet')}</div>
+    <ul class="rows">
+      <li><h3>Собственный участок</h3><p>Компания строит комплекс на собственном земельном участке.</p></li>
+      <li><h3>Собственные средства</h3><p>Строительство финансируется за счёт собственных средств компании.</p></li>
+      <li><h3>ЕНИ-код по запросу</h3><p>Менеджер сообщит ЕНИ-код, чтобы вы могли проверить сведения об участке самостоятельно.</p></li>
+      <li><h3>Публикация ДГА</h3><p>Проект застройки опубликован Департаментом градостроительства и архитектуры ${SITE.dga.date}. <a class="link" href="${SITE.dga.url}" rel="noopener" target="_blank">Открыть публикацию</a></p></li>
+    </ul>
+  </div>`, { alt: true, title: 'Застройщик' });
 
 // ───────────────────────── страницы ─────────────────────────
-
 export function pages() {
   const list = [];
   const add = (p) => list.push(p);
 
-  // Главная — «скроллителлинг»: каждая секция задаёт ракурс 3D-модели
+  // Главная: фильм по скроллу, каждая секция — свой кадр
   add({
-    path: '/', route: 'home', layout: 'hero', view: 'home',
+    path: '/', route: 'home',
     title: 'Квартиры в Бишкеке от застройщика — RADIAN GROUP, Южная магистраль',
     description: 'Квартиры RADIAN GROUP в ж/м Арча-Бешик на Южной магистрали: 1–4 комнаты от 39,49 м², потолки 3 м, закрытый двор. 3D-модель комплекса и планировок. От 2 000 $ за м², ориентир сдачи — 2029.',
-    preload: '/assets/img/hero.webp',
-    poster: { src: '/assets/img/hero.webp', alt: 'Проектная визуализация комплекса RADIAN GROUP: две башни со светлыми вертикалями фасада, вид со стороны Южной магистрали', w: 2000, h: 1119 },
     schema: [complexNode()],
     body: `
-<section class="hero" data-view="home" data-layout="hero">
-  <div class="hero-in">
-    <p class="eyebrow">${SITE.city} · Южная магистраль</p>
-    <h1>Квартиры ${SITE.brand} в&nbsp;Бишкеке</h1>
-    <p class="lead">Большие окна, потолки 3 м и закрытый двор на первой линии Южной магистрали. Выберите квартиру прямо на 3D-модели комплекса.</p>
-    <div class="row"><a class="btn btn-gold" href="/planirovki/">Выбрать квартиру</a><a class="btn btn-line" href="/pokupka/">Условия покупки</a></div>
-    ${dl([['Цена', `от ${SITE.priceFromFmt} за м²`], ['Ориентир сдачи', `${SITE.handover} год`], ['Расположение', 'ж/м Арча-Бешик, ул. А. Масалиева']], 'facts facts-row')}
-  </div>
-  <p class="hero-hint" aria-hidden="true">Листайте — камера облетит комплекс</p>
-</section>
-${sec('about', `
-  <p class="eyebrow">О комплексе</p>
-  <h2>Многофункциональный комплекс высотой до 16 этажей</h2>
-  <p>${SITE.brand} строит в ж/м Арча-Бешик комплекс, где жильё соединено с тем, что нужно каждый день: магазинами, ресторанами, фитнес-залом и офисами.</p>
-  ${dl(FACTS)}
-  <a class="more" href="/o-proekte/">Подробнее о проекте</a>
+${scene('hero', 'left', 'Комплекс', `
+  <h1>Квартиры RADIAN&nbsp;GROUP в&nbsp;Бишкеке</h1>
+  <p class="lead">Большие окна, потолки 3 м и закрытый двор на первой линии Южной магистрали.</p>
+  <div class="actions"><a class="btn btn-primary" href="/planirovki/">Выбрать планировку</a><a class="btn btn-quiet" href="/pokupka/">Условия покупки</a></div>
+  ${facts([['Цена', `от ${SITE.priceFromFmt} за м²`], ['Ориентир сдачи', `${SITE.handover} год`]], 'hero-facts')}
+`)}
+${scene('front', 'right', 'О проекте', `
+  <h2>Два корпуса высотой до 16 этажей</h2>
+  <p class="lead">${SITE.brand} строит в ж/м Арча-Бешик комплекс, где жильё соединено с тем, что нужно каждый день: магазинами, ресторанами, фитнес-залом и офисами.</p>
+  ${facts(FACTS)}
+  <a class="link" href="/o-proekte/">Подробнее о проекте</a>
 `, { id: 'about' })}
-${sec('plans', `
-  <p class="eyebrow">Планировки</p>
-  <h2>Выберите квартиру прямо на фасаде</h2>
-  <p>Двенадцать вариантов из проекта: от 39,49 до 136,67 м² и особый вариант с террасой. Наведите на окно — модель подскажет тип квартиры; нажмите — откроется планировка в 3D.</p>
-  <ul class="rooms-links">${ROOM_PAGES.map((r) => `<li><a href="/planirovki/${r.slug}/" data-hl-rooms="${r.rooms}"><b>${r.rooms}</b><span>${['', 'комната', 'комнаты', 'комнаты', 'комнаты'][r.rooms]}</span><small>${PLANS.filter((p) => p.rooms === r.rooms).map((p) => fmtArea(p.area)).join(' · ')} м²</small></a></li>`).join('')}</ul>
-  <a class="btn btn-gold" href="/planirovki/">Все планировки</a>
-`, { id: 'plans' })}
-${sec('facade', `
-  <p class="eyebrow">Свет и высота</p>
-  <h2>Большие окна и три метра до потолка</h2>
-  <p>Высота потолков — 3 метра. Большие окна дают комнатам дневной свет и глубину.</p>
-  <p>Вид на горы открывается из квартир соответствующих направлений. Скажите менеджеру, что вид для вас важен, — он покажет подходящие варианты.</p>
+${scene('podium', 'left', 'Первый этаж', `
+  <h2>Повседневное на первом этаже</h2>
+  <p class="lead">В проекте предусмотрены помещения для ежедневных дел. Комплекс строится: всё перечисленное запланировано, а не работает сегодня.</p>
+  ${tenants()}
 `)}
-${sec('location', `
-  <p class="eyebrow">Расположение</p>
-  <h2>Первая линия Южной магистрали</h2>
-  <p>Юго-западная часть Бишкека, ж/м Арча-Бешик, рядом с Джалом. Комплекс стоит в первой линии застройки вдоль улицы А. Масалиева — Южной магистрали.</p>
-  ${dl([['Адрес объекта по проекту', SITE.address], ['Школы и детские сады', 'Рядом с комплексом'], ['Общественный транспорт', 'Хорошая обеспеченность']])}
-  <a class="more" href="/raspolozhenie/">Карта и маршрут</a>
-`, { cls: 'dark', id: 'location' })}
-${sec('podium', `
-  <p class="eyebrow">Жизнь в комплексе</p>
-  <h2>Повседневное — на первом этаже</h2>
-  <p>В проекте предусмотрены помещения для ежедневных дел. Комплекс строится: всё перечисленное запланировано, а не работает сегодня.</p>
-  <ol class="numlist">${GROUND_FLOOR.map(([n, s]) => `<li><b>${n}</b><span>${s}</span></li>`).join('')}</ol>
-`)}
-${sec('courtyard', `
-  <p class="eyebrow">Двор и парковка</p>
+${scene('yard', 'right', 'Двор и парковка', `
   <h2>Закрытый двор и 111 машино-мест</h2>
-  <p>У комплекса закрытый двор. В проекте предусмотрено удобство для детей и родителей с колясками.</p>
-  <ul class="stats"><li><b>466 м²</b>детская площадка по проекту</li><li><b>202 м²</b>озеленение по проекту</li><li><b>78</b>машино-мест в подземном паркинге</li><li><b>33</b>наземных машино-места</li></ul>
-  <p class="note">111 машино-мест — общее число для комплекса по проекту. Условия приобретения места уточняйте у менеджера.</p>
-`, { cls: 'dark' })}
-${sec('progress', `
-  <p class="eyebrow">Ход строительства · данные на ${SITE.stage.date}</p>
-  <h2>${SITE.stage.title}</h2>
-  <p>Это последняя подтверждённая стадия. На модели построенная часть показана плотным цветом, остальное — контуром проекта.</p>
-  ${dl([['Сейчас', 'Уровень первого этажа'], ['Ориентир сдачи', `${SITE.handover} год — срок ориентировочный и может уточняться`]])}
-  <a class="more" href="/hod-stroitelstva/">История обновлений</a>
+  <p class="lead">У комплекса закрытый двор. В проекте предусмотрено удобство для детей и родителей с колясками.</p>
+  ${yardFigures()}
 `)}
-${sec('purchase', `
-  <p class="eyebrow">Покупка</p>
+${sheet(`<div class="sheet-head"><h2>Таким комплекс увидят с улицы</h2><p class="lead">Проектные визуализации архитекторов. По ним и по чертежам построена 3D-модель на этом сайте.</p></div>`, { title: 'Визуализации', bleed: rendersRail() })}
+${scene('location', 'left', 'Расположение', `
+  <h2>Первая линия Южной магистрали</h2>
+  <p class="lead">Юго-западная часть Бишкека, ж/м Арча-Бешик, рядом с Джалом. Комплекс стоит в первой линии застройки вдоль улицы А. Масалиева.</p>
+  ${facts([['Адрес объекта по проекту', SITE.address], ['Школы и детские сады', 'Рядом с комплексом'], ['Общественный транспорт', 'Хорошая обеспеченность'], ['Вид на горы', 'Из квартир соответствующих направлений']])}
+  <a class="link" href="/raspolozhenie/">Карта и маршрут</a>
+`, { id: 'location' })}
+${scene('plans', 'right', 'Планировки', `
+  <h2>Двенадцать планировок от 39,49 м²</h2>
+  <p class="lead">От одной до четырёх комнат и особый вариант с террасой. На модели открыт типовой этаж: так квартиры расположены на самом деле.</p>
+  <div class="rooms">${ROOM_PAGES.map((r) => `<a href="/planirovki/${r.slug}/"><b>${r.rooms}-комнатные</b><span>${PLANS.filter((p) => p.rooms === r.rooms).map((p) => fmtArea(p.area)).join(', ')} м²</span></a>`).join('')}</div>
+  <div class="actions"><a class="btn btn-primary" href="/planirovki/">Все планировки</a></div>
+`, { id: 'plans' })}
+${scene('night', 'left', 'Покупка', `
   <h2>От 2 000 $ за квадратный метр</h2>
-  <p>Это стартовая цена квадратного метра, а не стоимость квартиры. Расчёт по выбранной планировке подготовит менеджер.</p>
-  ${dl([['Оплата', 'Наличный расчёт или рассрочка'], ['Условия рассрочки', 'Менеджер рассчитает под вашу квартиру'], ['Состояние при передаче', 'Под самоотделку (ПСО)'], ['Ориентир сдачи', '2029 год']])}
-  <div class="row">${btnLead('Получить расчёт у менеджера')}<a class="btn btn-line" href="/pokupka/">Вопросы и ответы</a></div>
-`, { cls: 'dark' })}
-${contactsBlock()}`,
+  <p class="lead">Это стартовая цена квадратного метра, а не стоимость квартиры. Расчёт по выбранной планировке подготовит менеджер.</p>
+  ${facts([['Оплата', 'Наличный расчёт или рассрочка'], ['Состояние при передаче', 'Под самоотделку (ПСО)'], ['Стадия на ' + SITE.stage.date, 'Уровень первого этажа'], ['Ориентир сдачи', '2029 год']])}
+  <div class="actions">${btnLead('Получить расчёт')}<a class="btn btn-quiet" href="/hod-stroitelstva/">Ход строительства</a></div>
+`, { id: 'purchase' })}
+${contactsScene()}`,
   });
 
   // О проекте
   add({
-    path: '/o-proekte/', route: 'about', layout: 'split', view: 'about',
+    path: '/o-proekte/', route: 'about',
     title: 'О комплексе RADIAN GROUP: до 16 этажей, потолки 3 м, закрытый двор — Бишкек, Арча-Бешик',
     description: 'Многофункциональный комплекс RADIAN GROUP на Южной магистрали: 116 квартир в двух жилых блоках, апарт-отель, магазины и рестораны на первом этаже, двор и 111 машино-мест.',
     crumbs: [['О проекте']],
     schema: [complexNode()],
     body: `
-${sec('about', `
+${scene('front', 'left', 'О комплексе', `
   ${crumbs([['О проекте']])}
-  <p class="eyebrow">О комплексе</p>
-  <h1>Многофункциональный комплекс ${SITE.brand} в Бишкеке</h1>
-  <p class="lead">${SITE.brand} строит в ж/м Арча-Бешик комплекс высотой до 16 этажей, где жильё соединено с тем, что нужно каждый день: магазинами, ресторанами, фитнес-залом и офисами.</p>
-  ${dl(FACTS)}
+  <h1>Комплекс ${SITE.brand} в Бишкеке</h1>
+  <p class="lead">Многофункциональный комплекс высотой до 16 этажей в ж/м Арча-Бешик: жильё соединено с магазинами, ресторанами, фитнес-залом и офисами.</p>
+  ${facts(FACTS)}
 `)}
-${sec('about-side', `
-  <h2>Что входит в комплекс</h2>
-  <ul class="ticks">${COMPOSITION.map(([k, v]) => `<li><b>${k}.</b> ${v}</li>`).join('')}</ul>
-  <p class="note">Квартиры и апартаменты — разные форматы недвижимости с разным правовым статусом. Статус конкретного помещения и возможность его покупки уточняйте у менеджера.</p>
-  <p class="note">Состав комплекса приведён по проекту, опубликованному Департаментом градостроительства и архитектуры ${SITE.dga.date}. Это не сведения о наличии квартир в продаже.</p>
-`)}
-${sec('facade', `
-  <p class="eyebrow">Свет и высота</p>
+${sheet(`<div class="split"><div class="sheet-head"><h2>Что входит в комплекс</h2><p class="muted">Квартиры и апартаменты: разные форматы недвижимости с разным правовым статусом. Статус конкретного помещения уточняйте у менеджера. Состав приведён по проекту, опубликованному ДГА ${SITE.dga.date}; это не сведения о наличии квартир в продаже.</p></div><ul class="rows">${COMPOSITION.map(([k, v]) => `<li><h3>${k}</h3><p>${v}</p></li>`).join('')}</ul></div>`, { title: 'Состав' })}
+${scene('facade', 'right', 'Свет и высота', `
   <h2>Большие окна и три метра до потолка</h2>
-  <p>Высота потолков — 3 метра. Большие окна дают комнатам дневной свет и глубину. Вид на горы открывается из квартир соответствующих направлений — скажите менеджеру, что вид для вас важен.</p>
+  <p class="lead">Высота потолков 3 метра. Большие окна дают комнатам дневной свет и глубину.</p>
+  <p class="muted">Вид на горы открывается из квартир соответствующих направлений. Скажите менеджеру, что вид для вас важен, и он покажет подходящие варианты.</p>
 `)}
-${sec('podium', `
-  <p class="eyebrow">Первый этаж · по проекту</p>
-  <h2>Повседневное — на первом этаже</h2>
-  <ol class="numlist">${GROUND_FLOOR.map(([n, s]) => `<li><b>${n}</b><span>${s}</span></li>`).join('')}</ol>
-  <p class="note">Комплекс строится: всё перечисленное запланировано, а не работает сегодня.</p>
-`)}
-${sec('courtyard', `
-  <p class="eyebrow">Двор и парковка</p>
-  <h2>Закрытый двор и 111 машино-мест</h2>
-  <ul class="stats"><li><b>466 м²</b>детская площадка по проекту</li><li><b>202 м²</b>озеленение по проекту</li><li><b>78</b>машино-мест в подземном паркинге</li><li><b>33</b>наземных машино-места</li></ul>
-`, { cls: 'dark' })}
-${sec('about', `
-  <p class="eyebrow">Комфорт и безопасность</p>
-  <h2>Коротко о том, о чём спрашивают</h2>
-  ${dl(COMFORT, 'facts facts-2')}
-`)}
-${devBlock()}
-${contactsBlock()}`,
+${scene('podium', 'left', 'Первый этаж', `<h2>Повседневное на первом этаже</h2><p class="lead">Комплекс строится: всё перечисленное запланировано, а не работает сегодня.</p>${tenants()}`)}
+${scene('yard', 'right', 'Двор и парковка', `<h2>Закрытый двор и 111 машино-мест</h2><p class="lead">111 машино-мест: общее число для комплекса по проекту. Условия приобретения места уточняйте у менеджера.</p>${yardFigures()}`)}
+${sheet(`<div class="sheet-head"><h2>Коротко о том, о чём спрашивают</h2></div>${facts(COMFORT, 'wide')}`, { title: 'Комфорт' })}
+${developerSheet()}
+${contactsScene()}`,
   });
 
-  // Каталог планировок
+  // Каталог планировок и страницы по числу комнат
   const catalog = (rp) => {
     const shown = rp ? PLANS.filter((p) => p.rooms === rp.rooms) : PLANS;
-    const others = ROOM_PAGES.filter((r) => !rp || r.rooms !== rp.rooms);
-    const path = rp ? `/planirovki/${rp.slug}/` : '/planirovki/';
-    const title = rp ? rp.title : 'Планировки квартир в Бишкеке: 1–4 комнаты от 39,49 м² — RADIAN GROUP';
-    const h1 = rp ? rp.h1 : 'Планировки квартир от 39,49 до 228,06 м²';
+    const h1 = rp ? rp.h1 : 'Планировки квартир от 39,49 м²';
+    const rooms = [['all', 'Все', '/planirovki/'], ...[1, 2, 3, 4].map((n) => [n, String(n), `/planirovki/${n}-komnatnye/`])];
     add({
-      path, route: rp ? 'rooms' : 'plans', layout: 'split', view: 'plans', rooms: rp?.rooms,
-      title,
-      description: rp ? rp.description : 'Планировки квартир RADIAN GROUP в Бишкеке: 12 вариантов от 39,49 до 136,67 м² и квартира с террасой. Выбор квартиры на 3D-модели, чертежи с площадями помещений.',
+      path: rp ? `/planirovki/${rp.slug}/` : '/planirovki/', route: rp ? 'rooms' : 'plans', rooms: rp?.rooms,
+      title: rp ? rp.title : 'Планировки квартир в Бишкеке: 1–4 комнаты от 39,49 м² — RADIAN GROUP',
+      description: rp ? rp.description : 'Планировки квартир RADIAN GROUP в Бишкеке: 12 вариантов от 39,49 до 136,67 м² и квартира с террасой. Расположение на этаже по проектному чертежу, площади помещений.',
       crumbs: rp ? [['Планировки', '/planirovki/'], [rp.h1]] : [['Планировки']],
-      schema: [{
-        '@type': 'ItemList', name: h1,
-        itemListElement: shown.map((p, i) => ({ '@type': 'ListItem', position: i + 1, url: `${SITE.origin}/planirovki/${p.slug}/`, name: planTitle(p) })),
-      }],
+      schema: [{ '@type': 'ItemList', name: h1, itemListElement: shown.map((p, i) => ({ '@type': 'ListItem', position: i + 1, url: `${SITE.origin}/planirovki/${p.slug}/`, name: planTitle(p) })) }],
       body: `
-${sec('plans', `
+${scene('plans', 'left', 'Этаж', `
   ${crumbs(rp ? [['Планировки', '/planirovki/'], [rp.h1]] : [['Планировки']])}
-  <p class="eyebrow">Планировки</p>
   <h1>${h1}</h1>
-  <p class="lead">${rp ? rp.lead : 'Двенадцать вариантов из проекта: от 39,49 до 136,67 м² и особый вариант с террасой. Смотрите без регистрации; наличие и стоимость конкретной квартиры уточнит менеджер.'}</p>
-  <p class="hint-3d" data-3d-only hidden>Подходящие квартиры подсвечены на модели золотым. Выберите этаж на модели, чтобы заглянуть внутрь.</p>
-  ${planFilters(rp?.rooms)}
-  <ul class="cards" data-cards>${shown.map((p) => planCard(p)).join('')}</ul>
-  <div class="empty" data-empty hidden><h3>Таких вариантов в проекте нет</h3><p>Измените число комнат или диапазон площади — или попросите менеджера подобрать квартиру.</p>${btnLead()}</div>
-  <p class="note">Мебель на иллюстрациях показана условно. Число комнат указано по проектной классификации: считаются жилые комнаты, кухня — отдельно. Цена «от» относится к квадратному метру, а не к квартире.</p>
-  ${rp ? `<h2 class="h3">Другие варианты</h2><ul class="chips">${others.map((r) => `<li><a href="/planirovki/${r.slug}/">${r.h1}</a></li>`).join('')}<li><a href="/planirovki/">Все планировки</a></li></ul>` : ''}
+  <p class="lead">${rp ? rp.lead : 'Двенадцать вариантов из проекта и особый вариант с террасой. На модели открыт типовой этаж: наведите на планировку ниже, и она подсветится на плане.'}</p>
+  <div class="filters" data-filters>
+    <fieldset><legend>Комнат</legend><div class="seg">${rooms.map(([v, l, href]) => `<a href="${href}"${String(rp?.rooms || 'all') === String(v) ? ' aria-current="true"' : ''}>${l}</a>`).join('')}</div></fieldset>
+  </div>
 `)}
-${contactsBlock()}`,
+${sheet(`
+  <div class="sheet-head"><h2>${rp ? 'Варианты из проекта' : 'Все планировки'}</h2>
+    <div class="filters" data-filters><fieldset><legend>Площадь</legend><div class="seg">${AREA_RANGES.map((r, i) => `<button type="button" data-f-area="${r.id}" aria-pressed="${i === 0}">${r.label}</button>`).join('')}</div></fieldset></div>
+    <p class="count" data-f-count aria-live="polite"></p></div>
+  <ul class="cards" data-cards>${shown.map(planCard).join('')}</ul>
+  <div class="empty" data-empty hidden><h3>Таких вариантов в проекте нет</h3><p>Измените диапазон площади или попросите менеджера подобрать квартиру.</p>${btnLead()}</div>
+  <p class="muted">Мебель на иллюстрациях показана условно. Число комнат указано по проектной классификации: считаются жилые комнаты, кухня отдельно. Цена «от» относится к квадратному метру, а не к квартире.</p>
+`, { title: 'Планировки' })}
+${contactsScene()}`,
     });
   };
   catalog(null);
@@ -451,185 +389,143 @@ ${contactsBlock()}`,
     const same = PLANS.filter((q) => q.rooms === p.rooms && q.slug !== p.slug);
     const t = planTitle(p);
     const rp = ROOM_PAGES.find((r) => r.rooms === p.rooms);
+    const L = LAYOUT[p.slug];
+    const one = L.floors[0] === L.floors[1];
+    const sides = L.side.map((s) => SIDE_LABEL[s]).join('; ');
     const rows = [
       ['Тип по проекту', `${p.rooms}-комнатная квартира${p.terrace ? ' с террасой' : ''}`],
       [p.terrace ? 'Подпись квартиры на плане' : 'Площадь по плану', `${fmtArea(p.area)} м²`],
-      ...(p.terrace ? [['Открытая терраса', `${fmtArea(p.terrace)} м²`], ['Этаж', String(p.floor)]] : []),
+      ...(p.terrace ? [['Открытая терраса', `${fmtArea(p.terrace)} м²`]] : []),
+      [one ? 'Этаж' : 'Этажи', floorsLabel(p.slug)], ['Секция', L.section], ['Окна выходят', sides],
       ...(p.kitchen ? [['Кухня', p.kitchen]] : []),
-      ['Высота потолков', '3 м'], ['Окна', 'Большие'], ['Передача', 'Под самоотделку (ПСО)'], ['Цена', `от ${SITE.priceFromFmt} за м²`],
+      ['Высота потолков', '3 м'], ['Передача', 'Под самоотделку (ПСО)'], ['Цена', `от ${SITE.priceFromFmt} за м²`],
     ];
     add({
-      path: `/planirovki/${p.slug}/`, route: 'plan', layout: 'stage', view: 'plan', plan: p.slug,
+      path: `/planirovki/${p.slug}/`, route: 'plan', plan: p.slug,
       title: `${t} в Бишкеке — 3D-планировка | ${SITE.brand}`,
-      description: `Планировка: ${ROOM_WORD[p.rooms]}комнатная квартира${p.terrace ? ' с террасой' : ''} ${fmtArea(p.area)} м² в комплексе ${SITE.brand} на Южной магистрали. 3D-модель, чертёж с площадями помещений. Потолки 3 м, ПСО, от 2 000 $ за м².`,
+      description: `Планировка: ${ROOM_WORD[p.rooms]}комнатная квартира${p.terrace ? ' с террасой' : ''} ${fmtArea(p.area)} м² в комплексе ${SITE.brand} на Южной магистрали. Расположение на этаже, чертёж с площадями помещений. Потолки 3 м, ПСО, от 2 000 $ за м².`,
       crumbs: [['Планировки', '/planirovki/'], [rp.h1, `/planirovki/${rp.slug}/`], [t]],
-      ogImage: `/assets/plans/${p.code}.webp`,
-      image: `/assets/plans/${p.code}.webp`,
-      poster: { src: `/assets/plans/${p.code}.webp`, alt: `Иллюстрация планировки: ${t}`, w: 1800, h: 1800, contain: true },
+      ogImage: `/assets/plans/${p.code}.webp`, image: `/assets/plans/${p.code}.webp`,
       schema: [apartmentNode(p)],
       body: `
-<section class="sec sec-wide" data-view="plan" data-layout="stage">
-  <div class="sec-in">
-    ${crumbs([['Планировки', '/planirovki/'], [rp.h1, `/planirovki/${rp.slug}/`], [t]])}
-    <div class="plan-head">
-      <div>
-        <p class="eyebrow">Планировка</p>
-        <h1>${t}</h1>
-        ${p.note ? `<p class="lead">${p.note}</p>` : ''}
-      </div>
-      <div class="row">${btnLead('Уточнить наличие и стоимость', t)}${tel('btn btn-line')}</div>
+${scene('apartment', 'left', 'На этаже', `
+  ${crumbs([['Планировки', '/planirovki/'], [rp.h1, `/planirovki/${rp.slug}/`], [t]])}
+  <h1>${t}</h1>
+  <p class="lead">${p.note || `Золотом на плане отмечено место квартиры на этаже. Окна: ${sides}.`}</p>
+  ${facts([[one ? 'Этаж' : 'Этажи', floorsLabel(p.slug)], ['Секция', L.section], ['Потолки', '3 м'], ['Цена', `от ${SITE.priceFromFmt} за м²`]])}
+  <div class="actions">${btnLead('Уточнить наличие и стоимость', t)}</div>
+`, { plan: p.slug })}
+${sheet(`
+  <div class="drawings">
+    <div class="specs"><h2>Характеристики</h2>${facts(rows, 'list')}
+      <p class="muted">Стоимость этой квартиры рассчитает менеджер: цена «от» относится к квадратному метру, а не к квартире. Число комнат указано по проектной классификации: считаются жилые комнаты, кухня отдельно.</p></div>
+    <div class="specs">
+      <figure class="drawing"><a href="/assets/plans/${p.code}.webp" data-zoom><img src="/assets/plans/${p.code}.webp" alt="Иллюстрация планировки: ${esc(t)}" width="1800" height="1350" loading="lazy" decoding="async"></a><figcaption>Иллюстрация выполнена по проектному чертежу; мебель и отделка показаны условно и в стоимость не входят.</figcaption></figure>
+      <figure class="drawing"><a href="/assets/plans/${p.code}-draft.png" data-zoom><img src="/assets/plans/${p.code}-draft.png" alt="Проектный чертёж планировки с площадями помещений: ${esc(t)}" width="1400" height="1050" loading="lazy" decoding="async"></a><figcaption>Проектный чертёж с площадями помещений. Нажмите, чтобы увеличить.</figcaption></figure>
     </div>
-    <div class="plan-grid">
-      <div>
-        <h2 class="h3">Характеристики</h2>
-        ${dl(rows, 'facts facts-list')}
-        <p class="note">Стоимость этой квартиры рассчитает менеджер: цена «от» относится к квадратному метру, а не к квартире.</p>
-        <p class="note">Число комнат указано по проектной классификации: считаются жилые комнаты, кухня — отдельно.</p>
-        <p class="note" data-3d-only hidden>3D-модель построена по иллюстрации: стены выдавлены на высоту потолка 3 м, мебель показана условно. Точная геометрия и площади помещений — на проектном чертеже.</p>
-      </div>
-      <figure class="drawing">
-        <a href="/assets/plans/${p.code}-draft.png" data-zoom><img src="/assets/plans/${p.code}-draft.png" alt="Проектный чертёж планировки с площадями помещений: ${esc(t)}" loading="lazy" decoding="async"></a>
-        <figcaption>Проектный чертёж с площадями помещений. Нажмите, чтобы увеличить.</figcaption>
-      </figure>
-      <figure class="drawing">
-        <a href="/assets/plans/${p.code}.webp" data-zoom><img src="/assets/plans/${p.code}.webp" alt="Иллюстрация планировки: ${esc(t)}" loading="lazy" decoding="async"></a>
-        <figcaption>Иллюстрация выполнена по проектному чертежу; мебель и отделка показаны условно и в стоимость не входят.</figcaption>
-      </figure>
-    </div>
-    ${same.length ? `<h2 class="h3">Ещё ${ROOM_WORD[p.rooms]}комнатные</h2><ul class="cards cards-sm">${same.map((q) => planCard(q, { h: 'h3' })).join('')}</ul>` : ''}
-    <nav class="pager" aria-label="Соседние планировки">
-      <a href="/planirovki/${prev.slug}/" rel="prev"><small>Предыдущий вариант</small>${planShort(prev)}</a>
-      <a href="/planirovki/${next.slug}/" rel="next"><small>Следующий вариант</small>${planShort(next)}</a>
-    </nav>
   </div>
-</section>
-${contactsBlock().replace('data-layout="split"', 'data-layout="stage"')}`,
+  <nav class="pager" aria-label="Соседние планировки">
+    <a href="/planirovki/${prev.slug}/" rel="prev"><small>Предыдущий вариант</small>${planShort(prev)}</a>
+    <a href="/planirovki/${next.slug}/" rel="next"><small>Следующий вариант</small>${planShort(next)}</a>
+  </nav>`, { title: 'Чертежи' })}
+${same.length ? sheet(`<div class="sheet-head"><h2>Ещё ${ROOM_WORD[p.rooms]}комнатные</h2></div><ul class="cards">${same.map(planCard).join('')}</ul>`, { alt: true, title: 'Похожие' }) : ''}
+${contactsScene()}`,
     });
   });
 
   // Расположение
   add({
-    path: '/raspolozhenie/', route: 'location', layout: 'split', view: 'location',
+    path: '/raspolozhenie/', route: 'location',
     title: 'Расположение: Арча-Бешик, первая линия Южной магистрали — RADIAN GROUP, Бишкек',
     description: 'Комплекс RADIAN GROUP на первой линии Южной магистрали (ул. А. Масалиева) в юго-западной части Бишкека, ж/м Арча-Бешик. Адрес по проекту, координаты, маршрут и 3D-карта окружения.',
     crumbs: [['Расположение']],
     schema: [complexNode()],
     body: `
-${sec('location', `
+${scene('location', 'left', 'На карте', `
   ${crumbs([['Расположение']])}
-  <p class="eyebrow">Расположение</p>
-  <h1>Арча-Бешик, первая линия Южной магистрали</h1>
-  <p class="lead">Юго-западная часть Бишкека, ж/м Арча-Бешик, рядом с Джалом. Комплекс стоит в первой линии застройки вдоль улицы А. Масалиева — Южной магистрали.</p>
-  ${dl([['Адрес объекта по проекту', SITE.address], ['Координаты объекта', `<span dir="ltr">${SITE.geo.lat}, ${SITE.geo.lng}</span>`], ['Школы и детские сады', 'Рядом с комплексом'], ['Общественный транспорт', 'Хорошая обеспеченность']])}
-  <p class="note">Это адрес строящегося объекта, а не офиса продаж.</p>
-  <div class="row"><a class="btn btn-gold" href="https://www.google.com/maps/dir/?api=1&amp;destination=${SITE.geo.lat}%2C${SITE.geo.lng}" rel="noopener" target="_blank" data-track="route_click">Построить маршрут</a><a class="btn btn-line" href="${SITE.twoGis}" rel="noopener" target="_blank">Объект в 2ГИС</a></div>
-`, { cls: 'dark' })}
-${sec('sun', `
-  <p class="eyebrow">Солнце и вид</p>
-  <h2>Как солнце обходит комплекс</h2>
-  <p>Горы Ала-Тоо — на юге, Южная магистраль — на севере от комплекса. Передвиньте ползунок времени на модели: положение солнца рассчитано для координат объекта, тени — по проектной высоте башен.</p>
-  <p>Вид на горы открывается из квартир соответствующих направлений. Скажите менеджеру, что вид для вас важен, — он покажет подходящие варианты.</p>
+  <h1>Первая линия Южной магистрали</h1>
+  <p class="lead">Юго-западная часть Бишкека, ж/м Арча-Бешик, рядом с Джалом. Улицы и дома на модели взяты с карты района.</p>
+  ${facts([['Адрес объекта по проекту', SITE.address], ['Координаты', `<span dir="ltr">${SITE.geo.lat}, ${SITE.geo.lng}</span>`]], 'list')}
+  <div class="actions"><a class="btn btn-primary" href="https://www.google.com/maps/dir/?api=1&amp;destination=${SITE.geo.lat}%2C${SITE.geo.lng}" rel="noopener" target="_blank" data-track="route_click">Построить маршрут</a><a class="btn btn-quiet" href="${SITE.twoGis}" rel="noopener" target="_blank">Объект в 2ГИС</a></div>
 `)}
-${sec('map', `
-  <h2 class="h3">Карта</h2>
-  <div class="map" data-map><p>Карта OpenStreetMap загрузится после нажатия.</p><button type="button" class="btn btn-line" data-map-load>Показать карту</button></div>
-  <p class="note">Если карта не открылась, используйте координаты или <a href="https://www.google.com/maps/search/?api=1&amp;query=${SITE.geo.lat}%2C${SITE.geo.lng}" rel="noopener" target="_blank">ссылку на точку объекта</a>.</p>
+${scene('mountains', 'right', 'Вид на горы', `
+  <h2>Ала-Тоо на юге</h2>
+  <p class="lead">Вид на горы открывается из квартир соответствующих направлений. Скажите менеджеру, что вид для вас важен, и он покажет подходящие варианты.</p>
+  ${facts([['Школы и детские сады', 'Рядом с комплексом'], ['Общественный транспорт', 'Хорошая обеспеченность']])}
 `)}
-${sec('podium', `
-  <p class="eyebrow">Жизнь в комплексе</p>
-  <h2>Повседневное — на первом этаже</h2>
-  <ol class="numlist">${GROUND_FLOOR.map(([n, s]) => `<li><b>${n}</b><span>${s}</span></li>`).join('')}</ol>
-  <p class="note">Комплекс строится: всё перечисленное запланировано, а не работает сегодня.</p>
-`)}
-${contactsBlock()}`,
+${sheet(`<div class="split"><div class="sheet-head"><h2>Карта</h2><p class="muted">Это адрес строящегося объекта, а не офиса продаж. Если карта не открылась, используйте координаты или <a class="link" href="https://www.google.com/maps/search/?api=1&amp;query=${SITE.geo.lat}%2C${SITE.geo.lng}" rel="noopener" target="_blank">ссылку на точку объекта</a>.</p></div><div class="map" data-map><p>Карта OpenStreetMap загрузится после нажатия.</p><button type="button" class="btn btn-quiet" data-map-load>Показать карту</button></div></div>`, { title: 'Карта' })}
+${contactsScene()}`,
   });
 
   // Ход строительства
   add({
-    path: '/hod-stroitelstva/', route: 'progress', layout: 'split', view: 'progress',
+    path: '/hod-stroitelstva/', route: 'progress',
     title: 'Ход строительства комплекса RADIAN GROUP в Бишкеке — данные на 16.09.2026',
     description: 'Текущая подтверждённая стадия строительства комплекса RADIAN GROUP на Южной магистрали — уровень первого этажа (16.09.2026). Ориентировочный срок сдачи — 2029 год.',
     crumbs: [['Ход строительства']],
     body: `
-${sec('progress', `
+${scene('progress', 'left', 'Стадия', `
   ${crumbs([['Ход строительства']])}
-  <p class="eyebrow">Ход строительства · данные на ${SITE.stage.date}</p>
   <h1>${SITE.stage.title}</h1>
-  <p class="lead">Это последняя подтверждённая стадия. Фотографии со стройплощадки будут появляться здесь по мере поступления — только фактические.</p>
-  <p data-3d-only hidden>На модели построенная часть показана плотным цветом, остальное — контуром проекта.</p>
-  ${dl([['Сейчас', `Уровень первого этажа · данные на ${SITE.stage.date}`], ['Ориентир', 'Сдача — 2029 год. Срок ориентировочный и может уточняться.']])}
-  ${btnLead('Уточнить актуальную стадию', 'Ход строительства')}
+  <p class="lead">Это последняя подтверждённая стадия, данные на ${SITE.stage.date}. На модели построенная часть показана целиком, остальное: золотым контуром проекта.</p>
+  ${facts([['Сейчас', 'Уровень первого этажа'], ['Ориентир сдачи', '2029 год']])}
+  <div class="actions">${btnLead('Уточнить актуальную стадию', 'Ход строительства')}</div>
 `)}
-${sec('progress', `
-  <h2 class="h3">История обновлений</h2>
-  <ol class="timeline"><li><time datetime="${SITE.stage.iso}">${SITE.stage.date}</time><p>Строительство на уровне первого этажа.</p></li></ol>
-  <p class="note">Новые записи появятся вместе с подтверждёнными данными.</p>
-`)}
-${contactsBlock()}`,
+${sheet(`<div class="split"><div class="sheet-head"><h2>История обновлений</h2><p class="muted">Фотографии со стройплощадки будут появляться здесь по мере поступления, только фактические. Срок сдачи ориентировочный и может уточняться.</p></div><ol class="timeline"><li><time datetime="${SITE.stage.iso}">${SITE.stage.date}</time><p>Строительство на уровне первого этажа.</p></li></ol></div>`, { title: 'История' })}
+${contactsScene()}`,
   });
 
   // Покупка и вопросы
   add({
-    path: '/pokupka/', route: 'purchase', layout: 'split', view: 'purchase',
+    path: '/pokupka/', route: 'purchase',
     title: 'Цена и условия покупки: от 2 000 $ за м², рассрочка — квартиры RADIAN GROUP, Бишкек',
     description: 'Квартиры RADIAN GROUP от 2 000 $ за м². Наличный расчёт или рассрочка, передача под самоотделку, ориентир сдачи — 2029. Ответы на частые вопросы о покупке.',
     crumbs: [['Покупка и вопросы']],
-    schema: [{
-      '@type': 'FAQPage',
-      mainEntity: FAQ.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })),
-    }],
+    schema: [{ '@type': 'FAQPage', mainEntity: FAQ.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) }],
     body: `
-${sec('purchase', `
+${scene('night', 'left', 'Цена', `
   ${crumbs([['Покупка и вопросы']])}
-  <p class="eyebrow">Покупка</p>
   <h1>Цена и условия покупки</h1>
-  <p class="lead">От 2 000 $ за квадратный метр. Это стартовая цена квадратного метра, а не стоимость квартиры. Расчёт по выбранной планировке подготовит менеджер.</p>
-  ${dl([['Оплата', 'Наличный расчёт или рассрочка'], ['Условия рассрочки', 'Менеджер рассчитает под вашу квартиру'], ['Состояние при передаче', 'Под самоотделку (ПСО)'], ['Ориентир сдачи', '2029 год']])}
-  ${btnLead('Получить расчёт у менеджера')}
-`, { cls: 'dark' })}
-${sec('purchase', `
-  <p class="eyebrow">Вопросы и ответы</p>
-  <h2>Частые вопросы</h2>
-  ${faqList(FAQ)}
+  <p class="lead">От 2 000 $ за квадратный метр. Это стартовая цена метра, а не стоимость квартиры: расчёт подготовит менеджер.</p>
+  ${facts([['Оплата', 'Наличный расчёт или рассрочка'], ['Условия рассрочки', 'Менеджер рассчитает под вашу квартиру'], ['Состояние при передаче', 'Под самоотделку (ПСО)'], ['Ориентир сдачи', '2029 год']])}
+  <div class="actions">${btnLead('Получить расчёт')}</div>
 `)}
-${devBlock()}
-${contactsBlock()}`,
+${sheet(`<div class="split"><div class="sheet-head"><h2>Частые вопросы</h2><p class="muted">Не нашли ответ? Позвоните в отдел продаж: ${tel('link')}.</p></div><div class="faq">${FAQ.map(([q, a]) => `<details><summary><h3>${q}</h3></summary><p>${a}</p></details>`).join('')}</div></div>`, { title: 'Вопросы' })}
+${developerSheet()}
+${contactsScene()}`,
   });
 
-  // Контакты
+  // Контакты: камера заходит в офис продаж
   add({
-    path: '/kontakty/', route: 'contacts', layout: 'split', view: 'contacts',
+    path: '/kontakty/', route: 'contacts',
     title: 'Контакты отдела продаж RADIAN GROUP — телефон +996 998 88 88 84',
     description: 'Телефон отдела продаж RADIAN GROUP: +996 998 88 88 84. Подбор квартиры, расчёт стоимости и условий рассрочки. Объект: Бишкек, ж/м Арча-Бешик, Южная магистраль.',
     crumbs: [['Контакты']],
-    body: `
-${sec('contacts', `
+    body: scene('office', 'left', 'Контакты', `
   ${crumbs([['Контакты']])}
-  <p class="eyebrow">Контакты</p>
   <h1>Отдел продаж ${SITE.brand}</h1>
   <p class="lead">Расскажем о наличии, рассчитаем стоимость выбранной квартиры и условия рассрочки.</p>
-  <p class="big-tel">${tel('')}</p>
-  ${dl([['Объект по проекту', `${SITE.city}, ${SITE.district}, ${SITE.address}`], ['Сайт', 'radian.kg']])}
-  <p class="note">Это адрес строящегося объекта, а не офиса продаж.</p>
-  <div class="row">${btnLead()}<a class="btn btn-line" href="/raspolozhenie/">Как добраться</a></div>
-`, { cls: 'dark' })}`,
+  ${tel('big-tel')}
+  ${facts([['Объект по проекту', `${SITE.city}, ${SITE.district}, ${SITE.address}`], ['Сайт', 'radian.kg']], 'list')}
+  <div class="actions">${btnLead()}<a class="btn btn-quiet" href="/raspolozhenie/">Как добраться</a></div>
+  <p class="muted">Это адрес строящегося объекта, а не офиса продаж. Интерьер офиса на модели показан условно.</p>
+`),
   });
 
   // Обработка данных
   add({
-    path: '/konfidencialnost/', route: 'privacy', layout: 'split', view: 'home',
+    path: '/konfidencialnost/', route: 'privacy',
     title: 'Обработка данных — RADIAN GROUP',
     description: 'Какие данные получает RADIAN GROUP при обращении через сайт, зачем и как ими пользуется.',
     crumbs: [['Обработка данных']],
-    body: sec('home', `
+    body: sheet(`<div class="prose">
   ${crumbs([['Обработка данных']])}
   <h1>Обработка данных</h1>
-  <h2 class="h3">Какие данные мы получаем</h2><p>Номер телефона, имя — если вы его указали, выбранную планировку и язык общения.</p>
-  <h2 class="h3">Зачем</h2><p>Чтобы перезвонить, ответить на вопросы о квартирах и условиях покупки. Для рассылок без вашего согласия данные не используются.</p>
-  <h2 class="h3">Аналитика</h2><p>Мы учитываем обезличенные действия на сайте: просмотр планировок, нажатие на телефон, смену языка, действия с 3D-моделью. Имя, телефон и содержимое формы в аналитику не передаются.</p>
-  <h2 class="h3">Ваши права</h2><p>Вы можете попросить уточнить или удалить свои данные, обратившись в отдел продаж.</p>
-  <p class="note">Реквизиты оператора данных и срок хранения будут указаны перед запуском сайта.</p>
-`),
+  <h2>Какие данные мы получаем</h2><p>Номер телефона, имя — если вы его указали, выбранную планировку и язык общения.</p>
+  <h2>Зачем</h2><p>Чтобы перезвонить, ответить на вопросы о квартирах и условиях покупки. Для рассылок без вашего согласия данные не используются.</p>
+  <h2>Аналитика</h2><p>Мы учитываем обезличенные действия на сайте: просмотр планировок, нажатие на телефон, смену языка. Имя, телефон и содержимое формы в аналитику не передаются.</p>
+  <h2>Ваши права</h2><p>Вы можете попросить уточнить или удалить свои данные, обратившись в отдел продаж.</p>
+  <p class="muted">Реквизиты оператора данных и срок хранения будут указаны перед запуском сайта.</p></div>`),
   });
 
   return list;
@@ -637,9 +533,9 @@ ${sec('contacts', `
 
 export function notFoundPage() {
   return {
-    path: '/404.html', route: 'notfound', layout: 'split', view: 'home', noindex: true,
+    path: '/404.html', route: 'notfound', noindex: true,
     title: 'Страница не найдена — RADIAN GROUP',
     description: 'Такой страницы нет. Перейдите к планировкам или на главную.',
-    body: sec('home', `<p class="eyebrow">Ошибка 404</p><h1>Такой страницы нет</h1><p class="lead">Возможно, ссылка устарела. Начните с планировок или главной.</p><div class="row"><a class="btn btn-gold" href="/planirovki/">Планировки</a><a class="btn btn-line" href="/">На главную</a></div>`),
+    body: scene('hero', 'left', 'Комплекс', `<h1>Такой страницы нет</h1><p class="lead">Возможно, ссылка устарела. Начните с планировок или главной.</p><div class="actions"><a class="btn btn-primary" href="/planirovki/">Планировки</a><a class="btn btn-quiet" href="/">На главную</a></div>`),
   };
 }

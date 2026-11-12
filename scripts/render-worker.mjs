@@ -22,7 +22,7 @@ const imgFor = (p) => {
     return [[`/assets/plans/${plan.code}.webp`, `Иллюстрация планировки: ${planTitle(plan)}`],
       [`/assets/plans/${plan.code}-draft.png`, `Проектный чертёж: ${planTitle(plan)}`]];
   }
-  if (p.path === '/') return [['/assets/img/hero.jpg', 'Проектная визуализация комплекса RADIAN GROUP'], ['/assets/img/front.jpg', 'Фронтальный вид двух башен комплекса']];
+  if (p.path === '/') return [['/assets/renders/front-day.webp', 'Проектная визуализация комплекса RADIAN GROUP со стороны Южной магистрали'], ['/assets/renders/aerial-north.webp', 'Комплекс RADIAN GROUP с высоты'], ['/assets/renders/yard-sunset.webp', 'Двор комплекса RADIAN GROUP']];
   return [];
 };
 const xmlEsc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');

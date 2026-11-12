@@ -1,147 +1,99 @@
-// Связка страницы и 3D: секция, которая сейчас в зоне чтения, задаёт ракурс
-// камеры и раскладку (hero / split / stage). Здесь же — какая часть экрана
-// отдана сцене (прямоугольники для маски и кадра) и фильтры каталога ↔ подсветка.
+// Связка страницы и 3D. Секции-сцены (data-shot) задают кадры камеры —
+// пользователь просто листает. Здесь же: навигация по главам справа,
+// фильтр каталога и подсветка квартиры на плане этажа.
 import { AREA_RANGES } from '../data/plans.js';
 
-const desktop = matchMedia('(min-width: 900px)');
-
 export function createPage(scene) {
-  let sections = [];
-  let active = null;
-  let main = null;
-  let url = null;
-  let raf = 0;
-  let vars = null;
-  let layoutNow = document.body.dataset.layout;
+  let main = null; let sections = []; let scenes = [];
+  const chapters = document.querySelector('[data-chapters]');
+  let raf = 0; let current = null;
 
-  // CSS-переменные раскладки: меряем один раз и при ресайзе (не на каждый кадр)
-  function measure() {
-    const probe = document.createElement('div');
-    probe.style.cssText = 'position:absolute;visibility:hidden;pointer-events:none;top:0;left:0';
-    document.body.append(probe);
-    const px = (v) => { probe.style.height = `var(${v})`; return probe.getBoundingClientRect().height; };
-    vars = { hdr: px('--hdr'), stageM: px('--stage-m'), stageH: px('--stage-h') };
-    probe.style.height = '0'; probe.style.width = 'var(--col)';
-    vars.col = probe.getBoundingClientRect().width;
-    probe.remove();
-  }
-
-  // Видимая область сцены для раскладки (координаты окна)
-  function rects(layout) {
-    const W = document.documentElement.clientWidth; const H = innerHeight;
-    const { hdr, col, stageM, stageH } = vars;
-    const d = desktop.matches;
-    if (layout === 'hero') {
-      const all = { x: 0, y: 0, w: W, h: H };
-      // текст первого экрана — слева (десктоп) / снизу (телефон): кадр центрируем в свободной части
-      return { frame: d ? { x: W * 0.34, y: hdr, w: W * 0.66, h: H - hdr } : { x: 0, y: hdr, w: W, h: H * 0.46 }, clip: all, ui: { x: 0, y: hdr, w: W, h: H - hdr } };
-    }
-    if (layout === 'stage') {
-      const r = { x: 0, y: hdr, w: W, h: stageH };
-      return { frame: r, clip: { ...r, h: Math.max(0, stageH - scrollY) }, ui: r };
-    }
-    const r = d ? { x: col, y: hdr, w: W - col, h: H - hdr } : { x: 0, y: hdr, w: W, h: stageM };
-    return { frame: r, clip: r, ui: r };
-  }
-
-  function viewOpts(sec) {
-    if (sec.dataset.view !== 'plan') return {};
-    return { plan: main.dataset.plan, unit: url.searchParams.get('u') };
-  }
-
-  function setLayout(l, animate) {
-    const changed = layoutNow !== l;
-    layoutNow = l;
-    if (document.body.dataset.layout !== l) document.body.dataset.layout = l;
-    if (changed) scene.setLayout(l);
-    scene.setRects(rects(l), changed && animate ? 0.85 : 0);
-  }
-
-  function pickActive(animate = true) {
+  // какая глава сейчас на экране + закрыта ли сцена «листом» целиком
+  function update() {
     raf = 0;
-    if (!sections.length) return;
-    const vh = innerHeight;
-    const th = !desktop.matches && layoutNow === 'split' ? vars.hdr + vars.stageM + (vh - vars.hdr - vars.stageM) * 0.3 : vh * 0.55;
-    let cur = sections[0];
-    for (const s of sections) if (s.getBoundingClientRect().top <= th) cur = s;
-    const l = cur.dataset.layout || main.dataset.layout;
-    if (cur !== active) {
-      active = cur;
-      setLayout(l, animate);
-      scene.setView(cur.dataset.view, viewOpts(cur));
-    } else if (l === 'stage') {
-      scene.setRects(rects(l), 0); // планировка «уезжает» под текст при прокрутке
+    const mid = innerHeight / 2; let cur = sections[0]; let covered = false;
+    for (const s of sections) {
+      const r = s.getBoundingClientRect();
+      if (r.top <= mid) cur = s;
+      if (s.classList.contains('sheet') && r.top <= 0 && r.bottom >= innerHeight) covered = true;
     }
-    if (l === 'stage') scene.setPaused(scrollY > vars.stageH + 20);
-    else scene.setPaused(false);
+    const ftr = document.querySelector('.ftr');
+    const atFoot = !!ftr && ftr.getBoundingClientRect().top < innerHeight - 80; // у подвала панели не нужны
+    document.body.classList.toggle('covered', covered || atFoot);
+    scene.setPaused(covered);
+    if (cur !== current) {
+      current = cur;
+      chapters?.querySelectorAll('a').forEach((a) => a.setAttribute('aria-current', String(a.dataset.i === String(sections.indexOf(cur)))));
+    }
   }
-  const onScroll = () => { if (!raf) raf = requestAnimationFrame(() => pickActive(true)); };
+  const onScroll = () => { if (!raf) raf = requestAnimationFrame(update); };
   addEventListener('scroll', onScroll, { passive: true });
-  addEventListener('resize', () => { measure(); scene.setRects(rects(layoutNow), 0); onScroll(); });
+  addEventListener('resize', () => { scene.refresh(); onScroll(); });
+
+  function buildChapters() {
+    if (!chapters) return;
+    const titled = sections.filter((s) => s.dataset.title);
+    chapters.replaceChildren();
+    if (titled.length < 3) return;
+    for (const s of titled) {
+      const a = document.createElement('a');
+      a.textContent = s.dataset.title; a.dataset.i = String(sections.indexOf(s));
+      a.href = `#${s.id || ''}`;
+      a.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); s.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
+      chapters.append(a);
+    }
+  }
 
   function hydrateCatalog() {
-    const box = main.querySelector('[data-filters]');
-    if (!box) return;
-    const cards = [...main.querySelectorAll('[data-plan-card]')];
-    const count = box.querySelector('[data-f-count]');
+    const cards = [...main.querySelectorAll('[data-cards] [data-plan-card]')];
+    const count = main.querySelector('[data-f-count]');
     const empty = main.querySelector('[data-empty]');
-    const rooms = main.dataset.rooms ? Number(main.dataset.rooms) : null;
+    if (!cards.length || !count) return;
     let area = 'all';
     const apply = () => {
       const r = AREA_RANGES.find((x) => x.id === area);
       let n = 0;
-      for (const c of cards) {
-        const ok = r.test(Number(c.dataset.area));
-        c.hidden = !ok;
-        if (ok) n++;
-      }
+      for (const c of cards) { const ok = r.test(Number(c.dataset.area)); c.hidden = !ok; if (ok) n++; }
       count.textContent = `Найдено вариантов: ${n}`;
       if (empty) empty.hidden = n > 0;
-      scene.setFilter({ rooms, area });
+      scene.refresh();
     };
-    box.addEventListener('click', (e) => {
+    main.addEventListener('click', (e) => {
       const b = e.target.closest('[data-f-area]');
       if (!b) return;
       area = b.dataset.fArea;
-      box.querySelectorAll('[data-f-area]').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+      main.querySelectorAll('[data-f-area]').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
       apply();
-      (window.dataLayer = window.dataLayer || []).push({ event: 'filter_change', rooms: rooms || 'all', area });
+      (window.dataLayer = window.dataLayer || []).push({ event: 'filter_change', area });
     });
     apply();
   }
-
   function hydrateHover() {
     main.querySelectorAll('[data-plan-card]').forEach((c) => {
       const slug = c.dataset.planCard;
-      c.addEventListener('pointerenter', () => { scene.previewPlan(slug); scene.prefetchPlan(slug); });
-      c.addEventListener('pointerleave', () => scene.previewPlan(null));
-      c.addEventListener('focusin', () => scene.previewPlan(slug));
-      c.addEventListener('focusout', () => scene.previewPlan(null));
-      c.addEventListener('touchstart', () => scene.prefetchPlan(slug), { passive: true });
-    });
-    main.querySelectorAll('[data-hl-rooms]').forEach((a) => {
-      const n = Number(a.dataset.hlRooms);
-      a.addEventListener('pointerenter', () => scene.previewRooms(n));
-      a.addEventListener('pointerleave', () => scene.previewRooms(null));
+      c.addEventListener('pointerenter', () => scene.preview(slug));
+      c.addEventListener('pointerleave', () => scene.preview(null));
+      c.addEventListener('focusin', () => scene.preview(slug));
+      c.addEventListener('focusout', () => scene.preview(null));
     });
   }
 
-  function mount(m, u) {
+  function mount(m, { fly = true } = {}) {
     main = m;
-    url = new URL(u.href || u, location.href);
-    sections = [...main.querySelectorAll('[data-view]')].filter((s) => s !== main);
-    if (!sections.length) sections = [main];
-    active = null;
-    if (!vars) measure();
+    sections = [...main.querySelectorAll(':scope > section')];
+    scenes = sections.filter((s) => s.dataset.shot);
+    // страница без сцен (например, «Обработка данных») держит общий вид комплекса
+    current = null;
     document.body.dataset.route = main.dataset.route;
-    scene.closeCard();
-    if (main.dataset.route !== 'plans' && main.dataset.route !== 'rooms') scene.setFilter({ rooms: null, area: 'all' });
-    if (window.__3d) main.querySelectorAll('[data-3d-only]').forEach((el) => { el.hidden = false; });
+    buildChapters();
     hydrateCatalog();
     hydrateHover();
-    pickActive(true);
+    scene.setTrack(scenes, { fly });
+    update();
+    // картинки и шрифты меняют высоту секций — пересчитываем кадры
+    main.querySelectorAll('img').forEach((img) => { if (!img.complete) img.addEventListener('load', () => scene.refresh(), { once: true }); });
+    document.fonts?.ready.then(() => scene.refresh());
   }
 
-  measure();
-  return { mount, refresh: () => pickActive(true), rects: () => rects(layoutNow), get vars() { return vars; } };
+  return { mount };
 }

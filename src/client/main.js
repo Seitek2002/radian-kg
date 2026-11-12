@@ -1,32 +1,32 @@
-// Точка входа. Страница полностью работает без JS и без WebGL (статический HTML).
-// JS добавляет переходы без перезагрузки, а 3D-движок грузится отдельным чанком
-// после первой отрисовки — с прогрессом в процентах (сначала байты чанка,
-// потом этапы подготовки сцены).
+// Точка входа. Страница полностью работает без JS и без WebGL (статический HTML
+// поверх проектной визуализации). JS добавляет переходы без перезагрузки,
+// а 3D-движок грузится отдельным чанком — с прогрессом на заставке.
 import { initDom, openLead } from './ui/dom.js';
 import { createRouter } from './router.js';
 import { createPage } from './page.js';
 
 const stage = document.querySelector('[data-stage]');
-const pl = document.querySelector('[data-pl]'); // полноэкранный предзагрузчик
-const pre = {
-  pct: pl?.querySelector('[data-pre-pct]'),
-  bar: pl?.querySelector('[data-pre-bar]'),
-  text: pl?.querySelector('[data-pre-text]'),
-};
+const pl = document.querySelector('[data-pl]'); // полноэкранная заставка
+const pre = { pct: pl?.querySelector('[data-pre-pct]'), bar: pl?.querySelector('[data-pre-bar]'), text: pl?.querySelector('[data-pre-text]') };
 const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 // Тяжёлая работа (разбор движка, сборка сцены) — только после вступления логотипа,
 // чтобы анимация заставки не делила время с JS. Скачивание идёт параллельно.
 const introDone = () => new Promise((r) => setTimeout(r, Math.max(0, (reduced ? 0 : 2400) - performance.now())));
 
-// Убираем предзагрузчик не раньше, чем доиграет анимация логотипа (~2,9 с от начала
-// загрузки страницы). Промис — момент, когда экран начинает гаснуть.
+let shown = 0;
+function progress(p, text) {
+  if (text) performance.mark(`3d:${text}`);
+  shown = Math.max(shown, p); // проценты только растут
+  if (pre.pct) pre.pct.textContent = `${Math.round(shown * 100)}%`;
+  if (pre.bar) pre.bar.style.transform = `scaleX(${shown})`;
+  if (text && pre.text) pre.text.textContent = text;
+}
+
+// Заставка уходит не раньше, чем доиграет логотип (~2,9 с от начала загрузки)
 function hideLoader(minMs = reduced ? 0 : 2900) {
   if (!pl || pl.classList.contains('done')) return Promise.resolve();
-  if (import.meta.env.DEV && location.search.includes('pl-debug')) return new Promise(() => {}); // заставка остаётся — для отладки анимации
-  const wait = Math.max(0, minMs - performance.now());
+  if (import.meta.env.DEV && location.search.includes('pl-debug')) return new Promise(() => {});
   return new Promise((resolve) => setTimeout(() => {
-    // страница под заставкой не рисовалась (visibility: hidden) — проявляем её,
-    // пока заставка ещё непрозрачна, и только через пару кадров начинаем гасить
     document.documentElement.classList.add('pl-reveal');
     requestAnimationFrame(() => requestAnimationFrame(() => {
       pl.classList.add('done');
@@ -34,40 +34,35 @@ function hideLoader(minMs = reduced ? 0 : 2900) {
       setTimeout(() => { pl.remove(); document.documentElement.classList.remove('pl-reveal'); }, 900);
       resolve();
     }));
-  }, wait));
-}
-let shown = 0;
-function progress(p, text) {
-  if (text) performance.mark(`3d:${text}`); // этапы загрузки — видны в DevTools → Performance
-  shown = Math.max(shown, p); // проценты только растут
-  const v = Math.round(shown * 100);
-  if (pre.pct) pre.pct.textContent = `${v}%`;
-  if (pre.bar) pre.bar.style.transform = `scaleX(${shown})`; // transform — без пересчёта вёрстки
-  if (text && pre.text) pre.text.textContent = text;
+  }, Math.max(0, minMs - performance.now())));
 }
 
-// Прокси к 3D: запоминает последние вызовы, пока движок грузится
+// Прокси к 3D: запоминает последний сценарий, пока движок грузится
 let app = null;
-const last = { view: null, rects: null, filter: { rooms: null, area: 'all' }, paused: false };
+const last = { track: null, paused: false };
 const scene = {
-  setView(view, opts) { last.view = [view, opts]; app?.setView(view, opts); },
-  setRects(r, d) { last.rects = r; app?.setRects(r, d); },
-  setLayout(l) { app?.setLayout(l); },
-  setFilter(f) { last.filter = { ...last.filter, ...f }; app?.setFilter(f); },
-  previewPlan(s) { app?.previewPlan(s); },
-  previewRooms(n) { app?.previewRooms(n); },
-  prefetchPlan(s) { app?.prefetchPlan(s); },
-  closeCard() { app?.closeCard(); },
+  setTrack(sections, opts) { last.track = [sections, opts]; app?.setTrack(sections, opts); },
+  refresh() { app?.refresh(); },
+  preview(slug) { app?.preview(slug); },
   setPaused(p) { last.paused = p; app?.setPaused(p); },
 };
 
 initDom();
 const page = createPage(scene);
-const router = createRouter({ onPage: (main, url) => page.mount(main, url) });
-page.mount(document.querySelector('main'), location);
+createRouter({ onPage: (main) => page.mount(main, { fly: true }) });
+page.mount(document.querySelector('main'), { fly: false });
 
-// Только наличие API: пробный контекст WebGL стоит 200–300 мс главного потока.
-// Если контекст на деле не создастся — это поймает запуск движка (catch ниже).
+// время суток на модели
+const tod = document.querySelector('[data-tod]');
+const syncTod = (key) => tod?.querySelectorAll('button').forEach((b) => b.setAttribute('aria-pressed', String((b.dataset.todKey || null) === (key || null))));
+tod?.addEventListener('click', (e) => {
+  const b = e.target.closest('button');
+  if (!b || !app) return;
+  app.setTimeOfDay(b.dataset.todKey || null);
+  syncTod(b.dataset.todKey || null);
+  (window.dataLayer = window.dataLayer || []).push({ event: 'time_of_day', tod: b.dataset.todKey || 'auto' });
+});
+
 const webgl = () => !!window.WebGL2RenderingContext;
 
 // Скачиваем чанк 3D-движка с прогрессом по байтам; import() затем возьмёт его из кэша
@@ -91,31 +86,21 @@ async function download(meta) {
 async function boot3D() {
   if (!stage) { hideLoader(0); return; }
   if (!webgl()) { stage.classList.add('no3d'); hideLoader(0); return; }
-  window.__3d = true;
-  document.querySelectorAll('[data-3d-only]').forEach((el) => { el.hidden = false; });
   progress(0.02, 'Загружаем 3D-модель комплекса…');
   try {
     await download(document.querySelector('meta[name="x-3d"]'));
     await introDone();
     progress(0.34, 'Запускаем 3D-движок…');
-    await new Promise((r) => requestAnimationFrame(() => setTimeout(r, 0))); // дать отрисовать текст
+    await new Promise((r) => requestAnimationFrame(() => setTimeout(r, 0)));
     const { createApp3D } = await import('./scene/app3d.js');
-    const a = await createApp3D(stage, {
-      progress,
-      rects: last.rects || page.rects(),
-      initial: last.view ? { view: last.view[0], opts: last.view[1] } : null,
-      navigate: (u) => router.go(u),
-      lead: (ctx) => openLead(ctx),
-    });
+    const a = await createApp3D(stage, { progress, lead: (ctx) => openLead(ctx) });
     if (import.meta.env.DEV) window.__app = a;
-    a.setRects(page.rects(), 0);
-    a.setFilter(last.filter);
-    a.setPaused(last.paused);
+    syncTod(a.timeOfDay);
     await hideLoader();
-    app = a; // с этого момента страница управляет сценой напрямую
-    app.setRects(page.rects(), 0);
-    app.setFilter(last.filter);
-    if (last.view) app.setView(...last.view); // облёт камеры — одновременно с исчезновением заставки
+    app = a;
+    app.start();
+    if (last.track) app.setTrack(last.track[0], { fly: true }); // первый пролёт — вместе с исчезновением заставки
+    app.setPaused(last.paused);
   } catch (e) {
     console.error('3D недоступно:', e);
     stage.classList.add('no3d');
@@ -123,15 +108,8 @@ async function boot3D() {
   }
 }
 
-// экономия трафика: 3D только по запросу
 if (navigator.connection?.saveData) {
+  // экономия трафика: вместо 3D остаётся проектная визуализация
+  stage?.classList.add('no3d');
   hideLoader(0);
-  const b = document.createElement('button');
-  b.className = 's-btn';
-  b.style.cssText = 'position:absolute;left:50%;top:60%;transform:translate(-50%,-50%);z-index:3;pointer-events:auto';
-  b.textContent = 'Загрузить 3D-модель (≈ 1,3 МБ)';
-  b.addEventListener('click', () => { b.remove(); boot3D(); }, { once: true });
-  stage?.querySelector('.stage-frame')?.append(b);
-} else {
-  boot3D(); // сразу: заставка закрывает страницу, ждать загрузки картинок незачем
-}
+} else boot3D();

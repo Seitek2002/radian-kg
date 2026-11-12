@@ -11,7 +11,6 @@
 //   SITE_ORIGIN=https://staging.example node scripts/build.mjs --noindex
 import { build } from 'esbuild';
 import { cp, mkdir, rm, writeFile, readdir } from 'node:fs/promises';
-import { existsSync } from 'node:fs';
 import { Worker } from 'node:worker_threads';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
@@ -76,10 +75,6 @@ async function count(dir) {
 if (process.argv[1] && pathToFileURL(process.argv[1]).href === import.meta.url) {
   const args = process.argv.slice(2);
   const opt = (name) => args.find((a) => a.startsWith(`--${name}=`))?.split('=')[1];
-  if (!existsSync(path.join(ROOT, 'src/data/walls.json'))) {
-    console.error('Нет src/data/walls.json — запустите: npm run walls');
-    process.exit(1);
-  }
   buildSite({ dev: args.includes('--dev'), noindex: args.includes('--noindex'), base: opt('base') || '/', out: opt('out') || 'dist', origin: opt('origin') || process.env.SITE_ORIGIN }).catch((e) => {
     console.error(e);
     process.exit(1);
